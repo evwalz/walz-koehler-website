@@ -1,0 +1,38 @@
+---
+import Todo from "./Todo.astro";
+import { photoExists } from "../lib/photos";
+import { todoText } from "../lib/todo";
+import type { SiteData } from "../lib/types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="sec" id="about">
+  <div class="in">
+    <h2>{data.about.heading}</h2>
+    <div class="people">
+      {data.about.people.map((person) => (
+        <div class="person">
+          {photoExists(person.photo) ? (
+            <div class="photo">
+              <img src={`/photos/${person.photo}`} alt={person.photoAlt} loading="lazy" />
+            </div>
+          ) : (
+            <div class="photo" role="img" aria-label={todoText(data.about.photoPlaceholder)}>
+              <span><Todo value={data.about.photoPlaceholder} /></span>
+            </div>
+          )}
+          <div>
+            <h3>{person.name}</h3>
+            <p class="role">{person.role}</p>
+            <p>{person.bio}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

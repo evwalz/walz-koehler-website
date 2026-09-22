@@ -1,0 +1,25 @@
+---
+import Todo from "./Todo.astro";
+import { todoText } from "../lib/todo";
+import type { SiteData } from "../lib/types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+const mailHref = `mailto:${todoText(data.contact.email)}`;
+---
+
+<section class="sec contact" id="contact">
+  <div class="in contact-in">
+    <div>
+      <h2>{data.contact.heading}</h2>
+      <p class="body-l">{data.contact.body}</p>
+    </div>
+    <div class="mail-box">
+      <p class="mail"><Todo value={data.contact.email} /></p>
+      <a class="btn p" href={mailHref}>{data.contact.cta} <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>

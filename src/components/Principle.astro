@@ -1,0 +1,18 @@
+---
+import type { SiteData } from "../lib/types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="sec-band">
+  <div class="in">
+    <div class="principle">
+      <h2>{data.principle.heading}</h2>
+      <p>{data.principle.body}</p>
+    </div>
+  </div>
+</section>
