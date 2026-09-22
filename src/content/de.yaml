@@ -1,0 +1,159 @@
+htmlLang: "de"
+
+meta:
+  home:
+    title: "Walz & Köhler — KI & Data Science, Prognosen, Bildverarbeitung"
+    description: "Walz & Köhler entwickeln individuelle KI-Modelle für Unternehmen: probabilistische Prognosen und Bilderkennung, gemessen an dem, was Sie heute nutzen, bevor etwas live geht."
+  legalNotice:
+    title: "Impressum — Walz & Köhler"
+    description: "Impressum für die Website von Walz & Köhler."
+  privacy:
+    title: "Datenschutz — Walz & Köhler"
+    description: "Wie Walz & Köhler personenbezogene Daten auf dieser Website verarbeitet."
+
+skipLink: "Zum Inhalt springen"
+
+nav:
+  brand: "Walz & Köhler"
+  ariaLabel: "Hauptmenü"
+  links:
+    services: "Leistungen"
+    work: "Arbeiten"
+    about: "Über uns"
+    contact: "Kontakt"
+  langGroupAriaLabel: "Sprache"
+  langCurrentLabel: "DE"
+  langOtherLabel: "EN"
+  langOtherAriaLabel: "Zu Englisch wechseln"
+
+hero:
+  eyebrow: "KI & Data Science · Prognosen · Bildverarbeitung"
+  heading: "KI-Modelle, die mit Ihren Daten funktionieren – und der Nachweis, dass sie es tun."
+  lede: "Wir sind zwei Machine-Learning-Forschende und entwickeln individuelle Modelle für Unternehmen: Prognosen, mit denen Sie planen können, und Bilderkennung, die in Ihren Bildern findet, worauf es ankommt. Bevor etwas live geht, messen wir es an dem, was Sie heute schon nutzen."
+  ctaPrimary: "Schreiben Sie uns"
+  ctaSecondary: "Unsere Arbeiten ansehen"
+
+services:
+  heading: "Was wir tun"
+  items:
+    - title: "Prognosen"
+      text: "Nachfrage, Energie, Absatz – alles, was sich mit der Zeit oder dem Wetter bewegt. Probabilistische Prognosen, die sagen, wie wahrscheinlich jedes Ergebnis ist, statt nur eine Zahl zu nennen – damit Sie für die ganze Bandbreite planen können."
+    - title: "Bilderkennung & individuelle Modelle"
+      text: "Bildmodelle, die erkennen, klassifizieren und segmentieren – für Qualitätsprüfung, Dokumente oder medizinische Bilder. Sprach-, multimodale und domänenspezifische Modelle, wenn die Aufgabe es verlangt."
+    - title: "KI-Strategie & Machbarkeit"
+      text: "Welche Ihrer Ideen lohnen sich? Wir bewerten Anwendungsfälle, Machbarkeit, Nutzen und die Einbindung in Ihre Systeme – bevor Sie investieren."
+    - title: "Umsetzung & Befähigung"
+      text: "Von Anfang bis Ende: Datenpipelines, Training, Evaluation, Deployment und MLOps. Und wir helfen Ihrem Team, KI sicher einzusetzen – damit alles auch nach uns weiterläuft."
+
+range:
+  heading: "Eine Bandbreite statt einer einzigen Zahl."
+  body: "Jede Prognose ist unsicher. Wir zeigen, wie wahrscheinlich jedes Ergebnis ist – und je weiter wir vorausschauen, desto breiter wird die Spanne. Sie planen mit dem ganzen Bild statt mit falscher Genauigkeit."
+  caption: "Beispieldaten zur Veranschaulichung."
+  labels:
+    observed: "beobachtet"
+    today: "heute"
+    forecast: "Prognose"
+  ariaLabel: "Fächerdiagramm: beobachtete Werte bis heute, danach eine Prognose, deren Unsicherheitsbänder breiter und blasser werden, je weiter sie vorausschaut"
+
+principle:
+  heading: "Gemessen, nicht versprochen."
+  body: "Viele KI-Projekte werden an einer Demo gemessen. Wir messen unsere an einem Vergleich: das neue Modell gegen Ihre bisherige Methode, auf Ihren Daten, mit einem fairen Maßstab, den wir vorher festlegen. Schlägt es Ihre Lösung nicht, sagen wir es Ihnen – bevor Sie in den Betrieb investieren. Saubere Evaluation ist für uns kein Zusatz. Sie ist Evas Forschungsgebiet."
+
+work:
+  heading: "Ausgewählte Arbeiten"
+  items:
+    - eyebrow: "Prognosen · gemeinsames Projekt · 2024"
+      title: "Niederschlagsprognosen für das nördliche tropische Afrika"
+      text: "Mit Kolleg:innen am KIT und am HITS haben wir ein Deep-Learning-Bildmodell mit einem statistischen Verfahren für Unsicherheit kombiniert, um den Niederschlag der nächsten 24 Stunden vorherzusagen. Es schlug das physikalische Ensemble des Europäischen Zentrums für mittelfristige Wettervorhersage (EZMW) – bei der Frage, ob es regnet, und bei der Frage, wie viel."
+      link: "https://arxiv.org/abs/2401.03746"
+      linkLabel: "Quelle"
+      pending: false
+    - eyebrow: "Bildverarbeitung · Gregor · DKFZ"
+      title: "nnU-Net: medizinische Bildsegmentierung, die sich selbst konfiguriert"
+      text: "Gregor ist Mitautor des ursprünglichen nnU-Net-Papers: ein Framework, das sich ohne manuelles Tuning an neue Segmentierungsaufgaben anpasst und in der medizinischen Bildverarbeitung zu einer weit verbreiteten Referenz geworden ist."
+      link: "https://arxiv.org/abs/1809.10486"
+      linkLabel: "Quelle"
+      pending: false
+    - eyebrow: "Evaluation · Eva · 2026"
+      title: "Faire Vergleiche von KI- und physikalischen Wettermodellen"
+      text: "Eva hat den Potential CRPS mitentwickelt – ein Maß, mit dem sich KI-Wettermodelle und klassische Modelle unter gleichen Bedingungen vergleichen lassen. Veröffentlicht in Artificial Intelligence for the Earth Systems."
+      link: "https://journals.ametsoc.org/view/journals/aies/5/1/AIES-D-25-0054.1.xml"
+      linkLabel: "Quelle"
+      pending: false
+    - eyebrow: "Kundenprojekt · seit 2025"
+      title: "TODO: Projekttitel"
+      text: "TODO: Zwei, drei Sätze: das Problem des Kunden, was wir gebaut haben, und das gemessene Ergebnis."
+      link: null
+      linkLabel: "Quelle"
+      pending: true
+
+howWeWork:
+  heading: "So arbeiten wir"
+  steps:
+    - title: "Sie schreiben uns"
+      text: "Beschreiben Sie, was Sie vorhersagen oder erkennen möchten und welche Daten Sie haben. Ein paar Sätze reichen."
+    - title: "Wir prüfen die Machbarkeit"
+      text: "Wir sehen uns Aufgabe und Daten an und sagen Ihnen ehrlich, ob sich KI lohnt – und wie ein fairer Test aussähe."
+    - title: "Wir bauen, messen, übergeben"
+      text: "Das Modell, sein Vergleich mit Ihrer bisherigen Methode, die Inbetriebnahme – und ein Team, das es weiterführen kann."
+
+about:
+  heading: "Wer wir sind"
+  photoPlaceholder: "TODO: Foto"
+  people:
+    - name: "Dr. Eva-Maria Walz"
+      role: "Prognosen & Evaluation"
+      bio: "Statistikerin mit Schwerpunkt auf probabilistischen Prognosen – und auf der Frage, woran man erkennt, ob eine Prognose wirklich gut ist. Forschung am Karlsruher Institut für Technologie (KIT) und am Heidelberger Institut für Theoretische Studien (HITS), mit Veröffentlichungen zu Wettervorhersage, Prognosebewertung und maschinellem Lernen. Sie entwickelt außerdem Software bis in den produktiven Betrieb."
+      photo: "eva-walz.jpg"
+      photoAlt: "Porträt von Dr. Eva-Maria Walz"
+    - name: "Gregor Köhler"
+      role: "Bildverarbeitung & individuelle KI-Modelle"
+      bio: "Seit 2015 im Machine Learning. Acht Jahre Deep-Learning-Forschung am Deutschen Krebsforschungszentrum (DKFZ), Mitautor von nnU-Net und seit 2025 selbstständiger KI-Berater. Mitorganisator des Freiburg.AI-Meetups und zuvor von heidelberg.ai (über 3.000 Mitglieder)."
+      photo: "gregor-koehler.jpg"
+      photoAlt: "Porträt von Gregor Köhler"
+
+contact:
+  heading: "Erzählen Sie uns, was Sie vorhersagen oder erkennen möchten."
+  body: "Schreiben Sie ein paar Zeilen zu Aufgabe und Daten. Wir antworten persönlich."
+  email: "TODO: hallo@[Domain – später]"
+  cta: "Schreiben Sie uns"
+
+footer:
+  copyright: "© 2026 Walz & Köhler"
+  legalNoticeLabel: "Impressum"
+  privacyLabel: "Datenschutz"
+  invoicingNote: "TODO: Angaben fürs Impressum: wer rechnet ab, von wo"
+
+legalNotice:
+  heading: "Impressum"
+  checkNotice: "TODO: Alle Angaben auf dieser Seite vor Veröffentlichung prüfen."
+  ddgIntro: "Angaben gemäß § 5 DDG:"
+  facts:
+    - label: "Name"
+      value: "TODO: vollständiger Name bzw. vollständige Namen"
+    - label: "Anschrift"
+      value: "TODO: Postanschrift"
+    - label: "Kontakt"
+      value: "TODO: E-Mail-Adresse, ggf. Telefonnummer"
+    - label: "Umsatzsteuer-ID"
+      value: "TODO: Umsatzsteuer-Identifikationsnummer, falls vorhanden"
+  responsibleIntro: "Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV:"
+  responsibleValue: "TODO: Name und Anschrift"
+
+privacy:
+  heading: "Datenschutzerklärung"
+  checkNotice: "TODO: Alle Angaben auf dieser Seite vor Veröffentlichung prüfen."
+  sections:
+    - heading: "Verantwortlicher"
+      body: "TODO: Name und Kontaktdaten des Verantwortlichen"
+    - heading: "Hosting und Server-Logs"
+      intro: "Diese Website wird gehostet bei:"
+      body: "TODO: Hosting-Anbieter und Serverstandort"
+    - heading: "Kontakt"
+      body: "Wenn Sie uns per E-Mail schreiben, verwenden wir Ihre Nachricht und E-Mail-Adresse ausschließlich zur Beantwortung."
+    - heading: "Cookies und Analyse"
+      body: "Wir verwenden keine Cookies und keine Analyse-Dienste Dritter. Die Schriften dieser Website werden auf unserem eigenen Server gehostet, nicht bei Google oder einem anderen Dritten geladen."
+    - heading: "Ihre Rechte"
+      body: "Nach der DSGVO (Art. 15–21) haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch bezüglich Ihrer personenbezogenen Daten."
+    - heading: "Beschwerderecht"
+      body: "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren."

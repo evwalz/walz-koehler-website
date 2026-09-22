@@ -1,0 +1,12 @@
+/* Self-hosted fonts (spec §2): loading Google Fonts from Google's servers was ruled a GDPR
+   violation for a German site (LG München I, 2022), so the three faces the mockup pulled from
+   fonts.googleapis.com are bundled here instead, via @fontsource. Weights match the mockup's
+   Google Fonts request (Bricolage Grotesque 400/600/700, Figtree 400/500/600, DM Mono 400/500). */
+@import "@fontsource/bricolage-grotesque/400.css";
+@import "@fontsource/bricolage-grotesque/600.css";
+@import "@fontsource/bricolage-grotesque/700.css";
+@import "@fontsource/figtree/400.css";
+@import "@fontsource/figtree/500.css";
+@import "@fontsource/figtree/600.css";
+@import "@fontsource/dm-mono/400.css";
+@import "@fontsource/dm-mono/500.css";

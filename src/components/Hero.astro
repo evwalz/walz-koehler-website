@@ -1,0 +1,26 @@
+---
+import { lossFieldSVG, B3_COLORS } from "../lib/drawings";
+import type { SiteData } from "../lib/types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+const field = lossFieldSVG(B3_COLORS);
+---
+
+<section class="hero" id="top">
+  <div class="field" aria-hidden="true" set:html={field} />
+  <div class="in">
+    <div class="hero-text">
+      <p class="eyebrow">{data.hero.eyebrow}</p>
+      <h1>{data.hero.heading}</h1>
+      <p class="lede">{data.hero.lede}</p>
+      <div class="ctas">
+        <a class="btn p" href="#contact">{data.hero.ctaPrimary} <span aria-hidden="true">→</span></a>
+        <a class="btn" href="#work">{data.hero.ctaSecondary}</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+---
+import { getEntry } from "astro:content";
+import LegalNoticePage from "../../components/LegalNoticePage.astro";
+
+const entry = await getEntry("site", "en");
+if (!entry) throw new Error("Missing content entry: en");
+---
+
+<LegalNoticePage lang="en" data={entry.data} />

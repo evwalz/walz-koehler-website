@@ -1,0 +1,11 @@
+---
+import { isTodo, todoText } from "../lib/todo";
+
+interface Props {
+  value: string;
+}
+
+const { value } = Astro.props;
+---
+
+{isTodo(value) ? <mark class="pend">{todoText(value)}</mark> : value}

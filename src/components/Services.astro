@@ -1,0 +1,23 @@
+---
+import type { SiteData } from "../lib/types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="sec" id="services">
+  <div class="in">
+    <h2>{data.services.heading}</h2>
+    <div class="svc">
+      {data.services.items.map((item) => (
+        <div class="card">
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
