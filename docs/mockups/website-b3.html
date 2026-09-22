@@ -1,0 +1,212 @@
+<title>Walz &amp; Köhler Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--ground:#F3F5F0;--ink:#18200F;--muted:#58624F;--line:#D5DCCC;--tint:#E3E9DA;--accent:#43682B;--on-accent:#FFFFFF;--card:#FFFFFF;
+--pend-bg:#FFF1C2;--pend-ink:#6B4C00;--display:"Bricolage Grotesque",system-ui,sans-serif;--sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+--gut:clamp(18px,5vw,64px)}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+html[data-lang="en"] .lang-body[data-l="de"],html[data-lang="de"] .lang-body[data-l="en"]{display:none}
+h1,h2,h3,p,figure,ol{margin:0}
+h1,h2,h3{text-wrap:balance;font-family:var(--display)}
+[lang="de"] p,[lang="de"] h3{hyphens:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.in{max-width:calc(1200px + 2 * var(--gut));margin-inline:auto;padding-inline:var(--gut)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+section[id]{scroll-margin-top:72px}
+
+/* menu bar: solid, sticky; a hairline appears once the page scrolls under it */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--ground);border-bottom:1px solid transparent;transition:border-color .2s}
+html.scrolled .nav{border-bottom-color:var(--line)}
+.nav-in{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;padding-block:16px}
+.brand{font:600 20px/1 var(--display);letter-spacing:-.01em;text-decoration:none}
+.nav-r{display:flex;align-items:center;gap:26px}
+.links{display:flex;gap:24px;font-size:15px;color:var(--muted)}
+.links a{text-decoration:none}
+.links a:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;gap:2px}
+.lang button{font:500 12px/1 var(--mono);letter-spacing:.04em;color:var(--muted);background:none;border:0;border-radius:999px;padding:6px 9px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+
+/* hero: loss-landscape isolines and the gradient-descent path, fading out behind the text */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.field{position:absolute;inset:0;-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.08) 42%,#000 70%);mask-image:linear-gradient(90deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.08) 42%,#000 70%)}
+.field svg{display:block;width:100%;height:100%}
+.hero-text{position:relative;display:flex;flex-direction:column;gap:22px;max-width:660px;padding-block:clamp(56px,8vw,104px) clamp(64px,9vw,116px)}
+.eyebrow{font:500 12px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
+.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.02;letter-spacing:-.035em;font-weight:700}
+[lang="de"] .hero h1{font-size:clamp(32px,4.3vw,54px);line-height:1.05}
+.lede{color:var(--muted);font-size:clamp(17px,1.4vw,19px);line-height:1.55;max-width:56ch}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;font-weight:600;font-size:15px;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;white-space:nowrap}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+
+/* sections */
+.sec{padding-block:clamp(56px,7vw,96px)}
+.sec + .sec{border-top:1px solid var(--line)}
+.sec-tight{padding-top:0}
+.sec + .sec.sec-tight{border-top:0}
+.fan-narrow{display:none}
+.sec h2{font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:28px}
+.body-l{color:var(--muted);font-size:17px;line-height:1.6;max-width:52ch}
+.card{background:var(--card);border-radius:14px;padding:clamp(20px,2.2vw,28px)}
+.card h3{font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.card p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.svc .card{display:flex;flex-direction:column;gap:10px}
+
+.range{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2fr);gap:clamp(24px,4vw,56px);align-items:center}
+.range h2{margin-bottom:16px}
+.fig{padding-bottom:14px}
+.fig svg{display:block;width:100%;height:auto}
+.cap{font:12px/1.45 var(--mono);color:var(--muted);margin-top:8px}
+
+.sec-band{padding-block:8px}
+.principle{background:var(--accent);color:var(--ground);border-radius:18px;padding:clamp(28px,4.5vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(18px,3.5vw,48px)}
+.principle h2{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.03em;line-height:1.02;margin:0}
+.principle p{font-size:17px;line-height:1.65;opacity:.93}
+.sec-band + .sec{border-top:0}
+
+.works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.work{display:flex;flex-direction:column;gap:10px}
+.work .src{margin-top:auto;padding-top:6px;font:500 13px/1 var(--mono);color:var(--accent);text-decoration:none}
+.work .src:hover{text-decoration:underline;text-underline-offset:3px}
+.work.pending{background:transparent;border:1.5px dashed var(--line)}
+
+.steps{list-style:none;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.steps li{counter-increment:s;border-top:1.5px solid var(--ink);padding-top:14px;display:flex;flex-direction:column;gap:8px}
+.steps li::before{content:counter(s);font:500 13px/1 var(--mono);color:var(--accent)}
+.steps h3{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.steps p{color:var(--muted);font-size:15.5px;line-height:1.6}
+
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.person{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;align-items:start}
+.photo{aspect-ratio:4/5;max-width:100%;border-radius:14px;border:1px dashed var(--line);display:grid;place-items:center;text-align:center;padding:8px;
+background:repeating-linear-gradient(45deg,var(--tint) 0 6px,transparent 6px 12px);font:11px/1.35 var(--mono);color:var(--muted)}
+.photo span{background:var(--ground);padding:2px 4px;border-radius:3px}
+.person h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.role{font:500 12px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--accent);margin:6px 0 10px}
+.person p:last-child{color:var(--muted);font-size:15.5px;line-height:1.6}
+
+.contact-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px}
+.contact h2{font-size:clamp(28px,3.8vw,46px);font-weight:700;letter-spacing:-.03em;line-height:1.05;max-width:20ch;margin-bottom:16px}
+.mail-box{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.mail{font:500 17px/1.4 var(--mono);color:var(--accent)}
+
+.foot{border-top:1px solid var(--line)}
+.foot-in{display:flex;flex-wrap:wrap;gap:8px 22px;padding-block:24px;font-size:13.5px;color:var(--muted)}
+.foot a{text-underline-offset:3px}
+
+mark.pend{background:var(--pend-bg);color:var(--pend-ink);padding:1px 5px;border-radius:3px;font:inherit}
+
+@media (max-width:860px){
+  .links{display:none}
+  .svc,.works,.people,.range,.principle{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .fan-wide{display:none}
+  .fan-narrow{display:block}
+  .field{-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.06) 62%,#000 86%);mask-image:linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.06) 62%,#000 86%)}
+  .hero-text{padding-block:40px 170px}
+}
+@media (max-width:420px){.person{grid-template-columns:96px minmax(0,1fr);gap:16px}}
+</style>
+<script>document.documentElement.setAttribute("data-lang","en")</script>
+<div class="lang-body" data-l="en" lang="en">
+<header class="nav"><div class="in nav-in"><a class="brand" href="#top-en">Walz &amp; Köhler</a><div class="nav-r"><nav class="links" aria-label="Main"><a href="#services-en">Services</a><a href="#work-en">Work</a><a href="#about-en">About</a><a href="#contact-en">Contact</a></nav><div class="lang" role="group" aria-label="Language"><button type="button" data-set="en">EN</button><button type="button" data-set="de">DE</button></div></div></div></header>
+<section class="hero" id="top-en"><div class="field" data-svg="loss" aria-hidden="true"></div><div class="in"><div class="hero-text"><p class="eyebrow">AI &amp; data science · forecasting · computer vision</p><h1>AI models that work on your data — and proof that they do.</h1><p class="lede">We are two machine-learning researchers who build custom models for companies: forecasts you can plan with, and vision systems that find what matters in your images. Before anything goes live, we measure it against what you use today.</p><div class="ctas"><a class="btn p" href="#contact-en">Write to us <span aria-hidden="true">→</span></a><a class="btn" href="#work-en">See our work</a></div></div></div></section>
+<section class="sec" id="services-en"><div class="in"><h2>What we do</h2><div class="svc"><div class="card"><h3>Forecasting</h3><p>Demand, energy, sales — anything that moves with time or weather. Probabilistic forecasts that say how likely each outcome is, not just one number, so you can plan for the whole range.</p></div><div class="card"><h3>Image recognition &amp; custom models</h3><p>Vision models that detect, classify and segment, for inspection, documents or medical images. Language, multimodal and domain-specific models when the problem calls for them.</p></div><div class="card"><h3>AI strategy &amp; feasibility</h3><p>Which of your ideas are worth building? We evaluate use cases, feasibility, return and how a model fits your systems — before you invest.</p></div><div class="card"><h3>Implementation &amp; enablement</h3><p>End to end: data pipelines, training, evaluation, deployment and MLOps. And we help your team adopt AI safely, so it keeps working after we leave.</p></div></div></div></section>
+<section class="sec sec-tight"><div class="in range"><div><h2>A range, not a single number.</h2><p class="body-l">Every forecast is uncertain. We show how likely each outcome is — and the further ahead we look, the wider the range gets. You plan with the whole picture, not with false precision.</p></div><figure class="card fig"><div class="fan-wide" data-svg="fan" data-fs="12" data-lab="observed|today|forecast" data-gid="fan-en-wide" data-aria="Fan chart: observed values up to today, then a forecast whose uncertainty bands widen and fade the further ahead it looks"></div><div class="fan-narrow" data-svg="fan" data-fs="30" data-lab="observed|today|forecast" data-gid="fan-en-narrow" data-aria="Fan chart: observed values up to today, then a forecast whose uncertainty bands widen and fade the further ahead it looks"></div><figcaption class="cap">Example data, for illustration.</figcaption></figure></div></section>
+<section class="sec-band"><div class="in"><div class="principle"><h2>Measured, not promised.</h2><p>Many AI projects are judged by a demo. We judge ours by a comparison: the new model against your current method, on your data, with a fair score agreed up front. If it does not beat what you have, we tell you — before you invest in running it. Rigorous evaluation is not an add-on for us. It is Eva’s research field.</p></div></div></section>
+<section class="sec" id="work-en"><div class="in"><h2>Selected work</h2><div class="works"><article class="card work"><p class="eyebrow">Forecasting · joint project · 2024</p><h3>Rainfall forecasts for northern tropical Africa</h3><p>With colleagues at KIT and HITS, we combined a deep-learning image model with a statistical method for uncertainty to forecast 24-hour rainfall. It beat the physics-based ensemble of the European Centre for Medium-Range Weather Forecasts (ECMWF), both on whether it rains and on how much.</p><a class="src" href="https://arxiv.org/abs/2401.03746" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a></article><article class="card work"><p class="eyebrow">Computer vision · Gregor · DKFZ</p><h3>nnU-Net: medical image segmentation that configures itself</h3><p>Gregor is a co-author of the original nnU-Net paper: a framework that adapts itself to a new segmentation task without manual tuning, and has become a widely used baseline in medical imaging.</p><a class="src" href="https://arxiv.org/abs/1809.10486" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a></article><article class="card work"><p class="eyebrow">Evaluation · Eva · 2026</p><h3>Fair comparisons of AI and physics-based weather models</h3><p>Eva co-developed the potential CRPS, a measure that lets AI weather models and classical ones be compared on equal terms. Published in Artificial Intelligence for the Earth Systems.</p><a class="src" href="https://journals.ametsoc.org/view/journals/aies/5/1/AIES-D-25-0054.1.xml" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a></article><article class="card work pending"><p class="eyebrow">Client project · since 2025</p><h3><mark class="pend">[Project title]</mark></h3><p><mark class="pend">[Two or three sentences: the client&#x27;s problem, what we built, and the measured result.]</mark></p></article></div></div></section>
+<section class="sec"><div class="in"><h2>How we work</h2><ol class="steps"><li><h3>You write to us</h3><p>Tell us what you want to predict or recognise, and what data you have. A few sentences are enough.</p></li><li><h3>We check feasibility</h3><p>We look at the problem and the data and tell you honestly whether AI will pay off, and what a fair test would look like.</p></li><li><h3>We build, measure, hand over</h3><p>The model, its comparison against your current method, deployment, and a team that can run it.</p></li></ol></div></section>
+<section class="sec" id="about-en"><div class="in"><h2>Who we are</h2><div class="people"><div class="person"><div class="photo" role="img" aria-label="Photo — Eva provides"><span>Photo — Eva provides</span></div><div><h3>Dr. Eva-Maria Walz</h3><p class="role">Forecasting &amp; evaluation</p><p>Statistician working on probabilistic forecasting and on how to tell whether a forecast is actually good. Research at the Karlsruhe Institute of Technology (KIT) and the Heidelberg Institute for Theoretical Studies (HITS), with publications on weather prediction, forecast evaluation and machine learning. She also builds and ships production software.</p></div></div><div class="person"><div class="photo" role="img" aria-label="Photo — Eva provides"><span>Photo — Eva provides</span></div><div><h3>Gregor Köhler</h3><p class="role">Computer vision &amp; custom AI models</p><p>Machine-learning practitioner since 2015. Eight years of deep-learning research at the German Cancer Research Center (DKFZ), co-author of nnU-Net, and independent AI consultant since 2025. Co-organizes the Freiburg.AI meetup and co-organized heidelberg.ai (3,000+ members).</p></div></div></div></div></section>
+<section class="sec contact" id="contact-en"><div class="in contact-in"><div><h2>Tell us what you want to predict or recognise.</h2><p class="body-l">Write a few lines about the problem and your data. We reply personally.</p></div><div class="mail-box"><p class="mail"><mark class="pend">hello@[domain — later]</mark></p><span class="btn p">Write to us <span aria-hidden="true">→</span></span></div></div></section>
+<footer class="foot"><div class="in foot-in"><span>© 2026 Walz &amp; Köhler</span><a href="#">Legal notice (Impressum)</a><a href="#">Privacy</a><span><mark class="pend">Impressum details: who invoices, from where</mark></span></div></footer>
+</div>
+<div class="lang-body" data-l="de" lang="de">
+<header class="nav"><div class="in nav-in"><a class="brand" href="#top-de">Walz &amp; Köhler</a><div class="nav-r"><nav class="links" aria-label="Hauptmenü"><a href="#services-de">Leistungen</a><a href="#work-de">Arbeiten</a><a href="#about-de">Über uns</a><a href="#contact-de">Kontakt</a></nav><div class="lang" role="group" aria-label="Sprache"><button type="button" data-set="en">EN</button><button type="button" data-set="de">DE</button></div></div></div></header>
+<section class="hero" id="top-de"><div class="field" data-svg="loss" aria-hidden="true"></div><div class="in"><div class="hero-text"><p class="eyebrow">KI &amp; Data Science · Prognosen · Bildverarbeitung</p><h1>KI-Modelle, die mit Ihren Daten funktionieren – und der Nachweis, dass sie es tun.</h1><p class="lede">Wir sind zwei Machine-Learning-Forschende und entwickeln individuelle Modelle für Unternehmen: Prognosen, mit denen Sie planen können, und Bilderkennung, die in Ihren Bildern findet, worauf es ankommt. Bevor etwas live geht, messen wir es an dem, was Sie heute schon nutzen.</p><div class="ctas"><a class="btn p" href="#contact-de">Schreiben Sie uns <span aria-hidden="true">→</span></a><a class="btn" href="#work-de">Unsere Arbeiten ansehen</a></div></div></div></section>
+<section class="sec" id="services-de"><div class="in"><h2>Was wir tun</h2><div class="svc"><div class="card"><h3>Prognosen</h3><p>Nachfrage, Energie, Absatz – alles, was sich mit der Zeit oder dem Wetter bewegt. Probabilistische Prognosen, die sagen, wie wahrscheinlich jedes Ergebnis ist, statt nur eine Zahl zu nennen – damit Sie für die ganze Bandbreite planen können.</p></div><div class="card"><h3>Bilderkennung &amp; individuelle Modelle</h3><p>Bildmodelle, die erkennen, klassifizieren und segmentieren – für Qualitätsprüfung, Dokumente oder medizinische Bilder. Sprach-, multimodale und domänenspezifische Modelle, wenn die Aufgabe es verlangt.</p></div><div class="card"><h3>KI-Strategie &amp; Machbarkeit</h3><p>Welche Ihrer Ideen lohnen sich? Wir bewerten Anwendungsfälle, Machbarkeit, Nutzen und die Einbindung in Ihre Systeme – bevor Sie investieren.</p></div><div class="card"><h3>Umsetzung &amp; Befähigung</h3><p>Von Anfang bis Ende: Datenpipelines, Training, Evaluation, Deployment und MLOps. Und wir helfen Ihrem Team, KI sicher einzusetzen – damit alles auch nach uns weiterläuft.</p></div></div></div></section>
+<section class="sec sec-tight"><div class="in range"><div><h2>Eine Bandbreite statt einer einzigen Zahl.</h2><p class="body-l">Jede Prognose ist unsicher. Wir zeigen, wie wahrscheinlich jedes Ergebnis ist – und je weiter wir vorausschauen, desto breiter wird die Spanne. Sie planen mit dem ganzen Bild statt mit falscher Genauigkeit.</p></div><figure class="card fig"><div class="fan-wide" data-svg="fan" data-fs="12" data-lab="beobachtet|heute|Prognose" data-gid="fan-de-wide" data-aria="Fächerdiagramm: beobachtete Werte bis heute, danach eine Prognose, deren Unsicherheitsbänder breiter und blasser werden, je weiter sie vorausschaut"></div><div class="fan-narrow" data-svg="fan" data-fs="30" data-lab="beobachtet|heute|Prognose" data-gid="fan-de-narrow" data-aria="Fächerdiagramm: beobachtete Werte bis heute, danach eine Prognose, deren Unsicherheitsbänder breiter und blasser werden, je weiter sie vorausschaut"></div><figcaption class="cap">Beispieldaten zur Veranschaulichung.</figcaption></figure></div></section>
+<section class="sec-band"><div class="in"><div class="principle"><h2>Gemessen, nicht versprochen.</h2><p>Viele KI-Projekte werden an einer Demo gemessen. Wir messen unsere an einem Vergleich: das neue Modell gegen Ihre bisherige Methode, auf Ihren Daten, mit einem fairen Maßstab, den wir vorher festlegen. Schlägt es Ihre Lösung nicht, sagen wir es Ihnen – bevor Sie in den Betrieb investieren. Saubere Evaluation ist für uns kein Zusatz. Sie ist Evas Forschungsgebiet.</p></div></div></section>
+<section class="sec" id="work-de"><div class="in"><h2>Ausgewählte Arbeiten</h2><div class="works"><article class="card work"><p class="eyebrow">Prognosen · gemeinsames Projekt · 2024</p><h3>Niederschlagsprognosen für das nördliche tropische Afrika</h3><p>Mit Kolleg:innen am KIT und am HITS haben wir ein Deep-Learning-Bildmodell mit einem statistischen Verfahren für Unsicherheit kombiniert, um den Niederschlag der nächsten 24 Stunden vorherzusagen. Es schlug das physikalische Ensemble des Europäischen Zentrums für mittelfristige Wettervorhersage (EZMW) – bei der Frage, ob es regnet, und bei der Frage, wie viel.</p><a class="src" href="https://arxiv.org/abs/2401.03746" target="_blank" rel="noopener">Quelle <span aria-hidden="true">↗</span></a></article><article class="card work"><p class="eyebrow">Bildverarbeitung · Gregor · DKFZ</p><h3>nnU-Net: medizinische Bildsegmentierung, die sich selbst konfiguriert</h3><p>Gregor ist Mitautor des ursprünglichen nnU-Net-Papers: ein Framework, das sich ohne manuelles Tuning an neue Segmentierungsaufgaben anpasst und in der medizinischen Bildverarbeitung zu einer weit verbreiteten Referenz geworden ist.</p><a class="src" href="https://arxiv.org/abs/1809.10486" target="_blank" rel="noopener">Quelle <span aria-hidden="true">↗</span></a></article><article class="card work"><p class="eyebrow">Evaluation · Eva · 2026</p><h3>Faire Vergleiche von KI- und physikalischen Wettermodellen</h3><p>Eva hat den Potential CRPS mitentwickelt – ein Maß, mit dem sich KI-Wettermodelle und klassische Modelle unter gleichen Bedingungen vergleichen lassen. Veröffentlicht in Artificial Intelligence for the Earth Systems.</p><a class="src" href="https://journals.ametsoc.org/view/journals/aies/5/1/AIES-D-25-0054.1.xml" target="_blank" rel="noopener">Quelle <span aria-hidden="true">↗</span></a></article><article class="card work pending"><p class="eyebrow">Kundenprojekt · seit 2025</p><h3><mark class="pend">[Projekttitel]</mark></h3><p><mark class="pend">[Zwei, drei Sätze: das Problem des Kunden, was wir gebaut haben, und das gemessene Ergebnis.]</mark></p></article></div></div></section>
+<section class="sec"><div class="in"><h2>So arbeiten wir</h2><ol class="steps"><li><h3>Sie schreiben uns</h3><p>Beschreiben Sie, was Sie vorhersagen oder erkennen möchten und welche Daten Sie haben. Ein paar Sätze reichen.</p></li><li><h3>Wir prüfen die Machbarkeit</h3><p>Wir sehen uns Aufgabe und Daten an und sagen Ihnen ehrlich, ob sich KI lohnt – und wie ein fairer Test aussähe.</p></li><li><h3>Wir bauen, messen, übergeben</h3><p>Das Modell, sein Vergleich mit Ihrer bisherigen Methode, die Inbetriebnahme – und ein Team, das es weiterführen kann.</p></li></ol></div></section>
+<section class="sec" id="about-de"><div class="in"><h2>Wer wir sind</h2><div class="people"><div class="person"><div class="photo" role="img" aria-label="Foto – liefert Eva"><span>Foto – liefert Eva</span></div><div><h3>Dr. Eva-Maria Walz</h3><p class="role">Prognosen &amp; Evaluation</p><p>Statistikerin mit Schwerpunkt auf probabilistischen Prognosen – und auf der Frage, woran man erkennt, ob eine Prognose wirklich gut ist. Forschung am Karlsruher Institut für Technologie (KIT) und am Heidelberger Institut für Theoretische Studien (HITS), mit Veröffentlichungen zu Wettervorhersage, Prognosebewertung und maschinellem Lernen. Sie entwickelt außerdem Software bis in den produktiven Betrieb.</p></div></div><div class="person"><div class="photo" role="img" aria-label="Foto – liefert Eva"><span>Foto – liefert Eva</span></div><div><h3>Gregor Köhler</h3><p class="role">Bildverarbeitung &amp; individuelle KI-Modelle</p><p>Seit 2015 im Machine Learning. Acht Jahre Deep-Learning-Forschung am Deutschen Krebsforschungszentrum (DKFZ), Mitautor von nnU-Net und seit 2025 selbstständiger KI-Berater. Mitorganisator des Freiburg.AI-Meetups und zuvor von heidelberg.ai (über 3.000 Mitglieder).</p></div></div></div></div></section>
+<section class="sec contact" id="contact-de"><div class="in contact-in"><div><h2>Erzählen Sie uns, was Sie vorhersagen oder erkennen möchten.</h2><p class="body-l">Schreiben Sie ein paar Zeilen zu Aufgabe und Daten. Wir antworten persönlich.</p></div><div class="mail-box"><p class="mail"><mark class="pend">hallo@[Domain – später]</mark></p><span class="btn p">Schreiben Sie uns <span aria-hidden="true">→</span></span></div></div></section>
+<footer class="foot"><div class="in foot-in"><span>© 2026 Walz &amp; Köhler</span><a href="#">Impressum</a><a href="#">Datenschutz</a><span><mark class="pend">Angaben fürs Impressum: wer rechnet ab, von wo</mark></span></div></footer>
+</div>
+<script>
+(function(){
+/* deterministic noise so every viewer sees the same picture */
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function f1(n){return Math.round(n*10)/10}
+/* B3 · the header lines are the contour lines of a loss landscape; the dotted path is gradient descent with
+   momentum — how a model learns, step by step, downhill (perpendicular to the contours) */
+function lossFieldSVG(c){
+  var W=1200,H=560,n=120,m=56,dx=W/n,dy=H/m,i,j;
+  var wells=[[.80,.64,-1.0,165],[.56,.30,-.42,105],[.70,.26,.38,115],[.97,.18,-.28,95],[.40,.78,-.30,120],[.30,.30,.25,140]];
+  function L(x,y){var s=.9*((x-W*.8)*(x-W*.8)+(y-H*.62)*(y-H*.62))/(W*W*.35);
+    for(var k=0;k<wells.length;k++){var w=wells[k],ax=x-W*w[0],ay=y-H*w[1];s+=w[2]*Math.exp(-(ax*ax+ay*ay)/(2*w[3]*w[3]))}return s}
+  var g=[];for(j=0;j<=m;j++){g.push([]);for(i=0;i<=n;i++)g[j].push(L(i*dx,j*dy))}
+  var lo=Infinity,hi=-Infinity;g.forEach(function(r){r.forEach(function(v){if(v<lo)lo=v;if(v>hi)hi=v})});
+  var levels=[],K=20;for(i=1;i<K;i++)levels.push(lo+(hi-lo)*Math.pow(i/K,1.35));
+  function seg(lv){var d='';
+    for(j=0;j<m;j++)for(i=0;i<n;i++){
+      var a=g[j][i],b=g[j][i+1],cc=g[j+1][i+1],e=g[j+1][i],idx=(a>lv?8:0)|(b>lv?4:0)|(cc>lv?2:0)|(e>lv?1:0);
+      if(idx===0||idx===15)continue;
+      var x=i*dx,y=j*dy;function it(p,q){return(lv-p)/(q-p)}
+      var top=[x+dx*it(a,b),y],rt=[x+dx,y+dy*it(b,cc)],bt=[x+dx*it(e,cc),y+dy],lf=[x,y+dy*it(a,e)];
+      var S={1:[[lf,bt]],2:[[bt,rt]],3:[[lf,rt]],4:[[top,rt]],5:[[lf,top],[bt,rt]],6:[[top,bt]],7:[[lf,top]],8:[[lf,top]],9:[[top,bt]],10:[[top,rt],[lf,bt]],11:[[top,rt]],12:[[lf,rt]],13:[[bt,rt]],14:[[lf,bt]]}[idx];
+      S.forEach(function(sg){d+='M'+f1(sg[0][0])+' '+f1(sg[0][1])+'L'+f1(sg[1][0])+' '+f1(sg[1][1])})
+    }return d}
+  var out='';levels.forEach(function(lv){out+='<path d="'+seg(lv)+'" fill="none" stroke="'+c.contour+'" stroke-width="1"/>'});
+  /* gradient descent with momentum from the top edge */
+  var px=W*.60,py=H*.04,vx=0,vy=0,eta=5200,beta=.82,h=1,pts=[[px,py]];
+  for(var t=0;t<600;t++){
+    var gx=(L(px+h,py)-L(px-h,py))/(2*h),gy=(L(px,py+h)-L(px,py-h))/(2*h);
+    vx=beta*vx-eta*gx;vy=beta*vy-eta*gy;var sp=Math.sqrt(vx*vx+vy*vy);if(sp>16){vx*=16/sp;vy*=16/sp}
+    px+=vx;py+=vy;pts.push([px,py]);if(sp<.25&&t>40)break}
+  var path='<polyline points="'+pts.map(function(p){return f1(p[0])+','+f1(p[1])}).join(' ')+'" fill="none" stroke="'+c.accent+'" stroke-width="1.6" stroke-dasharray="1 5" stroke-linecap="round"/>';
+  var dots='';for(i=0;i<pts.length;i+=4)dots+='<circle cx="'+f1(pts[i][0])+'" cy="'+f1(pts[i][1])+'" r="3.4" fill="'+c.accent+'"/>';
+  var e=pts[pts.length-1];dots+='<circle cx="'+f1(e[0])+'" cy="'+f1(e[1])+'" r="10" fill="none" stroke="'+c.accent+'" stroke-width="2"/><circle cx="'+f1(e[0])+'" cy="'+f1(e[1])+'" r="4.5" fill="'+c.accent+'"/>';
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+out+path+dots+'</svg>'
+}
+/* B2 · Eva's title plot, redrawn in the site's one colour: observed past, "now", a forecast whose nested
+   quantile bands widen and fade with lead time. Shape traced from her PDF; data illustrative. */
+function evaFanSVG(c,lab,gid,aria,fs){
+  var obsY=[486,522,508,450,494,500,458,465,436],fcY=[457,443,421,436,378,392,385,357,400,372,400,343,357];
+  function X(xh){return f1(50+(xh-107)*(920/1420))}function Y(yh){return f1(30+(yh-90)*(330/560))}
+  var obs=obsY.map(function(y,i){return[159+62*i,y]}),fc=fcY.map(function(y,j){return[717+62*j,y]}),now=obs[8];
+  var fr=[1,.8,.6,.42,.24],op=[.22,.32,.45,.62,.85],bands='';
+  fr.forEach(function(k,b){
+    var up=[now],dn=[now];
+    fc.forEach(function(p,h){var w=(12+158*Math.sqrt(h/12))*k;up.push([p[0],p[1]-w*1.05]);dn.push([p[0],p[1]+w*.95])});
+    var pts=up.concat(dn.reverse()).map(function(p){return X(p[0])+','+Y(p[1])}).join(' ');
+    bands+='<polygon points="'+pts+'" fill="url(#'+gid+')" fill-opacity="'+op[b]+'"/>'});
+  function pl(a){return a.map(function(p){return X(p[0])+','+Y(p[1])}).join(' ')}
+  var dots=obs.map(function(p){return '<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="5" fill="'+c.accent+'" stroke="'+c.ink+'" stroke-width="1"/>'}).join('')+
+           fc.map(function(p){return '<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="4.6" fill="#FFFFFF" stroke="'+c.ink+'" stroke-width="1.1"/>'}).join('');
+  var ax='<path d="M'+X(107)+' '+Y(650)+'V'+Y(100)+'M'+X(107)+' '+Y(650)+'H'+X(1515)+'" stroke="'+c.ink+'" stroke-width="1.3" fill="none"/>'+
+         '<path d="M'+(X(107)-5)+' '+(Y(100)+9)+'L'+X(107)+' '+Y(100)+'L'+(+X(107)+5)+' '+(Y(100)+9)+'Z" fill="'+c.ink+'"/>'+
+         '<path d="M'+(X(1515)-9)+' '+(Y(650)-5)+'L'+X(1515)+' '+Y(650)+'L'+(X(1515)-9)+' '+(+Y(650)+5)+'Z" fill="'+c.ink+'"/>';
+  return '<svg viewBox="0 0 1000 '+(372+fs)+'" role="img" aria-label="'+aria+'" font-family="DM Mono,monospace" font-size="'+fs+'" fill="'+c.muted+'">'+
+   '<defs><linearGradient id="'+gid+'" gradientUnits="userSpaceOnUse" x1="'+X(655)+'" y1="0" x2="'+X(1461)+'" y2="0"><stop offset="0" stop-color="#27411A"/><stop offset=".45" stop-color="#4E7A32"/><stop offset="1" stop-color="#C9D8B4" stop-opacity=".55"/></linearGradient></defs>'+
+   ax+bands+'<line x1="'+X(655)+'" x2="'+X(655)+'" y1="'+Y(112)+'" y2="'+Y(650)+'" stroke="'+c.ink+'" stroke-dasharray="4 4"/>'+
+   '<polyline points="'+pl(obs)+'" fill="none" stroke="'+c.ink+'" stroke-width="1.2"/><polyline points="'+pl([now].concat(fc))+'" fill="none" stroke="'+c.ink+'" stroke-width="1.2"/>'+dots+
+   '<text x="'+X(655)+'" y="'+(+Y(650)+fs+6)+'" text-anchor="middle" fill="'+c.ink+'">'+lab[1]+'</text><text x="'+X(380)+'" y="'+(+Y(650)+fs+6)+'" text-anchor="middle">'+lab[0]+'</text><text x="'+X(1100)+'" y="'+(+Y(650)+fs+6)+'" text-anchor="middle">'+lab[2]+'</text></svg>'
+}
+var C3={accent:'#43682B',ink:'#18200F',muted:'#58624F',contour:'#A9B79B'};
+var loss=lossFieldSVG(C3);
+document.querySelectorAll('[data-svg="loss"]').forEach(function(el){el.innerHTML=loss});
+document.querySelectorAll('[data-svg="fan"]').forEach(function(el){el.innerHTML=evaFanSVG(C3,el.dataset.lab.split('|'),el.dataset.gid,el.dataset.aria,+el.dataset.fs)});
+var root=document.documentElement,btns=document.querySelectorAll('.lang button');
+function set(l){root.setAttribute('data-lang',l);root.lang=l;btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false')});try{localStorage.setItem('wk-site-lang',l)}catch(e){}}
+var saved=null;try{saved=localStorage.getItem('wk-site-lang')}catch(e){}
+set(saved==='de'?'de':'en');
+btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+function sc(){root.classList.toggle('scrolled',window.scrollY>4)}
+window.addEventListener('scroll',sc,{passive:true});sc();
+})();
+</script>
