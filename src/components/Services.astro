@@ -14,7 +14,7 @@ const { data } = Astro.props;
     <p class="svc-lead">{data.services.lead}</p>
     <div class="svc">
       {data.services.items.map((item) => (
-        <div class="card">
+        <div class="svc-item">
           <h3>{item.title}</h3>
           <p>{item.text}</p>
         </div>

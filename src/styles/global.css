@@ -257,15 +257,30 @@ html.scrolled .nav {
   font-size: 15.5px;
   line-height: 1.6;
 }
+/* Services are typographic columns under a rule, not cards: on this page a card means a
+   piece of proof, and nine identical white boxes made the whole middle one flat texture. */
 .svc {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 26px 34px;
 }
-.svc .card {
+.svc-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.svc-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.svc-item p {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.6;
 }
 
 /* The lead sits tight under the heading: it frames the three cards below it. */
@@ -282,6 +297,15 @@ html.scrolled .nav {
   text-wrap: balance;
 }
 
+/* The proof gets its own ground, so the white cards lift off it. The colour change
+   separates the section from its neighbours; the hairline rules would only repeat it. */
+#work {
+  background: var(--tint);
+  border-top: 0;
+}
+#work + .sec {
+  border-top: 0;
+}
 .works {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
