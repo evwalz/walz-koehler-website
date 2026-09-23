@@ -1,0 +1,155 @@
+htmlLang: "de"
+
+meta:
+  home:
+    title: "Walz & Köhler — Statistik und Machine Learning für Unternehmen"
+    description: "Zwei Forschende bauen Modelle, die Ihre Arbeit messbar verbessern. Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
+  legalNotice:
+    title: "Impressum — Walz & Köhler"
+    description: "Impressum für die Website von Walz & Köhler."
+  privacy:
+    title: "Datenschutz — Walz & Köhler"
+    description: "Wie Walz & Köhler personenbezogene Daten auf dieser Website verarbeitet."
+
+skipLink: "Zum Inhalt springen"
+
+nav:
+  brand: "Walz & Köhler"
+  ariaLabel: "Hauptmenü"
+  links:
+    work: "Arbeiten"
+    about: "Über uns"
+    contact: "Kontakt"
+  langGroupAriaLabel: "Sprache"
+  langCurrentLabel: "DE"
+  langOtherLabel: "EN"
+  langOtherAriaLabel: "Zur englischen Fassung wechseln"
+
+hero:
+  eyebrow: "Statistik · Machine Learning"
+  heading: "Modelle, die Ihre Arbeit messbar verbessern."
+  lede: "Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
+  ctaPrimary: "Schreiben Sie uns"
+
+services:
+  heading: "Was wir tun"
+  lead: "Jedes Projekt beginnt mit Ihrem Problem und Ihren Daten. Erst danach wählen wir die Methode – ein Deep-Learning-Modell, ein klassisches statistisches Verfahren oder gar kein Modell."
+  items:
+    - title: "Was Ihre Daten können"
+      text: "Was sie hergeben, was nicht, und was sich dafür ändern müsste."
+    - title: "Modelle für Ihre Aufgabe"
+      text: "Statistisch oder Deep Learning – auf den Daten, die Sie haben."
+    - title: "Von der Idee in den Betrieb"
+      text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
+
+range:
+  heading: "Was Sie zurückbekommen."
+  body: "Nicht nur eine Antwort, sondern auch, wo das Modell unsicher ist. In einer Prognose ist das eine Bandbreite, die weiter voraus breiter wird; bei Sprach- oder Bildaufgaben liegt sie auf einzelnen Fällen. Zu wissen, wo sie liegt, gibt Ihnen mehr für Ihre Entscheidung als die Antwort allein."
+  labels:
+    observed: "beobachtet"
+    today: "heute"
+    forecast: "Prognose"
+  ariaLabel: "Fächerdiagramm: beobachtete Werte bis heute, danach eine Prognose, deren Unsicherheitsbänder breiter und blasser werden, je weiter sie vorausschaut"
+
+work:
+  heading: "Ausgewählte Arbeiten"
+  items:
+    - eyebrow: "Prognosen · 2024"
+      title: "KI-Niederschlagsprognosen für das nördliche tropische Afrika"
+      text: "Schlug das physikalische EZMW-Ensemble bei 24-Stunden-Niederschlag."
+      sources:
+        - href: "https://arxiv.org/abs/2401.03746"
+          label: "Quelle"
+      pending: false
+    - eyebrow: "Bildverarbeitung · Mitautor am DKFZ"
+      title: "nnU-Net: Segmentierung, die sich selbst konfiguriert"
+      text: "Es stellt sich auf jeden neuen medizinischen Bilddatensatz selbst ein und wurde so zur Referenz."
+      sources:
+        - href: "https://arxiv.org/abs/1809.10486"
+          label: "Quelle"
+      pending: false
+    - eyebrow: "Bildsuche · Hauer GmbH"
+      title: "Das richtige Teil per Foto finden"
+      text: "Fotos werden mit dem Ersatzteilkatalog abgeglichen: aus einer manuellen Suche wurde eine automatische."
+      sources: []
+      pending: false
+    - eyebrow: "Kundenprojekt"
+      title: "TODO: zweites Kundenprojekt"
+      text: "TODO: Gregor – das Problem, was gebaut wurde, was sich für den Kunden geändert hat"
+      sources: []
+      pending: true
+    - eyebrow: "Evaluation"
+      title: "Das passende Maß für die Aufgabe wählen"
+      text: "Ein Maß sagt mehr, wenn es zum Ziel passt – und wenn man weiß, wie es zu lesen ist."
+      sources:
+        - href: "https://arxiv.org/abs/2510.17994"
+          label: "Quelle"
+      pending: false
+    - eyebrow: "Unsicherheit"
+      title: "Wie sicher eine Vorhersage ist"
+      text: "Nicht nur die Antwort – sondern auch, wie sehr Sie sich darauf verlassen können."
+      sources:
+        - href: "https://arxiv.org/abs/2212.08376"
+          label: "Quelle"
+      pending: false
+
+about:
+  heading: "Wer wir sind"
+  photoPlaceholder: "TODO: Foto"
+  people:
+    - name: "Dr. Eva-Maria Walz"
+      role: "Statistik & Prognosen"
+      bio: "Statistikerin am KIT und am HITS – probabilistische Prognosen und ihre Bewertung."
+      photo: "eva-walz.jpg"
+      photoAlt: "Porträt von Dr. Eva-Maria Walz"
+    - name: "Gregor Köhler"
+      role: "Deep Learning & Modelle"
+      bio: "Deep Learning seit 2015, über alle Modellfamilien hinweg. Acht Jahre am DKFZ, Mitautor von nnU-Net."
+      photo: "gregor-koehler.jpg"
+      photoAlt: "Porträt von Gregor Köhler"
+
+contact:
+  heading: "Erzählen Sie uns, was Ihre Daten leisten sollen."
+  email: "TODO: hallo@[Domain – später]"
+  cta: "Schreiben Sie uns"
+
+footer:
+  copyright: "© 2026 Walz & Köhler"
+  legalNoticeLabel: "Impressum"
+  privacyLabel: "Datenschutz"
+
+legalNotice:
+  heading: "Impressum"
+  checkNotice: "TODO: Alle Angaben auf dieser Seite – auch den Satz zur Zusammenarbeit – vor Veröffentlichung prüfen."
+  ddgIntro: "Angaben gemäß § 5 DDG"
+  facts:
+    - label: "Anbieterin"
+      value: "TODO: Dr. Eva-Maria Walz, Straße Hausnummer, PLZ Ort"
+    - label: "Anbieter"
+      value: "TODO: Gregor Köhler, Straße Hausnummer, PLZ Ort"
+    - label: "Kontakt"
+      value: "TODO: hallo@[Domain] · Telefon [Nummer]"
+    - label: "Umsatzsteuer-ID"
+      value: "TODO: USt-IdNr. beider Anbieter nach § 27a UStG — oder der Hinweis auf § 19 UStG"
+  arrangement: "TODO: Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
+  dispute: "Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit."
+  englishHeading: ""
+  englishBody: ""
+
+privacy:
+  heading: "Datenschutzerklärung"
+  checkNotice: "TODO: Alle Angaben auf dieser Seite vor Veröffentlichung prüfen."
+  sections:
+    - heading: "Verantwortlicher"
+      body: "TODO: Name und Kontaktdaten des Verantwortlichen"
+    - heading: "Hosting und Server-Logs"
+      intro: "Diese Website wird gehostet bei:"
+      body: "TODO: Hosting-Anbieter und Serverstandort"
+    - heading: "Kontakt"
+      body: "Wenn Sie uns per E-Mail schreiben, verwenden wir Ihre Nachricht und E-Mail-Adresse ausschließlich zur Beantwortung."
+    - heading: "Cookies und Analyse"
+      body: "Wir verwenden keine Cookies und keine Analyse-Dienste Dritter. Die Schriften dieser Website werden auf unserem eigenen Server gehostet, nicht bei Google oder einem anderen Dritten geladen."
+    - heading: "Ihre Rechte"
+      body: "Nach der DSGVO (Art. 15–21) haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch bezüglich Ihrer personenbezogenen Daten."
+    - heading: "Beschwerderecht"
+      body: "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren."

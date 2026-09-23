@@ -1,4 +1,6 @@
 
+htmlLang: "en"
+
 meta:
   home:
     title: "Walz & Köhler — statistics and machine learning for companies"
@@ -19,6 +21,10 @@ nav:
     work: "Work"
     about: "About"
     contact: "Contact"
+  langGroupAriaLabel: "Language"
+  langCurrentLabel: "EN"
+  langOtherLabel: "DE"
+  langOtherAriaLabel: "Switch to the German version"
 
 hero:
   eyebrow: "Statistics · Machine learning"

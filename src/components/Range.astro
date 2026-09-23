@@ -1,15 +1,17 @@
 ---
 import { evaFanSVG, B3_COLORS } from "../lib/drawings";
+import type { Lang } from "../lib/routes";
 import type { SiteData } from "../lib/types";
 
 interface Props {
+  lang: Lang;
   data: SiteData;
 }
 
-const { data } = Astro.props;
+const { lang, data } = Astro.props;
 const labels: [string, string, string] = [data.range.labels.observed, data.range.labels.today, data.range.labels.forecast];
-const fanWide = evaFanSVG(B3_COLORS, labels, "fan-wide", data.range.ariaLabel, 12);
-const fanNarrow = evaFanSVG(B3_COLORS, labels, "fan-narrow", data.range.ariaLabel, 30);
+const fanWide = evaFanSVG(B3_COLORS, labels, `fan-${lang}-wide`, data.range.ariaLabel, 12);
+const fanNarrow = evaFanSVG(B3_COLORS, labels, `fan-${lang}-narrow`, data.range.ariaLabel, 30);
 ---
 
 <section class="sec sec-tight">
@@ -19,8 +21,8 @@ const fanNarrow = evaFanSVG(B3_COLORS, labels, "fan-narrow", data.range.ariaLabe
       <p class="body-l">{data.range.body}</p>
     </div>
     <figure class="card fig">
-      <div class="fan-wide" set:html={fanWide} />
-      <div class="fan-narrow" set:html={fanNarrow} />
+      <div class=`fan-${lang}-wide` set:html={fanWide} />
+      <div class=`fan-${lang}-narrow` set:html={fanNarrow} />
     </figure>
   </div>
 </section>
