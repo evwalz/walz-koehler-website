@@ -42,15 +42,6 @@ services:
     - title: "Von der Idee in den Betrieb"
       text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
 
-range:
-  heading: "Was Sie zurückbekommen."
-  body: "Nicht nur eine Antwort, sondern auch, wo das Modell unsicher ist. In einer Prognose ist das eine Bandbreite, die weiter voraus breiter wird; bei Sprach- oder Bildaufgaben liegt sie auf einzelnen Fällen. Zu wissen, wo sie liegt, gibt Ihnen mehr für Ihre Entscheidung als die Antwort allein."
-  labels:
-    observed: "beobachtet"
-    today: "heute"
-    forecast: "Prognose"
-  ariaLabel: "Fächerdiagramm: beobachtete Werte bis heute, danach eine Prognose, deren Unsicherheitsbänder breiter und blasser werden, je weiter sie vorausschaut"
-
 work:
   heading: "Ausgewählte Arbeiten"
   items:
