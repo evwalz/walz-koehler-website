@@ -1,7 +1,7 @@
 /* Ported from docs/mockups/website-b3.html's <style>. Structural changes only: the mockup
-   toggled EN/DE with a `data-lang` attribute and hid the other `.lang-body`; here each
-   language is its own page, so that toggle and its `.lang-body` rule are dropped, and the
-   `.lang` control renders real links instead of `<button>`s. Look is otherwise unchanged. */
+   toggled EN/DE with a `data-lang` attribute; the site is English only, so that toggle, its
+   `.lang-body` rule, the `.lang` control and the German typography rules are all dropped.
+   Look is otherwise unchanged. */
 
 :root {
   --ground: #f3f5f0;
@@ -44,10 +44,6 @@ h2,
 h3 {
   text-wrap: balance;
   font-family: var(--display);
-}
-[lang="de"] p,
-[lang="de"] h3 {
-  hyphens: auto;
 }
 a {
   color: inherit;
@@ -114,11 +110,6 @@ html.scrolled .nav {
   letter-spacing: -0.01em;
   text-decoration: none;
 }
-.nav-r {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-}
 .links {
   display: flex;
   gap: 24px;
@@ -130,29 +121,6 @@ html.scrolled .nav {
 }
 .links a:hover {
   color: var(--ink);
-}
-.lang {
-  display: inline-flex;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 2px;
-  gap: 2px;
-}
-.lang a,
-.lang span {
-  font: 500 12px/1 var(--mono);
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  background: none;
-  border: 0;
-  border-radius: 999px;
-  padding: 6px 9px;
-  text-decoration: none;
-  display: inline-block;
-}
-.lang [aria-current="page"] {
-  background: var(--ink);
-  color: var(--ground);
 }
 
 /* hero: loss-landscape isolines and the gradient-descent path, fading out behind the text */
@@ -191,10 +159,6 @@ html.scrolled .nav {
   line-height: 1.02;
   letter-spacing: -0.035em;
   font-weight: 700;
-}
-[lang="de"] .hero h1 {
-  font-size: clamp(32px, 4.3vw, 54px);
-  line-height: 1.05;
 }
 .lede {
   color: var(--muted);

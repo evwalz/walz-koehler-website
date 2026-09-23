@@ -1,6 +1,10 @@
 # Spec — Walz & Köhler website v1
 
-Turn the approved mockup (`docs/mockups/website-b3.html`) into the real site: static, bilingual, easy to edit.
+Turn the approved mockup (`docs/mockups/website-b3.html`) into the real site: static, easy to edit.
+
+> **Superseded in places.** This is the spec v1 was built from. Since then the operators dropped the German
+> side (2026-09-23, English only), cut the "How we work" section, and rewrote the copy. Where this file and
+> the repo disagree, the repo is right.
 The text will change later — the operators fill in placeholders and rewrite copy themselves — so the most
 important property of v1 is that **every visible word lives in one content file per language, not in templates.**
 
@@ -15,7 +19,7 @@ following it silently. The mockup wins on look; this spec wins on structure.
 - **Section order**: menu · hero · What we do · Range (fan chart) · Principle (moss block) · Selected work ·
   How we work · Who we are · Contact · footer.
 - **Contact is email only.** No form.
-- **English and German**, same content.
+- **English only** (the German side was dropped on 2026-09-23).
 - **Tokens** (from the mockup): ground `#F3F5F0`, ink `#18200F`, muted `#58624F`, line `#D5DCCC`, tint `#E3E9DA`,
   accent `#43682B`, card `#FFFFFF`, contour `#A9B79B`. Radius: cards 14 px, principle block 18 px, buttons pill.
 - **Type**: Bricolage Grotesque (display), Figtree (body), DM Mono (labels, eyebrows, captions).
@@ -33,24 +37,21 @@ following it silently. The mockup wins on look; this spec wins on structure.
 
 ## 3. Routes
 
-| Page | English | German |
-|---|---|---|
-| Home | `/` | `/de/` |
-| Legal notice / Impressum | `/legal-notice/` | `/de/impressum/` |
-| Privacy / Datenschutz | `/privacy/` | `/de/datenschutz/` |
+| Page | Route |
+|---|---|
+| Home | `/` |
+| Legal notice | `/legal-notice/` |
+| Privacy | `/privacy/` |
 
-- The EN · DE switch in the menu bar is a pair of **links** to the same page in the other language (not a script
-  toggle), with `hreflang` alternates in `<head>` and `<html lang>` set per page.
-- Menu links jump to sections on the home page (`#services`, `#work`, `#about`, `#contact`; German anchors may
-  stay English). Offset for the sticky bar.
+- No language switch: the site is English only, `<html lang="en">`, and there are no `hreflang` alternates.
+- Menu links jump to sections on the home page (`#work`, `#about`, `#contact`). Offset for the sticky bar.
 
 ## 4. Content model — the part that matters most
 
-- **One content file per language** (e.g. `src/content/en.yaml`, `src/content/de.yaml`) holding every visible
-  string: menu, hero, services, range block and chart labels, principle, work items (tag, title, text, link),
-  steps, people (name, role, bio, photo file), contact, footer, legal pages, meta title/description, alt texts.
-- **Validated by a schema**: the build fails when a key is missing in either language or has the wrong shape.
-  EN and DE therefore can never drift apart silently.
+- **One content file** (`src/content/en.yaml`) holding every visible string: menu, hero, services, range block
+  and chart labels, principle, work items (tag, title, text, link), people (name, role, bio, photo file),
+  contact, footer, legal pages, meta title/description, alt texts.
+- **Validated by a schema**: the build fails when a key is missing or has the wrong shape.
 - **Placeholders**: a value that starts with `TODO:` renders as a visibly marked placeholder (yellow highlight,
   as in the mockup) showing the text after the prefix. `npm run todo` lists every remaining placeholder with
   file and key. Carry every ⏳ from `docs/copy-v1.2.md` over as a `TODO:` value.
@@ -72,7 +73,8 @@ the page shows the mockup's hatched placeholder instead, so the site builds and 
 
 ## 7. Legal pages (German law applies — Gregor is self-employed in Freiburg)
 
-- **Impressum** (§ 5 DDG) and **Datenschutzerklärung** (GDPR), English versions alongside.
+- **Legal notice** (§ 5 DDG) and **privacy notice** (GDPR). Since 2026-09-23 they exist in English only; if the
+  site is later aimed at German clients, a German version may need to come back.
 - Write the **structure only**, with every fact as a `TODO:` placeholder: names, postal address, email, phone if
   any, VAT ID if any, who is responsible for content. **Do not invent names, addresses or legal facts.**
 - Privacy skeleton: controller; hosting and server logs (host `TODO:`); contact by email; no cookies, no
@@ -98,13 +100,13 @@ Hosting and deploy, domain, contact form, CMS, analytics, dark mode, blog, CI.
 
 ## 11. Done means — observable, with a demonstration
 
-1. `npm ci && npm run build` succeeds from a clean clone; `dist/` holds the six pages of §3 plus `robots.txt`.
+1. `npm ci && npm run build` succeeds from a clean clone; `dist/` holds the three pages of §3 plus `robots.txt`.
 2. `npm run check` (Astro/TypeScript) passes.
-3. Deleting one key from `de.yaml` makes the build fail with a message naming the key; restoring it makes the
+3. Deleting one key from `en.yaml` makes the build fail with a message naming the key; restoring it makes the
    build pass. Show both runs in the PR (redden, then pass).
 4. `npm run todo` lists the placeholders (client project, email, Impressum and privacy facts, photos if any).
-5. Screenshots of `/` and `/de/` at 1440 px and 390 px wide, plus `/de/impressum/` at 390 px, look like the mockup
-   at the same widths. Name any difference you chose to make. Screenshots stay **local** — list their paths in
-   the PR, do not commit them.
-6. With JavaScript disabled, `/` and `/de/` show all content and the language links work.
+5. Screenshots of `/` at 1440 px and 390 px wide, plus `/legal-notice/` at 390 px, look like the mockup at the
+   same widths. Name any difference you chose to make. Screenshots stay **local** — list their paths in the PR,
+   do not commit them.
+6. With JavaScript disabled, `/` shows all content.
 7. Zero requests to any host other than the site's own (check the network log of one page load).

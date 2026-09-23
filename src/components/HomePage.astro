@@ -7,22 +7,20 @@ import Principle from "./Principle.astro";
 import Work from "./Work.astro";
 import About from "./About.astro";
 import Contact from "./Contact.astro";
-import type { Lang } from "../lib/routes";
 import type { SiteData } from "../lib/types";
 
 interface Props {
-  lang: Lang;
   data: SiteData;
 }
 
-const { lang, data } = Astro.props;
+const { data } = Astro.props;
 ---
 
-<Layout lang={lang} page="home" data={data} meta={data.meta.home}>
+<Layout page="home" data={data} meta={data.meta.home}>
   <Hero data={data} />
   <Services data={data} />
   <Principle data={data} />
-  <Range lang={lang} data={data} />
+  <Range data={data} />
   <Work data={data} />
   <About data={data} />
   <Contact data={data} />
