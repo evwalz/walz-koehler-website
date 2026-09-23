@@ -221,4 +221,68 @@ export function evaFanSVG(c: DrawingColors, lab: [string, string, string], gid: 
   );
 }
 
+/* ---- "What we do": one drawing in three beats ----------------------------------------
+   Your data (a histogram) · a model on it (the fan, unchanged) · it running (a pipeline).
+   Wide screens get them as one drawing spanning the three columns; below 860px the columns
+   stack and each item carries its own. Decorative: the headings next to them say the same
+   thing in words, so they are aria-hidden rather than carrying an English label onto /de/. */
+
+/** The fan's own axis in miniature — an L with an arrowhead on each arm. */
+function axisSVG(c: DrawingColors, x0: number, x1: number, yb: number, yt: number, sw: number): string {
+  return (
+    '<path d="M' + x0 + " " + yb + "V" + yt + "M" + x0 + " " + yb + "H" + x1 + '" stroke="' + c.ink + '" stroke-width="' + sw + '" fill="none"/>' +
+    '<path d="M' + f1(x0 - sw * 3.8) + " " + f1(yt + sw * 6.9) + "L" + x0 + " " + yt + "L" + f1(x0 + sw * 3.8) + " " + f1(yt + sw * 6.9) + 'Z" fill="' + c.ink + '"/>' +
+    '<path d="M' + f1(x1 - sw * 6.9) + " " + f1(yb - sw * 3.8) + "L" + x1 + " " + yb + "L" + f1(x1 - sw * 6.9) + " " + f1(yb + sw * 3.8) + 'Z" fill="' + c.ink + '"/>'
+  );
+}
+
+function barsSVG(c: DrawingColors, xs: number[], w: number, hs: number[], y0: number): string {
+  return hs.map((h, i) => '<rect x="' + xs[i] + '" y="' + (y0 - h) + '" width="' + w + '" height="' + h + '" fill="' + c.accent + '"/>').join("");
+}
+
+/** evaFanSVG placed inside another drawing: no labels, no role, positioned and scaled. */
+function fanInset(c: DrawingColors, gid: string, attrs: string): string {
+  return evaFanSVG(c, ["", "", ""], gid, "", 12)
+    .replace(' role="img" aria-label=""', "")
+    .replace("<svg ", "<svg " + attrs + " ");
+}
+
+function pipelineSVG(c: DrawingColors, x0: number, x1: number, y: number, r: number, sw: number): string {
+  const xm = f1((x0 + x1) / 2);
+  return (
+    '<line x1="' + x0 + '" y1="' + y + '" x2="' + x1 + '" y2="' + y + '" stroke="' + c.accent + '" stroke-width="' + sw + '"/>' +
+    '<circle cx="' + x0 + '" cy="' + y + '" r="' + r + '" fill="#F3F5F0" stroke="' + c.accent + '" stroke-width="' + f1(sw * 1.1) + '"/>' +
+    '<circle cx="' + xm + '" cy="' + y + '" r="' + r + '" fill="#F3F5F0" stroke="' + c.accent + '" stroke-width="' + f1(sw * 1.1) + '"/>' +
+    '<circle cx="' + x1 + '" cy="' + y + '" r="' + r + '" fill="' + c.accent + '"/>' +
+    '<path d="M' + f1(x1 + r + 3) + " " + y + " l" + f1(r * 2.4) + " 0 m" + f1(-r * 0.95) + " " + f1(-r * 0.95) + " l" + f1(r * 0.95) + " " + f1(r * 0.95) + " l" + f1(-r * 0.95) + " " + f1(r * 0.95) +
+    '" fill="none" stroke="' + c.accent + '" stroke-width="' + f1(sw * 1.1) + '" stroke-linecap="round" stroke-linejoin="round"/>'
+  );
+}
+
+/** Wide screens: the three beats as one drawing, each under the column that names it. */
+export function svcStripSVG(c: DrawingColors): string {
+  const yb = 172;
+  return (
+    '<svg viewBox="0 0 1200 200" width="100%" height="200" aria-hidden="true" style="display:block">' +
+    /* The columns are (1200 - 2*34) / 3 = 377.3 wide, starting at 0, 411.3 and 822.7, and
+       each beat starts at the left edge of the column whose heading names it. The fan
+       carries its own 50-unit axis margin, so it is inset by that much less. */
+    axisSVG(c, 6, 340, yb, 46, 1.3) +
+    barsSVG(c, [22, 74, 126, 178, 230, 282], 40, [26, 54, 82, 68, 40, 18], yb) +
+    fanInset(c, "fan-svc-wide", 'x="389" y="10" width="450" height="172.8"') +
+    pipelineSVG(c, 840, 1120, yb - 46, 8, 2.4) +
+    "</svg>"
+  );
+}
+
+/** Below 860px the columns stack, so each item carries its beat at column width. */
+export function svcMarkSVGs(c: DrawingColors): [string, string, string] {
+  const open = '<svg viewBox="0 0 340 92" width="100%" aria-hidden="true" style="display:block">';
+  return [
+    open + axisSVG(c, 8, 332, 78, 14, 1.2) + barsSVG(c, [22, 72, 122, 172, 222, 272], 38, [22, 44, 64, 52, 30, 14], 78) + "</svg>",
+    fanInset(c, "fan-svc-narrow", 'width="100%" aria-hidden="true" style="display:block"'),
+    open + pipelineSVG(c, 40, 270, 48, 10, 3) + "</svg>",
+  ];
+}
+
 export const B3_COLORS: DrawingColors = { accent: "#43682B", ink: "#18200F", muted: "#58624F", contour: "#A9B79B" };
