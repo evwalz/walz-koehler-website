@@ -246,13 +246,15 @@ html.scrolled .nav {
   border-radius: 14px;
   padding: clamp(20px, 2.2vw, 28px);
 }
-.card h3 {
+.card h3,
+.svc-item h3 {
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
-.card p {
+.card p,
+.svc-item p {
   color: var(--muted);
   font-size: 15.5px;
   line-height: 1.6;
@@ -271,17 +273,6 @@ html.scrolled .nav {
   border-top: 1px solid var(--line);
   padding-top: 16px;
 }
-.svc-item h3 {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-.svc-item p {
-  color: var(--muted);
-  font-size: 15.5px;
-  line-height: 1.6;
-}
 
 /* The lead sits tight under the heading: it frames the three cards below it. */
 .h-tight {
@@ -297,15 +288,6 @@ html.scrolled .nav {
   text-wrap: balance;
 }
 
-/* The proof gets its own ground, so the white cards lift off it. The colour change
-   separates the section from its neighbours; the hairline rules would only repeat it. */
-#work {
-  background: var(--tint);
-  border-top: 0;
-}
-#work + .sec {
-  border-top: 0;
-}
 .works {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
