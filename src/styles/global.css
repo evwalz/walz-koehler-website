@@ -498,79 +498,26 @@ mark.pend {
   font-size: 15px;
 }
 
-/* Case study: the one section that argues a single project from photo to answer.
-   Same register as the services columns — a rule, a mono number, a heading, a line of
-   prose — so the extra weight comes from the drawing, not from new furniture. */
-.cs-strip {
-  margin-top: 6px;
+/* One listed work carries a drawing and spans the grid: the picture sits on the page's
+   own paper colour inside the white card, so the ranked rows keep the contrast they were
+   drawn with. Wide screens get the three beats side by side, below 860px they stack. */
+.work-wide {
+  grid-column: 1 / -1;
 }
-.cs-stack {
+.work-fig {
+  margin: 0 0 6px;
+  background: var(--ground);
+  border-radius: 10px;
+  padding: clamp(10px, 1.6vw, 20px) clamp(8px, 1.4vw, 18px);
+}
+.work-wide .eyebrow {
+  margin-top: 4px;
+}
+.work-wide p:not(.eyebrow) {
+  max-width: 88ch;
+}
+.fig-stack {
   display: none;
-}
-.cs-steps {
-  list-style: none;
-  margin: 30px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 26px 34px;
-}
-.cs-step {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
-}
-.cs-n {
-  font: 500 12px/1.4 var(--mono);
-  letter-spacing: 0.09em;
-  color: var(--accent);
-}
-.cs-step h3 {
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-.cs-step p {
-  color: var(--muted);
-  font-size: 15.5px;
-  line-height: 1.6;
-}
-.cs-foot {
-  margin-top: 34px;
-  display: grid;
-  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-  gap: 22px 44px;
-  align-items: start;
-}
-.cs-facts {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-content: start;
-}
-.cs-facts li {
-  font: 500 11.5px/1 var(--mono);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 8px 12px;
-}
-/* the measurement claim, given the weight of a quote rather than a fourth column */
-.cs-note {
-  font-size: 16.5px;
-  line-height: 1.6;
-  max-width: 62ch;
-  border-left: 2px solid var(--accent);
-  padding-left: 18px;
 }
 
 @media (max-width: 1000px) {
@@ -595,16 +542,11 @@ mark.pend {
     display: block;
     margin-bottom: 2px;
   }
-  .cs-steps,
-  .cs-foot {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .cs-strip {
+  .fig-wide {
     display: none;
   }
-  .cs-stack {
+  .fig-stack {
     display: block;
-    margin-top: 10px;
   }
   .field {
     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 62%, #000 86%);

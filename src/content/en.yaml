@@ -43,27 +43,16 @@ services:
     - title: "From idea to production"
       text: "Pipelines, deployment — and a team that can run it."
 
-caseStudy:
-  eyebrow: "Case study · Hauer GmbH"
-  heading: "The right part, found from a photo."
-  lede: "A technician stands at a lift with the broken part in hand. The catalogue holds tens of thousands of items, the part number is worn off, and what the thing is called is exactly what nobody knows. Photographing it always works — so we made the photo the query."
-  steps:
-    - title: "The photo is the query"
-      text: "One picture from the app, taken where the part sits: dirty, half-occluded, at whatever angle the shaft allows."
-    - title: "The catalogue becomes vectors"
-      text: "Every catalogue image is embedded once, with DINOv3, into a vector database. The query photo is then a point, and the nearest points are the candidates. Part numbers and descriptions are searched in the same request, and the two rankings are fused into one."
-    - title: "A ranked answer — and an API for agents"
-      text: "The technician gets candidates in order, each with its catalogue entry. The same search is open to agents over an API: they pre-label incoming user photos, a human checks them, and everyday traffic becomes the next test set."
-  facts:
-    - "DINOv3 embeddings"
-    - "Image + text, rank-fused"
-    - "In production on AWS"
-    - "Open to agents"
-  note: "Every release is scored against a frozen, human-validated test set — top-1, top-10, top-50. That is what turns “this feels better” into a decision: one preprocessing step measurably lifted the hit rate and stayed, and a second, very plausible one was dropped again when the numbers came back flat."
-
 work:
   heading: "Selected work"
   items:
+    - eyebrow: "Image search · parts identification"
+      title: "The right part, found from a photo"
+      text: "Photos matched against the parts catalogue: a manual lookup became an automatic one. Every catalogue image is embedded once into a vector database, so a query photo is a point and the nearest points are the candidates; part numbers and descriptions are searched in the same request, and the two rankings are fused into one. It runs in production behind an API that agents can call too — they pre-label incoming photos, a human checks them, and everyday traffic becomes the next test set. Every release is scored against a frozen, human-validated test set, which is what turns “this feels better” into a decision."
+      sources: []
+      pending: false
+      wide: true
+      drawing: part-search
     - eyebrow: "Forecasting · 2024"
       title: "AI forecasts of rainfall for northern tropical Africa"
       text: "Beat the ECMWF physics ensemble on 24-hour rainfall."
@@ -78,7 +67,7 @@ work:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Source"
       pending: false
-    - eyebrow: "Document understanding · Hauer GmbH"
+    - eyebrow: "Document understanding · order intake"
       title: "Orders read where they arrive"
       text: "Ordering PDFs turned into validated, enriched JSON with a confidence score per field, matched against the customer and parts catalogues and ready for the ERP. The model runs on the machine in the building — no document leaves it."
       sources: []

@@ -391,38 +391,34 @@ function lcg(seed: number): () => number {
   };
 }
 
-/** Beat 1 · a part in the viewfinder: a roller guide riding its rail. */
+/** Beat 1 · an object in the viewfinder — deliberately abstract: nested contours around a
+   centre, in the register of the header's loss field. It has to read as "a thing, photographed",
+   without depicting anyone's actual part. */
 function photoBeat(c: DrawingColors): string {
   const br = 30;
   const corner = (x: number, y: number, dx: number, dy: number) =>
     '<path d="M' + (x + dx * br) + " " + y + "H" + x + "V" + (y + dy * br) +
     '" fill="none" stroke="' + c.accent + '" stroke-width="2.6" stroke-linecap="round"/>';
 
-  const cx = 132;
+  const cx = 170;
   const cy = 120;
-  let bolts = "";
-  for (let i = 0; i < 4; i++) {
-    const a = Math.PI / 4 + (i * Math.PI) / 2;
-    bolts += '<circle cx="' + f1(cx + Math.cos(a) * 36) + '" cy="' + f1(cy + Math.sin(a) * 36) +
-      '" r="4.6" fill="#FFFFFF" stroke="' + c.ink + '" stroke-width="1.2"/>';
-  }
+  /** a closed, slightly irregular contour — same shape at every scale, so they nest */
+  const blob = (k: number): string => {
+    const pts: string[] = [];
+    for (let i = 0; i < 72; i++) {
+      const t = (i / 72) * Math.PI * 2;
+      const r = 88 * k * (1 + 0.11 * Math.sin(3 * t + 0.6) + 0.06 * Math.cos(5 * t - 0.3));
+      pts.push(f1(cx + Math.cos(t) * r * 1.06) + "," + f1(cy + Math.sin(t) * r * 0.92));
+    }
+    return pts.join(" ");
+  };
 
   return (
     corner(8, 8, 1, 1) + corner(332, 8, -1, 1) + corner(8, 232, 1, -1) + corner(332, 232, -1, -1) +
-    // the guide rail the roller runs on
-    '<path d="M232 26V214M252 26V214" stroke="' + c.ink + '" stroke-width="1.6" fill="none"/>' +
-    '<path d="M222 26h40M222 214h40" stroke="' + c.ink + '" stroke-width="1.6" fill="none"/>' +
-    // arm from the wheel to the rail
-    '<rect x="186" y="106" width="46" height="28" rx="6" fill="#FFFFFF" stroke="' + c.ink + '" stroke-width="1.5"/>' +
-    // the wheel
-    '<circle cx="' + cx + '" cy="' + cy + '" r="58" fill="#FFFFFF" stroke="' + c.ink + '" stroke-width="2.2"/>' +
-    '<circle cx="' + cx + '" cy="' + cy + '" r="48" fill="none" stroke="' + c.ink + '" stroke-width="1.2"/>' +
-    '<circle cx="' + cx + '" cy="' + cy + '" r="20" fill="none" stroke="' + c.ink + '" stroke-width="1.6"/>' +
-    '<circle cx="' + cx + '" cy="' + cy + '" r="7" fill="' + c.accent + '"/>' +
-    bolts +
-    // a glint, so it reads as a photograph of a thing rather than a diagram
-    '<path d="M' + (cx - 41) + " " + (cy - 27) + "A48 48 0 0 1 " + (cx - 13) + " " + (cy - 46) +
-    '" fill="none" stroke="' + c.accent + '" stroke-width="2.4" stroke-linecap="round"/>'
+    '<polygon points="' + blob(1) + '" fill="#FFFFFF" stroke="' + c.ink + '" stroke-width="2.2" stroke-linejoin="round"/>' +
+    '<polygon points="' + blob(0.72) + '" fill="none" stroke="' + c.ink + '" stroke-width="1.3" stroke-linejoin="round"/>' +
+    '<polygon points="' + blob(0.46) + '" fill="none" stroke="' + c.contour + '" stroke-width="1.2" stroke-linejoin="round"/>' +
+    '<circle cx="' + cx + '" cy="' + cy + '" r="8" fill="' + c.accent + '"/>'
   );
 }
 

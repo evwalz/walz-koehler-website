@@ -42,27 +42,16 @@ services:
     - title: "Von der Idee in den Betrieb"
       text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
 
-caseStudy:
-  eyebrow: "Fallstudie · Hauer GmbH"
-  heading: "Das richtige Teil per Foto finden."
-  lede: "Ein Techniker steht am Aufzug, das defekte Teil in der Hand. Der Katalog führt zehntausende Positionen, die Teilenummer ist abgerieben, und wie das Ding heißt, weiß gerade niemand. Fotografieren lässt es sich immer – also ist das Foto die Suchanfrage."
-  steps:
-    - title: "Das Foto ist die Anfrage"
-      text: "Ein Bild aus der App, aufgenommen dort, wo das Teil sitzt: verschmutzt, halb verdeckt, im Winkel, den der Schacht zulässt."
-    - title: "Der Katalog wird zu Vektoren"
-      text: "Jedes Katalogbild wird einmal eingebettet, mit DINOv3, und in einer Vektordatenbank abgelegt. Das Anfragefoto ist damit ein Punkt, die nächstgelegenen Punkte sind die Kandidaten. Teilenummern und Beschreibungen werden in derselben Anfrage durchsucht, beide Ranglisten zu einer verschmolzen."
-    - title: "Eine Rangliste – und eine API für Agenten"
-      text: "Der Techniker bekommt die Kandidaten in Reihenfolge, jeweils mit Katalogeintrag. Dieselbe Suche steht Agenten über eine API offen: Sie labeln eingehende Nutzerfotos vor, ein Mensch prüft nach – aus dem laufenden Betrieb wird so der nächste Testdatensatz."
-  facts:
-    - "DINOv3-Embeddings"
-    - "Bild + Text, rangfusioniert"
-    - "Produktiv auf AWS"
-    - "Offen für Agenten"
-  note: "Jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen – Top-1, Top-10, Top-50. Das macht aus „fühlt sich besser an“ eine Entscheidung: Ein Vorverarbeitungsschritt hob die Trefferquote messbar und blieb, ein zweiter, sehr plausibler, flog wieder raus, als die Zahlen unverändert zurückkamen."
-
 work:
   heading: "Ausgewählte Arbeiten"
   items:
+    - eyebrow: "Bildsuche · Teileidentifikation"
+      title: "Das richtige Teil per Foto finden"
+      text: "Fotos werden mit dem Ersatzteilkatalog abgeglichen: aus einer manuellen Suche wurde eine automatische. Jedes Katalogbild wird einmal in eine Vektordatenbank eingebettet, das Anfragefoto ist damit ein Punkt und die nächstgelegenen Punkte sind die Kandidaten; Teilenummern und Beschreibungen werden in derselben Anfrage durchsucht, beide Ranglisten zu einer verschmolzen. Das Ganze läuft produktiv hinter einer API, die auch Agenten nutzen: Sie labeln eingehende Fotos vor, ein Mensch prüft nach, und aus dem laufenden Betrieb wird der nächste Testdatensatz. Jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen – das macht aus „fühlt sich besser an“ eine Entscheidung."
+      sources: []
+      pending: false
+      wide: true
+      drawing: part-search
     - eyebrow: "Prognosen · 2024"
       title: "KI-Niederschlagsprognosen für das nördliche tropische Afrika"
       text: "Schlug das physikalische EZMW-Ensemble bei 24-Stunden-Niederschlag."
@@ -77,7 +66,7 @@ work:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Quelle"
       pending: false
-    - eyebrow: "Dokumentenverständnis · Hauer GmbH"
+    - eyebrow: "Dokumentenverständnis · Auftragseingang"
       title: "Bestellungen dort gelesen, wo sie ankommen"
       text: "Bestell-PDFs werden zu validiertem, angereichertem JSON mit Konfidenz je Feld, abgeglichen mit Kunden- und Ersatzteilkatalog und bereit für das ERP. Das Modell läuft auf der Maschine im Haus – kein Dokument verlässt sie."
       sources: []

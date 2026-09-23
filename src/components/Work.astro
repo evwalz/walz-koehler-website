@@ -1,5 +1,6 @@
 ---
 import Todo from "./Todo.astro";
+import { partSearchStripSVG, partSearchStackSVG, B3_COLORS } from "../lib/drawings";
 import type { SiteData } from "../lib/types";
 
 interface Props {
@@ -7,6 +8,8 @@ interface Props {
 }
 
 const { data } = Astro.props;
+const strip = partSearchStripSVG(B3_COLORS);
+const stack = partSearchStackSVG(B3_COLORS);
 ---
 
 <section class="sec" id="work">
@@ -14,7 +17,13 @@ const { data } = Astro.props;
     <h2>{data.work.heading}</h2>
     <div class="works">
       {data.work.items.map((item) => (
-        <article class:list={["card", "work", item.pending && "pending"]}>
+        <article class:list={["card", "work", item.wide && "work-wide", item.pending && "pending"]}>
+          {item.drawing === "part-search" && (
+            <figure class="work-fig">
+              <div class="fig-wide" set:html={strip} />
+              <div class="fig-stack" set:html={stack} />
+            </figure>
+          )}
           <p class="eyebrow">{item.eyebrow}</p>
           <h3><Todo value={item.title} /></h3>
           <p><Todo value={item.text} /></p>
