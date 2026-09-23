@@ -1,4 +1,5 @@
 ---
+import { svcStripSVG, svcMarkSVGs, B3_COLORS } from "../lib/drawings";
 import type { SiteData } from "../lib/types";
 
 interface Props {
@@ -6,6 +7,8 @@ interface Props {
 }
 
 const { data } = Astro.props;
+const strip = svcStripSVG(B3_COLORS);
+const marks = svcMarkSVGs(B3_COLORS);
 ---
 
 <section class="sec" id="services">
@@ -13,12 +16,14 @@ const { data } = Astro.props;
     <h2 class="h-tight">{data.services.heading}</h2>
     <p class="svc-lead">{data.services.lead}</p>
     <div class="svc">
-      {data.services.items.map((item) => (
+      {data.services.items.map((item, i) => (
         <div class="svc-item">
+          <div class="svc-mark" set:html={marks[i]} />
           <h3>{item.title}</h3>
           <p>{item.text}</p>
         </div>
       ))}
     </div>
+    <div class="svc-strip" set:html={strip} />
   </div>
 </section>

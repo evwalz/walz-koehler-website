@@ -273,6 +273,14 @@ html.scrolled .nav {
   border-top: 1px solid var(--line);
   padding-top: 16px;
 }
+/* One drawing in three beats: spanning the columns on a wide screen, and carried by the
+   items themselves once they stack. Exactly one of the two is rendered at any width. */
+.svc-strip {
+  margin-top: 40px;
+}
+.svc-mark {
+  display: none;
+}
 
 /* The lead sits tight under the heading: it frames the three cards below it. */
 .h-tight {
@@ -504,6 +512,13 @@ mark.pend {
   .works,
   .people {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .svc-strip {
+    display: none;
+  }
+  .svc-mark {
+    display: block;
+    margin-bottom: 2px;
   }
   .field {
     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 62%, #000 86%);
