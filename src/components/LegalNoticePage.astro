@@ -16,7 +16,7 @@ const n = data.legalNotice;
   <div class="in sec legal">
     <h1>{n.heading}</h1>
     <p><mark class="pend">{todoText(n.checkNotice)}</mark></p>
-    <section>
+    <section lang="de">
       <p>{n.ddgIntro}</p>
       <dl>
         {n.facts.map((fact) => (
@@ -27,9 +27,13 @@ const n = data.legalNotice;
         ))}
       </dl>
     </section>
-    <section>
-      <p>{n.responsibleIntro}</p>
-      <p><Todo value={n.responsibleValue} /></p>
+    <section lang="de">
+      <p><Todo value={n.arrangement} /></p>
+      <p>{n.dispute}</p>
+    </section>
+    <section class="legal-en">
+      <h2>{n.englishHeading}</h2>
+      <p>{n.englishBody}</p>
     </section>
   </div>
 </Layout>
