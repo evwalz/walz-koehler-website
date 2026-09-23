@@ -56,20 +56,6 @@ work:
         - href: "https://arxiv.org/abs/2401.03746"
           label: "Source"
       pending: false
-    - eyebrow: "Evaluation"
-      title: "Choosing the right score for the task"
-      text: "A score says more when it fits the goal — and when you know how to read it."
-      sources:
-        - href: "https://arxiv.org/abs/2510.17994"
-          label: "Source"
-      pending: false
-    - eyebrow: "Uncertainty"
-      title: "How certain a prediction is"
-      text: "Not just the answer — how much you can rely on it."
-      sources:
-        - href: "https://arxiv.org/abs/2212.08376"
-          label: "Source"
-      pending: false
     - eyebrow: "Computer vision · DKFZ"
       title: "nnU-Net: segmentation that configures itself"
       text: "It adapts its own setup to each new medical imaging dataset, which made it a standard baseline."
@@ -87,6 +73,20 @@ work:
       text: "TODO: Gregor — the problem, what was built, what changed for the client"
       sources: []
       pending: true
+    - eyebrow: "Evaluation"
+      title: "Choosing the right score for the task"
+      text: "A score says more when it fits the goal — and when you know how to read it."
+      sources:
+        - href: "https://arxiv.org/abs/2510.17994"
+          label: "Source"
+      pending: false
+    - eyebrow: "Uncertainty"
+      title: "How certain a prediction is"
+      text: "Not just the answer — how much you can rely on it."
+      sources:
+        - href: "https://arxiv.org/abs/2212.08376"
+          label: "Source"
+      pending: false
 
 about:
   heading: "Who we are"
