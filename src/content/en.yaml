@@ -60,13 +60,8 @@ work:
       title: "Choosing the right score for the task"
       text: "A score says more when it fits the goal — and when you know how to read it."
       sources:
-        # Both read "Source" on screen; the aria label keeps them apart for a screen reader.
-        - href: "https://arxiv.org/abs/2311.14122"
-          label: "Source"
-          aria: "Source: paper on decompositions of the CRPS"
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Source"
-          aria: "Source: paper on rank correlation and area under the curve"
       pending: false
     - eyebrow: "Uncertainty"
       title: "How certain a prediction is"
