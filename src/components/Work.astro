@@ -18,10 +18,14 @@ const { data } = Astro.props;
           <p class="eyebrow">{item.eyebrow}</p>
           <h3><Todo value={item.title} /></h3>
           <p><Todo value={item.text} /></p>
-          {item.link && (
-            <a class="src" href={item.link} target="_blank" rel="noopener">
-              {item.linkLabel} <span aria-hidden="true">↗</span>
-            </a>
+          {item.sources.length > 0 && (
+            <div class="srcs">
+              {item.sources.map((source) => (
+                <a class="src" href={source.href} target="_blank" rel="noopener">
+                  {source.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
           )}
         </article>
       ))}

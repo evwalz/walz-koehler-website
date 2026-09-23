@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "./Hero.astro";
 import Services from "./Services.astro";
 import Range from "./Range.astro";
-import Principle from "./Principle.astro";
 import Work from "./Work.astro";
 import About from "./About.astro";
 import Contact from "./Contact.astro";
@@ -19,7 +18,6 @@ const { data } = Astro.props;
 <Layout page="home" data={data} meta={data.meta.home}>
   <Hero data={data} />
   <Services data={data} />
-  <Principle data={data} />
   <Range data={data} />
   <Work data={data} />
   <About data={data} />

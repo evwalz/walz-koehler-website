@@ -10,7 +10,8 @@ const { data } = Astro.props;
 
 <section class="sec" id="services">
   <div class="in">
-    <h2>{data.services.heading}</h2>
+    <h2 class="h-tight">{data.services.heading}</h2>
+    <p class="svc-lead">{data.services.lead}</p>
     <div class="svc">
       {data.services.items.map((item) => (
         <div class="card">

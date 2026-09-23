@@ -12,11 +12,13 @@ const mailHref = `mailto:${todoText(data.contact.email)}`;
 ---
 
 <section class="sec contact" id="contact">
-  <div class="in contact-in">
-    <h2>{data.contact.heading}</h2>
-    <div class="mail-box">
-      <p class="mail"><Todo value={data.contact.email} /></p>
-      <a class="btn p" href={mailHref}>{data.contact.cta} <span aria-hidden="true">→</span></a>
+  <div class="in">
+    <div class="contact-box">
+      <h2>{data.contact.heading}</h2>
+      <div class="mail-box">
+        <p class="mail"><Todo value={data.contact.email} /></p>
+        <a class="btn p" href={mailHref}>{data.contact.cta} <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
 </section>
