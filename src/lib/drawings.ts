@@ -222,77 +222,107 @@ export function evaFanSVG(c: DrawingColors, lab: [string, string, string], gid: 
 }
 
 /* ---- "What we do": one drawing in three beats ----------------------------------------
-   Your data (the kinds of it) · a model on it (the fan, unchanged) · it reaching production.
-   Wide screens get the three as one drawing under the three columns; below 860px the columns
-   stack and each item carries its own.
-
-   In the wide strip the two outer beats stand vertically — they take height instead of width,
-   so the gaps either side of the fan are wide and the row breathes. In the stacked marks they
-   run horizontally, where each has a column of its own to fill.
+   The kinds of data you have · a model on it (the fan, unchanged) · it running, and going on
+   running. Wide screens get the three under the three columns; below 860px the columns stack
+   and each item carries the same drawing at its own size — the fan fills its column, the two
+   marks sit at the size they are drawn.
 
    Decorative: the headings next to them say the same thing in words, so they are aria-hidden
-   rather than carrying an English label onto /de/. (The fan's miniature L-axis helper lived
-   here until the histogram beat went; recover it at 5dc8e3b if a beat ever needs axes again.) */
+   rather than carrying an English label onto /de/.
 
-/** A field of cells — satellite, weather, a scan. Darkness comes from two smooth bumps so it
- *  reads as a measurement, not noise; cells stay square whatever the box's aspect. */
-function rasterTile(c: DrawingColors, x: number, y: number, w: number, h: number): string {
-  const rows = 4;
-  const cols = Math.max(3, Math.round((w / h) * rows));
-  const cw = w / cols;
-  const ch = h / rows;
-  const pad = Math.min(1.5, cw * 0.16);
+   Earlier passes are in git if one is ever wanted back: a histogram and a horizontal pipeline
+   at 5dc8e3b, three abstract tiles and a vertical pipeline at ea77661. */
+
+/** The page ground (--ground), for a mark knocked out of a filled glyph. */
+const GROUND = "#F3F5F0";
+
+/** Beat 1 · a stack of photos — image-shaped data: weather, satellite, a scan. 92 × 48. */
+function photosGlyph(c: DrawingColors): string {
+  const w = 76, h = 38, sw = 2.4, fy = 10;
   let s = "";
-  for (let j = 0; j < rows; j++) {
-    for (let i = 0; i < cols; i++) {
-      const u = i / (cols - 1);
-      const v = j / (rows - 1);
-      const b1 = Math.exp(-((u - 0.25) ** 2 + (v - 0.7) ** 2) / 0.18);
-      const b2 = Math.exp(-((u - 0.8) ** 2 + (v - 0.25) ** 2) / 0.12);
-      const op = (0.14 + 0.86 * Math.min(1, b1 + b2 * 0.9)).toFixed(2);
-      s += '<rect x="' + f1(x + i * cw) + '" y="' + f1(y + j * ch) + '" width="' + f1(cw - pad) + '" height="' + f1(ch - pad) + '" fill="' + c.accent + '" fill-opacity="' + op + '"/>';
-    }
+  for (const [dx, dy] of [[16, 0], [8, 5]]) {
+    s += '<rect x="' + dx + '" y="' + dy + '" width="' + w + '" height="' + h + '" rx="3" fill="' + c.accent + '" stroke="' + GROUND + '" stroke-width="' + sw + '"/>';
   }
+  return (
+    s +
+    '<rect x="0" y="' + fy + '" width="' + w + '" height="' + h + '" rx="3" fill="' + c.accent + '" stroke="' + GROUND + '" stroke-width="' + sw + '"/>' +
+    '<circle cx="16" cy="' + (fy + 10) + '" r="4.2" fill="' + GROUND + '"/>' +
+    '<polyline points="5,' + (fy + 31) + " 22," + (fy + 14) + " 33," + (fy + 22) + " 48," + (fy + 8) + " 71," + (fy + 31) +
+    '" fill="none" stroke="' + GROUND + '" stroke-width="' + sw + '" stroke-linejoin="round" stroke-linecap="round"/>'
+  );
+}
+
+/** Beat 1 · the drum everyone draws for stored records. 52 × 48. */
+function drumGlyph(c: DrawingColors): string {
+  const cx = 26, rx = 26, ry = 8, top = 9, bot = 39, sw = 2.4;
+  let s = '<path d="M' + (cx - rx) + " " + top + "V" + bot + "A" + rx + " " + ry + " 0 0 0 " + (cx + rx) + " " + bot + "V" + top +
+    '" fill="' + c.accent + '" stroke="' + GROUND + '" stroke-width="' + sw + '"/>';
+  for (const d of [19, 29]) {
+    s += '<path d="M' + (cx - rx) + " " + d + "A" + rx + " " + ry + " 0 0 0 " + (cx + rx) + " " + d +
+      '" fill="none" stroke="' + GROUND + '" stroke-width="' + sw + '" stroke-opacity="0.75"/>';
+  }
+  return s + '<ellipse cx="' + cx + '" cy="' + top + '" rx="' + rx + '" ry="' + ry + '" fill="' + c.accent + '" stroke="' + GROUND + '" stroke-width="' + sw + '"/>';
+}
+
+/** Beat 1 · a stack of pages — the text a language model reads. 54 × 48. */
+function pagesGlyph(c: DrawingColors): string {
+  const w = 40, h = 38, sw = 2.4, fy = 10;
+  let s = "";
+  for (const [dx, dy] of [[14, 0], [7, 5]]) {
+    s += '<rect x="' + dx + '" y="' + dy + '" width="' + w + '" height="' + h + '" rx="2.5" fill="' + c.accent + '" stroke="' + GROUND + '" stroke-width="' + sw + '"/>';
+  }
+  s += '<rect x="0" y="' + fy + '" width="' + w + '" height="' + h + '" rx="2.5" fill="' + c.accent + '" stroke="' + GROUND + '" stroke-width="' + sw + '"/>';
+  [1, 0.82, 0.93, 0.6].forEach((k, i) => {
+    const y = fy + 9 + i * 7;
+    s += '<line x1="7" y1="' + y + '" x2="' + f1(7 + 26 * k) + '" y2="' + y + '" stroke="' + GROUND + '" stroke-width="' + sw +
+      '" stroke-opacity="' + (i === 0 ? "0.9" : "0.55") + '" stroke-linecap="round"/>';
+  });
   return s;
 }
 
-/** Rows and columns — the everyday case: a header row, then three rows of three cells. */
-function tableTile(c: DrawingColors, x: number, y: number, w: number, h: number): string {
-  const rh = h * 0.158;
-  const rg = h * 0.066;
-  const cwf = [0.31, 0.345, 0.27];
-  let s = '<rect x="' + f1(x) + '" y="' + f1(y + h * 0.13) + '" width="' + f1(w) + '" height="' + f1(rh) + '" fill="' + c.accent + '"/>';
-  for (let r = 0; r < 3; r++) {
-    let cx = x;
-    for (const fw of cwf) {
-      s += '<rect x="' + f1(cx) + '" y="' + f1(y + h * 0.395 + r * (rh + rg)) + '" width="' + f1(w * fw) + '" height="' + f1(rh) + '" fill="' + c.accent + '" fill-opacity="0.34"/>';
-      cx += w * fw + w * 0.035;
-    }
-  }
-  return s;
-}
+const G = (g: string, x: number, y: number, s: number) => '<g transform="translate(' + f1(x) + " " + f1(y) + ") scale(" + s + ')">' + g + "</g>";
 
-/** Text — what a language model reads. Five lines, the first set solid like a heading. */
-function textTile(c: DrawingColors, x: number, y: number, w: number, h: number): string {
-  const lh = h * 0.105;
-  const lg = h * 0.118;
-  return [1, 0.84, 0.95, 0.71, 0.51]
-    .map((fw, i) =>
-      '<rect x="' + f1(x) + '" y="' + f1(y + i * (lh + lg)) + '" width="' + f1(w * fw) + '" height="' + f1(lh) + '" rx="1.5" fill="' + c.accent + '" fill-opacity="' + (i === 0 ? "0.85" : "0.42") + '"/>'
-    )
-    .join("");
+/**
+ * Beat 1 — what the work runs on, and that it is not one shape of data: pictures over a
+ * database and a pile of text. Drawn at the origin; the block is DATA_KINDS wide and tall.
+ */
+const DATA_KINDS = { w: 168, h: 151 };
+function dataKindsSVG(c: DrawingColors): string {
+  const s = 1.3, gap = 30, rowH = 48 * s;
+  const row2 = rowH + 26;
+  const rowW = 52 * s + gap + 54 * s;
+  return (
+    G(photosGlyph(c), (rowW - 92 * s) / 2, 0, s) +
+    G(drumGlyph(c), 0, row2, s) +
+    G(pagesGlyph(c), 52 * s + gap, row2, s)
+  );
 }
 
 /**
- * Beat 1 — the kinds of data the work covers, side by side, because the offer is not tied to
- * one shape of data: a raster field, a table, lines of text. `x`/`y` are the first tile's top
- * left, `w`/`h` one tile, and `dir` whether the three run across or down.
+ * Beat 3 — production is not a finish line. Three stops on a ring that keeps turning, one of
+ * them filled: the model is live, and somebody is still running it.
  */
-function dataKindsSVG(c: DrawingColors, x: number, y: number, w: number, h: number, dir: "row" | "col"): string {
-  const g = dir === "row" ? w * 0.11 : h * 0.28;
-  const dx = dir === "row" ? w + g : 0;
-  const dy = dir === "row" ? 0 : h + g;
-  return rasterTile(c, x, y, w, h) + tableTile(c, x + dx, y + dy, w, h) + textTile(c, x + 2 * dx, y + 2 * dy, w, h);
+function loopSVG(c: DrawingColors, cx: number, cy: number, r: number, sw: number): string {
+  const at = (a: number): [number, number] => [f1(cx + r * Math.cos(a)), f1(cy + r * Math.sin(a))];
+  const gap = 0.42;                                   // the ring stops just short of closing
+  const [sx, sy] = at(-Math.PI / 2 + gap);
+  const [ex, ey] = at(-Math.PI / 2 - gap);
+  const tan = -Math.PI / 2 - gap + Math.PI / 2;       // tangent at the head, pointing round
+  const L = r * 0.24;
+  const barb = (d: number) => f1(ex + L * Math.cos(tan + d)) + " " + f1(ey + L * Math.sin(tan + d));
+  return (
+    '<path d="M' + sx + " " + sy + "A" + r + " " + r + " 0 1 1 " + ex + " " + ey + '" fill="none" stroke="' + c.accent +
+    '" stroke-width="' + sw + '" stroke-linecap="round"/>' +
+    '<path d="M' + barb(-2.5) + "L" + ex + " " + ey + "L" + barb(2.5) + '" fill="none" stroke="' + c.accent +
+    '" stroke-width="' + sw + '" stroke-linecap="round" stroke-linejoin="round"/>' +
+    [Math.PI / 6, (Math.PI * 5) / 6, -Math.PI / 2]
+      .map((a, i) => {
+        const [x, y] = at(a);
+        return '<circle cx="' + x + '" cy="' + y + '" r="' + f1(r * 0.17) + '" fill="' + (i === 0 ? c.accent : GROUND) +
+          '" stroke="' + c.accent + '" stroke-width="' + f1(sw * 0.8) + '"/>';
+      })
+      .join("")
+  );
 }
 
 /** evaFanSVG placed inside another drawing: no labels, no role, positioned and scaled. */
@@ -302,57 +332,31 @@ function fanInset(c: DrawingColors, gid: string, attrs: string): string {
     .replace("<svg ", "<svg " + attrs + " ");
 }
 
-/**
- * Beat 3 — the stops on the way to production: two still open, the last one shipped, and the
- * flow carrying on past it. Drawn along the segment (x0,y0)→(x1,y1), so the same figure runs
- * down the wide strip and across a stacked mark.
- */
-function pipelineSVG(c: DrawingColors, x0: number, y0: number, x1: number, y1: number, r: number, sw: number): string {
-  const len = Math.hypot(x1 - x0, y1 - y0);
-  const ux = (x1 - x0) / len;
-  const uy = (y1 - y0) / len;
-  const ring = (x: number, y: number) =>
-    '<circle cx="' + f1(x) + '" cy="' + f1(y) + '" r="' + r + '" fill="#F3F5F0" stroke="' + c.accent + '" stroke-width="' + f1(sw * 1.1) + '"/>';
-  const ax = x1 + ux * (r + 3);
-  const ay = y1 + uy * (r + 3);
-  const tx = ax + ux * r * 2.4;
-  const ty = ay + uy * r * 2.4;
-  const b = r * 0.95;
-  return (
-    '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x1 + '" y2="' + y1 + '" stroke="' + c.accent + '" stroke-width="' + sw + '"/>' +
-    ring(x0, y0) +
-    ring((x0 + x1) / 2, (y0 + y1) / 2) +
-    '<circle cx="' + f1(x1) + '" cy="' + f1(y1) + '" r="' + r + '" fill="' + c.accent + '"/>' +
-    '<path d="M' + f1(ax) + " " + f1(ay) + "L" + f1(tx) + " " + f1(ty) +
-    "M" + f1(tx - ux * b + uy * b) + " " + f1(ty - uy * b - ux * b) +
-    "L" + f1(tx) + " " + f1(ty) +
-    "L" + f1(tx - ux * b - uy * b) + " " + f1(ty - uy * b + ux * b) +
-    '" fill="none" stroke="' + c.accent + '" stroke-width="' + f1(sw * 1.1) + '" stroke-linecap="round" stroke-linejoin="round"/>'
-  );
-}
-
 /** Wide screens: the three beats as one drawing under the three columns. */
 export function svcStripSVG(c: DrawingColors): string {
   /* The columns are (1200 - 2*34) / 3 = 377.3 wide, starting at 0, 411.3 and 822.7. The fan
-     holds the middle; the outer two are narrow verticals at the strip's own left and right
-     edges, which puts the drawing's widest empty spans either side of the fan. */
+     holds the middle; the block of marks and the ring stand at the strip's own left and right
+     edges, mirrored about its centre, which puts the two widest empty spans either side of
+     the chart. */
+  const right = 1200 - DATA_KINDS.w / 2;
   return (
     '<svg viewBox="0 0 1200 200" width="100%" height="200" aria-hidden="true" style="display:block">' +
-    dataKindsSVG(c, 0, 12, 120, 48, "col") +
+    G(dataKindsSVG(c), 0, 96 - DATA_KINDS.h / 2, 1) +
     fanInset(c, "fan-svc-wide", 'x="389" y="10" width="450" height="172.8"') +
-    pipelineSVG(c, 1140, 16, 1140, 142, 10, 2.6) +
+    loopSVG(c, right, 96, 54, 5) +
     "</svg>"
   );
 }
 
-/** Below 860px the columns stack, so each item carries its beat at column width. */
+/** Below 860px the columns stack, so each item carries its own beat above its heading. */
 export function svcMarkSVGs(c: DrawingColors): [string, string, string] {
-  const open = '<svg viewBox="0 0 340 92" width="100%" aria-hidden="true" style="display:block">';
-  return [
-    open + dataKindsSVG(c, 0, 8, 105, 76, "row") + "</svg>",
-    fanInset(c, "fan-svc-narrow", 'width="100%" aria-hidden="true" style="display:block"'),
-    open + pipelineSVG(c, 40, 48, 270, 48, 10, 3) + "</svg>",
-  ];
+  const kinds =
+    '<svg viewBox="0 0 ' + DATA_KINDS.w + " " + DATA_KINDS.h + '" width="' + DATA_KINDS.w + '" height="' + DATA_KINDS.h +
+    '" aria-hidden="true" style="display:block">' + dataKindsSVG(c) + "</svg>";
+  const loop =
+    '<svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true" style="display:block">' +
+    loopSVG(c, 60, 60, 46, 4.4) + "</svg>";
+  return [kinds, fanInset(c, "fan-svc-narrow", 'width="100%" aria-hidden="true" style="display:block"'), loop];
 }
 
 export const B3_COLORS: DrawingColors = { accent: "#43682B", ink: "#18200F", muted: "#58624F", contour: "#A9B79B" };
