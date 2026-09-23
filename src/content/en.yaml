@@ -42,9 +42,9 @@ services:
       text: "Pipelines, deployment — and a team that can run it."
 
 range:
-  heading: "A range, not a single number."
-  body: "The further ahead we look, the wider it gets. You plan with the whole picture."
-  caption: "Example data."
+  heading: "What that looks like in a forecast."
+  body: "Part of judging a model is knowing where it is unsure. In a forecast that is a range that widens the further ahead it looks; in a language or image task it sits on single cases instead. Either way, knowing where it sits gives you more to decide on than the answer alone."
+  caption: "A forecast, as one example. Example data."
   labels:
     observed: "observed"
     today: "today"
@@ -52,8 +52,7 @@ range:
   ariaLabel: "Fan chart: observed values up to today, then a forecast whose uncertainty bands widen and fade the further ahead it looks"
 
 principle:
-  heading: "Measured, not promised."
-  body: "Your data, your current method, a fair score agreed up front. If the model does not beat it, we tell you."
+  heading: "Judging whether a model is really better is our work."
 
 work:
   heading: "Selected work"

@@ -42,9 +42,9 @@ services:
       text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
 
 range:
-  heading: "Eine Bandbreite statt einer Zahl."
-  body: "Je weiter voraus, desto breiter. Sie planen mit dem ganzen Bild."
-  caption: "Beispieldaten."
+  heading: "So sieht das in einer Prognose aus."
+  body: "Zum Beurteilen gehört zu wissen, wo ein Modell unsicher ist. In einer Prognose ist das eine Bandbreite, die weiter voraus breiter wird; bei Sprach- oder Bildaufgaben liegt sie auf einzelnen Fällen. So oder so: Zu wissen, wo sie liegt, gibt Ihnen mehr für Ihre Entscheidung als die Antwort allein."
+  caption: "Eine Prognose als ein Beispiel. Beispieldaten."
   labels:
     observed: "beobachtet"
     today: "heute"
@@ -52,8 +52,7 @@ range:
   ariaLabel: "Fächerdiagramm: beobachtete Werte bis heute, danach eine Prognose, deren Unsicherheitsbänder breiter und blasser werden, je weiter sie vorausschaut"
 
 principle:
-  heading: "Gemessen, nicht versprochen."
-  body: "Ihre Daten, Ihre bisherige Methode, ein vorher vereinbarter Maßstab. Schlägt das Modell sie nicht, sagen wir es Ihnen."
+  heading: "Zu beurteilen, ob ein Modell wirklich besser ist – das ist unsere Arbeit."
 
 work:
   heading: "Ausgewählte Arbeiten"

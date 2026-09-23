@@ -78,7 +78,6 @@ const siteSchema = z.object({
   }),
   principle: z.object({
     heading: z.string(),
-    body: z.string(),
   }),
   work: z.object({
     heading: z.string(),
