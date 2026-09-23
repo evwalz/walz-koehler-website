@@ -79,8 +79,8 @@ work:
       sources: []
       pending: true
     - eyebrow: "Evaluation"
-      title: "Das passende Maß für die Aufgabe wählen"
-      text: "Ein Maß sagt mehr, wenn es zum Ziel passt – und wenn man weiß, wie es zu lesen ist."
+      title: "Die passende Metrik für die Aufgabe wählen"
+      text: "Eine Metrik sagt mehr, wenn sie zum Ziel passt – und wenn man weiß, wie sie zu lesen ist."
       sources:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Quelle"
