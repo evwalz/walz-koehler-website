@@ -50,8 +50,8 @@ work:
   heading: "Selected work"
   items:
     - eyebrow: "Forecasting · 2024"
-      title: "Beating the ECMWF ensemble on 24-hour rainfall"
-      text: "A neural network with EasyUQ outperformed the physics ensemble over northern tropical Africa."
+      title: "AI forecasts of rainfall for northern tropical Africa"
+      text: "Beat the ECMWF physics ensemble on 24-hour rainfall."
       link: "https://arxiv.org/abs/2401.03746"
       linkLabel: "Source"
       pending: false
@@ -67,7 +67,7 @@ work:
       link: "https://arxiv.org/abs/2212.08376"
       linkLabel: "Source"
       pending: false
-    - eyebrow: "Deep learning · DKFZ"
+    - eyebrow: "Computer vision · DKFZ"
       title: "nnU-Net: segmentation that configures itself"
       text: "Gregor co-authored it; now a standard baseline in medical imaging."
       link: "https://arxiv.org/abs/1809.10486"
