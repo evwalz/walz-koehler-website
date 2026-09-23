@@ -274,7 +274,7 @@ html.scrolled .nav {
 }
 .svc {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 .svc .card {
@@ -309,26 +309,20 @@ html.scrolled .nav {
 .sec-band {
   padding-block: 8px;
 }
+/* The band carries one claim and nothing else, so there is no second column to fill. */
 .principle {
   background: var(--accent);
   color: var(--ground);
   border-radius: 18px;
   padding: clamp(28px, 4.5vw, 56px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-  gap: clamp(18px, 3.5vw, 48px);
 }
 .principle h2 {
-  font-size: clamp(30px, 4vw, 48px);
+  max-width: 24ch;
+  font-size: clamp(30px, 4.4vw, 52px);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.02;
   margin: 0;
-}
-.principle p {
-  font-size: 17px;
-  line-height: 1.65;
-  opacity: 0.93;
 }
 .sec-band + .sec {
   border-top: 0;
@@ -360,37 +354,6 @@ html.scrolled .nav {
   border: 1.5px dashed var(--line);
 }
 
-.steps {
-  list-style: none;
-  padding: 0;
-  counter-reset: s;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 3vw, 40px);
-}
-.steps li {
-  counter-increment: s;
-  border-top: 1.5px solid var(--ink);
-  padding-top: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.steps li::before {
-  content: counter(s);
-  font: 500 13px/1 var(--mono);
-  color: var(--accent);
-}
-.steps h3 {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.steps p {
-  color: var(--muted);
-  font-size: 15.5px;
-  line-height: 1.6;
-}
 
 .people {
   display: grid;
@@ -541,6 +504,12 @@ mark.pend {
   color: var(--ink);
 }
 
+@media (max-width: 1000px) {
+  .svc {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
   .links {
     display: none;
@@ -548,11 +517,7 @@ mark.pend {
   .svc,
   .works,
   .people,
-  .range,
-  .principle {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .steps {
+  .range {
     grid-template-columns: minmax(0, 1fr);
   }
   .fan-wide {
