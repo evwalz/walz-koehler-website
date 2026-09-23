@@ -74,19 +74,19 @@ work:
       pending: false
     - eyebrow: "Computer vision · DKFZ"
       title: "nnU-Net: segmentation that configures itself"
-      text: "Gregor co-authored it; now a standard baseline in medical imaging."
+      text: "It adapts its own setup to each new medical imaging dataset, which made it a standard baseline."
       sources:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Source"
       pending: false
-    - eyebrow: "Image search · client project"
+    - eyebrow: "Image search · Hauer GmbH"
       title: "The right part, found from a photo"
-      text: "Gregor matched photos against the supplier's parts catalogue: a manual lookup became an automatic one."
+      text: "Photos matched against the parts catalogue: a manual lookup became an automatic one."
       sources: []
       pending: false
     - eyebrow: "Client project"
-      title: "TODO: Gregor — second client project"
-      text: "TODO: the problem, what he built, what changed for the client"
+      title: "TODO: second client project"
+      text: "TODO: Gregor — the problem, what was built, what changed for the client"
       sources: []
       pending: true
 
