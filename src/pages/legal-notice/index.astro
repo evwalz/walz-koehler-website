@@ -6,4 +6,4 @@ const entry = await getEntry("site", "en");
 if (!entry) throw new Error("Missing content entry: en");
 ---
 
-<LegalNoticePage data={entry.data} />
+<LegalNoticePage lang="en" data={entry.data} />

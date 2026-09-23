@@ -34,6 +34,7 @@ const legalSection = z.object({
 });
 
 const siteSchema = z.object({
+  htmlLang: z.string(),
   meta: z.object({
     home: pageMeta,
     legalNotice: pageMeta,
@@ -48,6 +49,10 @@ const siteSchema = z.object({
       about: z.string(),
       contact: z.string(),
     }),
+    langGroupAriaLabel: z.string(),
+    langCurrentLabel: z.string(),
+    langOtherLabel: z.string(),
+    langOtherAriaLabel: z.string(),
   }),
   hero: z.object({
     eyebrow: z.string(),
@@ -88,15 +93,16 @@ const siteSchema = z.object({
     copyright: z.string(),
     legalNoticeLabel: z.string(),
     privacyLabel: z.string(),
-    invoicingNote: z.string(),
   }),
   legalNotice: z.object({
     heading: z.string(),
     checkNotice: z.string(),
     ddgIntro: z.string(),
-    facts: z.array(fact).length(4),
-    responsibleIntro: z.string(),
-    responsibleValue: z.string(),
+    facts: z.array(fact).min(3).max(8),
+    arrangement: z.string(),
+    dispute: z.string(),
+    englishHeading: z.string(),
+    englishBody: z.string(),
   }),
   privacy: z.object({
     heading: z.string(),

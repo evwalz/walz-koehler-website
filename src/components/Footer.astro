@@ -1,20 +1,19 @@
 ---
-import { ROUTES } from "../lib/routes";
+import { ROUTES, type Lang } from "../lib/routes";
 import type { SiteData } from "../lib/types";
-import Todo from "./Todo.astro";
 
 interface Props {
+  lang: Lang;
   data: SiteData;
 }
 
-const { data } = Astro.props;
+const { lang, data } = Astro.props;
 ---
 
 <footer class="foot">
   <div class="in foot-in">
     <span>{data.footer.copyright}</span>
-    <a href={ROUTES.legalNotice}>{data.footer.legalNoticeLabel}</a>
-    <a href={ROUTES.privacy}>{data.footer.privacyLabel}</a>
-    <span><Todo value={data.footer.invoicingNote} /></span>
+    <a href={ROUTES[lang].legalNotice}>{data.footer.legalNoticeLabel}</a>
+    <a href={ROUTES[lang].privacy}>{data.footer.privacyLabel}</a>
   </div>
 </footer>

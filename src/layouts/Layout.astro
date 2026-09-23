@@ -3,44 +3,55 @@ import "../styles/fonts.css";
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import { ROUTES, type PageKind } from "../lib/routes";
+import { ROUTES, otherLang, type Lang, type PageKind } from "../lib/routes";
 import { SITE_URL, LAUNCHED } from "../config/site.mjs";
 import type { SiteData } from "../lib/types";
 
 interface Props {
+  lang: Lang;
   page: PageKind;
   data: SiteData;
   meta: { title: string; description: string };
 }
 
-const { page, data, meta } = Astro.props;
-const canonicalUrl = new URL(ROUTES[page], SITE_URL).toString();
+const { lang, page, data, meta } = Astro.props;
+const other = otherLang(lang);
+const canonicalPath = ROUTES[lang][page];
+const canonicalUrl = new URL(canonicalPath, SITE_URL).toString();
+const enUrl = new URL(ROUTES.en[page], SITE_URL).toString();
+const deUrl = new URL(ROUTES.de[page], SITE_URL).toString();
+const ogLocale = lang === "en" ? "en_US" : "de_DE";
+const ogLocaleAlt = other === "en" ? "en_US" : "de_DE";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={data.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="de" href={deUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={data.nav.brand} />
     <meta property="og:title" content={meta.title} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {!LAUNCHED && <meta name="robots" content="noindex" />}
   </head>
   <body>
     <a class="skip-link" href="#main">{data.skipLink}</a>
-    <Nav page={page} data={data} />
+    <Nav lang={lang} page={page} data={data} />
     <main id="main">
       <slot />
     </main>
-    <Footer data={data} />
+    <Footer lang={lang} data={data} />
     <script>
       // Menu-bar hairline once the page scrolls under it (spec §1). Purely cosmetic:
       // the page renders and works fully with JS disabled.

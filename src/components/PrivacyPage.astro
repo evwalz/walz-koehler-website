@@ -2,17 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import Todo from "./Todo.astro";
 import { todoText } from "../lib/todo";
+import type { Lang } from "../lib/routes";
 import type { SiteData } from "../lib/types";
 
 interface Props {
+  lang: Lang;
   data: SiteData;
 }
 
-const { data } = Astro.props;
+const { lang, data } = Astro.props;
 const p = data.privacy;
 ---
 
-<Layout page="privacy" data={data} meta={data.meta.privacy}>
+<Layout lang={lang} page="privacy" data={data} meta={data.meta.privacy}>
   <div class="in sec legal">
     <h1>{p.heading}</h1>
     <p><mark class="pend">{todoText(p.checkNotice)}</mark></p>

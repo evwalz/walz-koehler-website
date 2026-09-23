@@ -6,4 +6,4 @@ const entry = await getEntry("site", "en");
 if (!entry) throw new Error("Missing content entry: en");
 ---
 
-<PrivacyPage data={entry.data} />
+<PrivacyPage lang="en" data={entry.data} />

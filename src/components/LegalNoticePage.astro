@@ -2,21 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import Todo from "./Todo.astro";
 import { todoText } from "../lib/todo";
+import type { Lang } from "../lib/routes";
 import type { SiteData } from "../lib/types";
 
 interface Props {
+  lang: Lang;
   data: SiteData;
 }
 
-const { data } = Astro.props;
+const { lang, data } = Astro.props;
 const n = data.legalNotice;
 ---
 
-<Layout page="legalNotice" data={data} meta={data.meta.legalNotice}>
+<Layout lang={lang} page="legalNotice" data={data} meta={data.meta.legalNotice}>
   <div class="in sec legal">
     <h1>{n.heading}</h1>
     <p><mark class="pend">{todoText(n.checkNotice)}</mark></p>
-    <section>
+    <section lang="de">
       <p>{n.ddgIntro}</p>
       <dl>
         {n.facts.map((fact) => (
@@ -27,9 +29,15 @@ const n = data.legalNotice;
         ))}
       </dl>
     </section>
-    <section>
-      <p>{n.responsibleIntro}</p>
-      <p><Todo value={n.responsibleValue} /></p>
+    <section lang="de">
+      <p><Todo value={n.arrangement} /></p>
+      <p>{n.dispute}</p>
     </section>
+    {n.englishBody && (
+      <section class="legal-en">
+        <h2>{n.englishHeading}</h2>
+        <p>{n.englishBody}</p>
+      </section>
+    )}
   </div>
 </Layout>
