@@ -35,7 +35,6 @@ const legalSection = z.object({
 });
 
 const siteSchema = z.object({
-  htmlLang: z.string(),
   meta: z.object({
     home: pageMeta,
     legalNotice: pageMeta,
@@ -50,10 +49,6 @@ const siteSchema = z.object({
       about: z.string(),
       contact: z.string(),
     }),
-    langGroupAriaLabel: z.string(),
-    langCurrentLabel: z.string(),
-    langOtherLabel: z.string(),
-    langOtherAriaLabel: z.string(),
   }),
   hero: z.object({
     eyebrow: z.string(),

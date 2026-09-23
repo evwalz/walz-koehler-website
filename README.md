@@ -1,7 +1,7 @@
 # Walz & Köhler — website
 
 One-page website for **Walz & Köhler**, Dr. Eva-Maria Walz and Gregor Köhler: AI and data-science projects,
-forecasting and computer vision. English and German.
+forecasting and computer vision. English only — the German side was dropped on 2026-09-23.
 
 Built with [Astro](https://astro.build), static output, no client framework. The build spec is
 `docs/SPEC.md`; the design it was built from is `docs/mockups/website-b3.html`; the accepted copy
@@ -23,10 +23,9 @@ npm run todo      # list every remaining TODO: placeholder, with file + key
 
 ## How to edit text
 
-Every visible string lives in **one file per language**: `src/content/en.yaml` and
-`src/content/de.yaml`. Both are validated against the same schema (`src/content.config.ts`) —
-if you rename or delete a key in one file without doing the same in the other, `npm run build`
-fails and names the missing key. Edit the value in place; no other file needs to change.
+Every visible string lives in **one file**: `src/content/en.yaml`, validated against the schema
+in `src/content.config.ts`. If you rename or delete a key the schema still expects, `npm run build`
+fails and names it. Edit the value in place; no other file needs to change.
 
 A value that starts with `TODO:` renders on the page as a highlighted placeholder showing the
 text after the prefix (e.g. `TODO: hosting provider and server location`). Replace the whole
@@ -35,11 +34,10 @@ every placeholder left, with the file and the exact key to edit.
 
 ## How to add or remove a project
 
-Selected work is the `work.items` list in each content file. Copy one entry (`eyebrow`, `title`,
-`text`, `link`, `linkLabel`, `pending`) and fill it in for the new project — add it in **both**
-`en.yaml` and `de.yaml`. Set `link: null` and `pending: true` for a project without a public
-source yet (it renders with a dashed border and no source link, like the current client-project
-placeholder). To remove a project, delete its entry from both files.
+Selected work is the `work.items` list in `en.yaml`. Copy one entry (`eyebrow`, `title`, `text`,
+`link`, `linkLabel`, `pending`) and fill it in for the new project. Set `link: null` and
+`pending: true` for a project without a public source yet (it renders with a dashed border and no
+source link). To remove a project, delete its entry.
 
 ## How to swap a photo
 

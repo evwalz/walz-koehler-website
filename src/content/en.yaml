@@ -1,4 +1,3 @@
-htmlLang: "en"
 
 meta:
   home:
@@ -20,10 +19,6 @@ nav:
     work: "Work"
     about: "About"
     contact: "Contact"
-  langGroupAriaLabel: "Language"
-  langCurrentLabel: "EN"
-  langOtherLabel: "DE"
-  langOtherAriaLabel: "Switch to German"
 
 hero:
   eyebrow: "Statistics · Machine learning"

@@ -1,17 +1,14 @@
 ---
-import { ROUTES, otherLang, type Lang, type PageKind } from "../lib/routes";
+import { ROUTES, type PageKind } from "../lib/routes";
 import type { SiteData } from "../lib/types";
 
 interface Props {
-  lang: Lang;
   page: PageKind;
   data: SiteData;
 }
 
-const { lang, page, data } = Astro.props;
-const homeHref = ROUTES[lang].home;
-const other = otherLang(lang);
-const otherHref = ROUTES[other][page];
+const { page, data } = Astro.props;
+const homeHref = ROUTES.home;
 const brandHref = page === "home" ? "#top" : homeHref;
 
 function sectionHref(id: string): string {
@@ -22,16 +19,10 @@ function sectionHref(id: string): string {
 <header class="nav">
   <div class="in nav-in">
     <a class="brand" href={brandHref}>{data.nav.brand}</a>
-    <div class="nav-r">
-      <nav class="links" aria-label={data.nav.ariaLabel}>
-        <a href={sectionHref("work")}>{data.nav.links.work}</a>
-        <a href={sectionHref("about")}>{data.nav.links.about}</a>
-        <a href={sectionHref("contact")}>{data.nav.links.contact}</a>
-      </nav>
-      <div class="lang" role="group" aria-label={data.nav.langGroupAriaLabel}>
-        <span aria-current="page">{data.nav.langCurrentLabel}</span>
-        <a href={otherHref} aria-label={data.nav.langOtherAriaLabel}>{data.nav.langOtherLabel}</a>
-      </div>
-    </div>
+    <nav class="links" aria-label={data.nav.ariaLabel}>
+      <a href={sectionHref("work")}>{data.nav.links.work}</a>
+      <a href={sectionHref("about")}>{data.nav.links.about}</a>
+      <a href={sectionHref("contact")}>{data.nav.links.contact}</a>
+    </nav>
   </div>
 </header>
