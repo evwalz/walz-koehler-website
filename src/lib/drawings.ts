@@ -332,18 +332,23 @@ function fanInset(c: DrawingColors, gid: string, attrs: string): string {
     .replace("<svg ", "<svg " + attrs + " ");
 }
 
+/* The strip runs on the same grid as the columns above it: three tracks of (1200 - 2*34)/3
+   with 34 between them. Each beat is centred on its own track, by the box its ink actually
+   occupies — which for the fan is not its svg box, since that carries a margin for the axis
+   it draws itself. */
+const COL_W = (1200 - 2 * 34) / 3;
+const colMid = (i: number) => i * (COL_W + 34) + COL_W / 2;
+const FAN_BOX = { w: 450, inkL: 20, inkR: 433 };     // ink inside the 450-wide inset
+
 /** Wide screens: the three beats as one drawing under the three columns. */
 export function svcStripSVG(c: DrawingColors): string {
-  /* The columns are (1200 - 2*34) / 3 = 377.3 wide, starting at 0, 411.3 and 822.7. The fan
-     holds the middle; the block of marks and the ring stand at the strip's own left and right
-     edges, mirrored about its centre, which puts the two widest empty spans either side of
-     the chart. */
-  const right = 1200 - DATA_KINDS.w / 2;
+  const mid = 96;
   return (
     '<svg viewBox="0 0 1200 200" width="100%" height="200" aria-hidden="true" style="display:block">' +
-    G(dataKindsSVG(c), 0, 96 - DATA_KINDS.h / 2, 1) +
-    fanInset(c, "fan-svc-wide", 'x="389" y="10" width="450" height="172.8"') +
-    loopSVG(c, right, 96, 54, 5) +
+    G(dataKindsSVG(c), colMid(0) - DATA_KINDS.w / 2, mid - DATA_KINDS.h / 2, 1) +
+    fanInset(c, "fan-svc-wide", 'x="' + f1(colMid(1) - (FAN_BOX.inkL + FAN_BOX.inkR) / 2) +
+      '" y="10" width="' + FAN_BOX.w + '" height="172.8"') +
+    loopSVG(c, colMid(2), mid, 54, 5) +
     "</svg>"
   );
 }
