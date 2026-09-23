@@ -10,8 +10,7 @@ const workItem = z.object({
   eyebrow: z.string(),
   title: z.string(),
   text: z.string(),
-  link: z.string().url().nullable(),
-  linkLabel: z.string(),
+  sources: z.array(z.object({ href: z.string().url(), label: z.string() })),
   pending: z.boolean(),
 });
 

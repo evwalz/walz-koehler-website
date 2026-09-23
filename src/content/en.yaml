@@ -52,38 +52,42 @@ work:
     - eyebrow: "Forecasting · 2024"
       title: "AI forecasts of rainfall for northern tropical Africa"
       text: "Beat the ECMWF physics ensemble on 24-hour rainfall."
-      link: "https://arxiv.org/abs/2401.03746"
-      linkLabel: "Source"
+      sources:
+        - href: "https://arxiv.org/abs/2401.03746"
+          label: "Source"
       pending: false
     - eyebrow: "Evaluation"
-      title: "Comparing models fairly"
-      text: "A benchmark is only as good as its setup. The right metrics and a careful comparison are what let you say which model is best — and why."
-      link: null
-      linkLabel: "Source"
+      title: "Choosing the right score for the task"
+      text: "A score says more when it fits the goal — and when you know how to read it."
+      sources:
+        - href: "https://arxiv.org/abs/2311.14122"
+          label: "CRPS decomposition"
+        - href: "https://arxiv.org/abs/2510.17994"
+          label: "Rank correlation"
       pending: false
-    - eyebrow: "Uncertainty · SIAM Review 2024"
-      title: "More than a single number"
-      text: "A point prediction hides how sure the model is. A range says how much to rely on it — and EasyUQ produces one from any model, without tuning."
-      link: "https://arxiv.org/abs/2212.08376"
-      linkLabel: "Source"
+    - eyebrow: "Uncertainty"
+      title: "How sure the model is"
+      text: "A prediction is worth more when it says how certain it is."
+      sources:
+        - href: "https://arxiv.org/abs/2212.08376"
+          label: "EasyUQ"
       pending: false
     - eyebrow: "Computer vision · DKFZ"
       title: "nnU-Net: segmentation that configures itself"
       text: "Gregor co-authored it; now a standard baseline in medical imaging."
-      link: "https://arxiv.org/abs/1809.10486"
-      linkLabel: "Source"
+      sources:
+        - href: "https://arxiv.org/abs/1809.10486"
+          label: "Source"
       pending: false
     - eyebrow: "Image search · client project"
       title: "The right part, found from a photo"
       text: "Gregor matched photos against the supplier's parts catalogue: a manual lookup became an automatic one."
-      link: null
-      linkLabel: "Source"
+      sources: []
       pending: false
     - eyebrow: "Client project"
       title: "TODO: Gregor — second client project"
       text: "TODO: the problem, what he built, what changed for the client"
-      link: null
-      linkLabel: "Source"
+      sources: []
       pending: true
 
 about:

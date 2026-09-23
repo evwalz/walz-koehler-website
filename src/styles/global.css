@@ -286,9 +286,14 @@ html.scrolled .nav {
   flex-direction: column;
   gap: 10px;
 }
-.work .src {
+.srcs {
   margin-top: auto;
   padding-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+.work .src {
   font: 500 13px/1 var(--mono);
   color: var(--accent);
   text-decoration: none;
