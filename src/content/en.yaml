@@ -60,17 +60,20 @@ work:
       title: "Choosing the right score for the task"
       text: "A score says more when it fits the goal — and when you know how to read it."
       sources:
+        # Both read "Source" on screen; the aria label keeps them apart for a screen reader.
         - href: "https://arxiv.org/abs/2311.14122"
-          label: "CRPS decomposition"
+          label: "Source"
+          aria: "Source: paper on decompositions of the CRPS"
         - href: "https://arxiv.org/abs/2510.17994"
-          label: "Rank correlation"
+          label: "Source"
+          aria: "Source: paper on rank correlation and area under the curve"
       pending: false
     - eyebrow: "Uncertainty"
-      title: "How sure the model is"
-      text: "A prediction is worth more when it says how certain it is."
+      title: "How certain a prediction is"
+      text: "Not just the answer — how much you can rely on it."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
-          label: "EasyUQ"
+          label: "Source"
       pending: false
     - eyebrow: "Computer vision · DKFZ"
       title: "nnU-Net: segmentation that configures itself"
