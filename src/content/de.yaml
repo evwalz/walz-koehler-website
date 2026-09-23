@@ -42,6 +42,24 @@ services:
     - title: "Von der Idee in den Betrieb"
       text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
 
+caseStudy:
+  eyebrow: "Fallstudie · Hauer GmbH"
+  heading: "Das richtige Teil per Foto finden."
+  lede: "Ein Techniker steht am Aufzug, das defekte Teil in der Hand. Der Katalog führt zehntausende Positionen, die Teilenummer ist abgerieben, und wie das Ding heißt, weiß gerade niemand. Fotografieren lässt es sich immer – also ist das Foto die Suchanfrage."
+  steps:
+    - title: "Das Foto ist die Anfrage"
+      text: "Ein Bild aus der App, aufgenommen dort, wo das Teil sitzt: verschmutzt, halb verdeckt, im Winkel, den der Schacht zulässt."
+    - title: "Der Katalog wird zu Vektoren"
+      text: "Jedes Katalogbild wird einmal eingebettet, mit DINOv3, und in einer Vektordatenbank abgelegt. Das Anfragefoto ist damit ein Punkt, die nächstgelegenen Punkte sind die Kandidaten. Teilenummern und Beschreibungen werden in derselben Anfrage durchsucht, beide Ranglisten zu einer verschmolzen."
+    - title: "Eine Rangliste – und eine API für Agenten"
+      text: "Der Techniker bekommt die Kandidaten in Reihenfolge, jeweils mit Katalogeintrag. Dieselbe Suche steht Agenten über eine API offen: Sie labeln eingehende Nutzerfotos vor, ein Mensch prüft nach – aus dem laufenden Betrieb wird so der nächste Testdatensatz."
+  facts:
+    - "DINOv3-Embeddings"
+    - "Bild + Text, rangfusioniert"
+    - "Produktiv auf AWS"
+    - "Offen für Agenten"
+  note: "Jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen – Top-1, Top-10, Top-50. Das macht aus „fühlt sich besser an“ eine Entscheidung: Ein Vorverarbeitungsschritt hob die Trefferquote messbar und blieb, ein zweiter, sehr plausibler, flog wieder raus, als die Zahlen unverändert zurückkamen."
+
 work:
   heading: "Ausgewählte Arbeiten"
   items:
@@ -59,16 +77,11 @@ work:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Quelle"
       pending: false
-    - eyebrow: "Bildsuche · Hauer GmbH"
-      title: "Das richtige Teil per Foto finden"
-      text: "Fotos werden mit dem Ersatzteilkatalog abgeglichen: aus einer manuellen Suche wurde eine automatische."
+    - eyebrow: "Dokumentenverständnis · Hauer GmbH"
+      title: "Bestellungen dort gelesen, wo sie ankommen"
+      text: "Bestell-PDFs werden zu validiertem, angereichertem JSON mit Konfidenz je Feld, abgeglichen mit Kunden- und Ersatzteilkatalog und bereit für das ERP. Das Modell läuft auf der Maschine im Haus – kein Dokument verlässt sie."
       sources: []
       pending: false
-    - eyebrow: "Kundenprojekt"
-      title: "TODO: zweites Kundenprojekt"
-      text: "TODO: Gregor – das Problem, was gebaut wurde, was sich für den Kunden geändert hat"
-      sources: []
-      pending: true
     - eyebrow: "Evaluation"
       title: "Die passende Metrik für die Aufgabe wählen"
       text: "Eine Metrik sagt mehr, wenn sie zum Ziel passt – und wenn man weiß, wie sie zu lesen ist."
@@ -76,12 +89,27 @@ work:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Quelle"
       pending: false
+    - eyebrow: "Edge-ML · Beratung"
+      title: "Arten erkennen auf einem solarbetriebenen Sensor"
+      text: "Beratung eines Startups für Biodiversitätsmonitoring zum Modell in seinem Feldgerät: ein kleines Netz, quantisiert auf einen Mikrocontroller, angelernt von einem sehr viel größeren und mit unbeschrifteten Aufnahmen weitergetrieben."
+      sources: []
+      pending: false
     - eyebrow: "Unsicherheit"
       title: "Wie sicher eine Vorhersage ist"
       text: "Nicht nur die Antwort – sondern auch, wie sehr Sie sich darauf verlassen können."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
           label: "Quelle"
+      pending: false
+    - eyebrow: "Simulation · eigenes Labor"
+      title: "Nutzerforschung, bevor es Nutzer gibt"
+      text: "Eine Population aus einer bekannten Merkmalsverteilung ziehen und ein Modell so antworten lassen, wie es diese Menschen täten. Rückmeldung zu Fragebogen oder Produkt, solange beides noch entsteht – geprüft an Verteilungen, die wir nachrechnen können."
+      sources: []
+      pending: false
+    - eyebrow: "Forschung · laufend"
+      title: "Lernen mit wenigen Labels"
+      text: "Selbstüberwachtes Vortrainieren und halbüberwachtes Lernen, die den Bedarf an annotierten Aufnahmen senken – ehrlich gemessen gegen eine gut eingestellte nnU-Net-Baseline."
+      sources: []
       pending: false
 
 about:
@@ -94,8 +122,8 @@ about:
       photo: "eva-walz.jpg"
       photoAlt: "Porträt von Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
-      role: "Deep Learning & Modelle"
-      bio: "Deep Learning seit 2015, über alle Modellfamilien hinweg. Acht Jahre am DKFZ, Mitautor von nnU-Net."
+      role: "Deep Learning, Vision & Retrieval"
+      bio: "Deep Learning seit 2015, über alle Modellfamilien hinweg. Acht Jahre am DKFZ in der medizinischen Bildsegmentierung, Mitautor von nnU-Net. Heute baut er Systeme, die laufen: visuelle Suche über Industriekataloge, Dokumentenverständnis auf lokaler Hardware und Modelle, die klein genug für einen Sensor im Feld sind."
       photo: "gregor-koehler.jpg"
       photoAlt: "Porträt von Gregor Köhler"
 

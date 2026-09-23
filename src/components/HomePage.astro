@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "./Hero.astro";
 import Services from "./Services.astro";
+import CaseStudy from "./CaseStudy.astro";
 import Work from "./Work.astro";
 import About from "./About.astro";
 import Contact from "./Contact.astro";
@@ -19,6 +20,7 @@ const { lang, data } = Astro.props;
 <Layout lang={lang} page="home" data={data} meta={data.meta.home}>
   <Hero data={data} />
   <Services data={data} />
+  <CaseStudy data={data} />
   <Work data={data} />
   <About data={data} />
   <Contact data={data} />

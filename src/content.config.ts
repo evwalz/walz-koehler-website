@@ -14,6 +14,15 @@ const workItem = z.object({
   pending: z.boolean(),
 });
 
+const caseStudy = z.object({
+  eyebrow: z.string(),
+  heading: z.string(),
+  lede: z.string(),
+  steps: z.array(z.object({ title: z.string(), text: z.string() })).length(3),
+  facts: z.array(z.string()).min(2).max(5),
+  note: z.string(),
+});
+
 const person = z.object({
   name: z.string(),
   role: z.string(),
@@ -65,9 +74,10 @@ const siteSchema = z.object({
     lead: z.string(),
     items: z.array(z.object({ title: z.string(), text: z.string() })).length(3),
   }),
+  caseStudy: caseStudy.optional(),
   work: z.object({
     heading: z.string(),
-    items: z.array(workItem).min(4).max(6),
+    items: z.array(workItem).min(4).max(8),
   }),
   about: z.object({
     heading: z.string(),
