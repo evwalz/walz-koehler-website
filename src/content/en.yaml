@@ -2,8 +2,8 @@ htmlLang: "en"
 
 meta:
   home:
-    title: "Walz & Köhler — AI & data science, forecasting, computer vision"
-    description: "Walz & Köhler build custom AI models for companies: probabilistic forecasts and computer vision, measured against what you use today before anything goes live."
+    title: "Walz & Köhler — statistics and machine learning for companies"
+    description: "Two researchers building models that measurably improve how you work. Your problem and your data decide the approach — statistical, deep learning, or both."
   legalNotice:
     title: "Legal notice — Walz & Köhler"
     description: "Legal notice (Impressum) for the Walz & Köhler website."
@@ -17,7 +17,6 @@ nav:
   brand: "Walz & Köhler"
   ariaLabel: "Main"
   links:
-    services: "Services"
     work: "Work"
     about: "About"
     contact: "Contact"
@@ -27,28 +26,25 @@ nav:
   langOtherAriaLabel: "Switch to German"
 
 hero:
-  eyebrow: "AI & data science · forecasting · computer vision"
-  heading: "AI models that work on your data — and proof that they do."
-  lede: "We are two machine-learning researchers who build custom models for companies: forecasts you can plan with, and vision systems that find what matters in your images. Before anything goes live, we measure it against what you use today."
+  eyebrow: "Statistics · Machine learning"
+  heading: "Models that measurably improve how you work."
+  lede: "Your problem and your data decide the approach — statistical, deep learning, or both."
   ctaPrimary: "Write to us"
-  ctaSecondary: "See our work"
 
 services:
   heading: "What we do"
   items:
-    - title: "Forecasting"
-      text: "Demand, energy, sales — anything that moves with time or weather. Probabilistic forecasts that say how likely each outcome is, not just one number, so you can plan for the whole range."
-    - title: "Image recognition & custom models"
-      text: "Vision models that detect, classify and segment, for inspection, documents or medical images. Language, multimodal and domain-specific models when the problem calls for them."
-    - title: "AI strategy & feasibility"
-      text: "Which of your ideas are worth building? We evaluate use cases, feasibility, return and how a model fits your systems — before you invest."
-    - title: "Implementation & enablement"
-      text: "End to end: data pipelines, training, evaluation, deployment and MLOps. And we help your team adopt AI safely, so it keeps working after we leave."
+    - title: "What your data can do"
+      text: "We check whether a model pays off — before you invest."
+    - title: "Models for your problem"
+      text: "Statistical or deep learning, on the data you have."
+    - title: "From idea to production"
+      text: "Pipelines, deployment — and a team that can run it."
 
 range:
   heading: "A range, not a single number."
-  body: "Every forecast is uncertain. We show how likely each outcome is — and the further ahead we look, the wider the range gets. You plan with the whole picture, not with false precision."
-  caption: "Example data, for illustration."
+  body: "The further ahead we look, the wider it gets. You plan with the whole picture."
+  caption: "Example data."
   labels:
     observed: "observed"
     today: "today"
@@ -57,64 +53,53 @@ range:
 
 principle:
   heading: "Measured, not promised."
-  body: "Many AI projects are judged by a demo. We judge ours by a comparison: the new model against your current method, on your data, with a fair score agreed up front. If it does not beat what you have, we tell you — before you invest in running it. Rigorous evaluation is not an add-on for us. It is Eva’s research field."
+  body: "Your data, your current method, a fair score agreed up front. If the model does not beat it, we tell you."
 
 work:
   heading: "Selected work"
   items:
-    - eyebrow: "Forecasting · joint project · 2024"
+    - eyebrow: "Forecasting · 2024"
       title: "Rainfall forecasts for northern tropical Africa"
-      text: "With colleagues at KIT and HITS, we combined a deep-learning image model with a statistical method for uncertainty to forecast 24-hour rainfall. It beat the physics-based ensemble of the European Centre for Medium-Range Weather Forecasts (ECMWF), both on whether it rains and on how much."
+      text: "Beat the ECMWF physics ensemble on 24-hour rainfall."
       link: "https://arxiv.org/abs/2401.03746"
       linkLabel: "Source"
       pending: false
-    - eyebrow: "Computer vision · Gregor · DKFZ"
-      title: "nnU-Net: medical image segmentation that configures itself"
-      text: "Gregor is a co-author of the original nnU-Net paper: a framework that adapts itself to a new segmentation task without manual tuning, and has become a widely used baseline in medical imaging."
+    - eyebrow: "Computer vision · DKFZ"
+      title: "nnU-Net: segmentation that configures itself"
+      text: "Gregor co-authored it; now a standard baseline in medical imaging."
       link: "https://arxiv.org/abs/1809.10486"
       linkLabel: "Source"
       pending: false
-    - eyebrow: "Evaluation · Eva · 2026"
-      title: "Fair comparisons of AI and physics-based weather models"
-      text: "Eva co-developed the potential CRPS, a measure that lets AI weather models and classical ones be compared on equal terms. Published in Artificial Intelligence for the Earth Systems."
+    - eyebrow: "Evaluation · 2026"
+      title: "Comparing AI and physics weather models fairly"
+      text: "Eva co-developed the potential CRPS."
       link: "https://journals.ametsoc.org/view/journals/aies/5/1/AIES-D-25-0054.1.xml"
       linkLabel: "Source"
       pending: false
-    - eyebrow: "Client project · since 2025"
-      title: "TODO: Project title"
-      text: "TODO: Two or three sentences: the client's problem, what we built, and the measured result."
+    - eyebrow: "Image search · client project"
+      title: "The right tool, found from a photo"
+      text: "Gregor matched photos against the company catalogue: a manual lookup became an automatic one."
       link: null
       linkLabel: "Source"
-      pending: true
-
-howWeWork:
-  heading: "How we work"
-  steps:
-    - title: "You write to us"
-      text: "Tell us what you want to predict or recognise, and what data you have. A few sentences are enough."
-    - title: "We check feasibility"
-      text: "We look at the problem and the data and tell you honestly whether AI will pay off, and what a fair test would look like."
-    - title: "We build, measure, hand over"
-      text: "The model, its comparison against your current method, deployment, and a team that can run it."
+      pending: false
 
 about:
   heading: "Who we are"
   photoPlaceholder: "TODO: photo"
   people:
     - name: "Dr. Eva-Maria Walz"
-      role: "Forecasting & evaluation"
-      bio: "Statistician working on probabilistic forecasting and on how to tell whether a forecast is actually good. Research at the Karlsruhe Institute of Technology (KIT) and the Heidelberg Institute for Theoretical Studies (HITS), with publications on weather prediction, forecast evaluation and machine learning. She also builds and ships production software."
+      role: "Statistics & forecasting"
+      bio: "Statistician at KIT and HITS, working on probabilistic forecasts and how to tell whether one is good."
       photo: "eva-walz.jpg"
       photoAlt: "Portrait of Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
-      role: "Computer vision & custom AI models"
-      bio: "Machine-learning practitioner since 2015. Eight years of deep-learning research at the German Cancer Research Center (DKFZ), co-author of nnU-Net, and independent AI consultant since 2025. Co-organizes the Freiburg.AI meetup and co-organized heidelberg.ai (3,000+ members)."
+      role: "Deep learning & models"
+      bio: "Deep learning since 2015, across model families. Eight years at the DKFZ, co-author of nnU-Net."
       photo: "gregor-koehler.jpg"
       photoAlt: "Portrait of Gregor Köhler"
 
 contact:
-  heading: "Tell us what you want to predict or recognise."
-  body: "Write a few lines about the problem and your data. We reply personally."
+  heading: "Tell us what you want your data to do."
   email: "TODO: hello@[domain — later]"
   cta: "Write to us"
 

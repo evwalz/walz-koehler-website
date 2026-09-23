@@ -2,8 +2,8 @@ htmlLang: "de"
 
 meta:
   home:
-    title: "Walz & Köhler — KI & Data Science, Prognosen, Bildverarbeitung"
-    description: "Walz & Köhler entwickeln individuelle KI-Modelle für Unternehmen: probabilistische Prognosen und Bilderkennung, gemessen an dem, was Sie heute nutzen, bevor etwas live geht."
+    title: "Walz & Köhler — Statistik und Machine Learning für Unternehmen"
+    description: "Zwei Forschende bauen Modelle, die Ihre Arbeit messbar verbessern. Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
   legalNotice:
     title: "Impressum — Walz & Köhler"
     description: "Impressum für die Website von Walz & Köhler."
@@ -17,38 +17,34 @@ nav:
   brand: "Walz & Köhler"
   ariaLabel: "Hauptmenü"
   links:
-    services: "Leistungen"
     work: "Arbeiten"
     about: "Über uns"
     contact: "Kontakt"
   langGroupAriaLabel: "Sprache"
   langCurrentLabel: "DE"
   langOtherLabel: "EN"
-  langOtherAriaLabel: "Zu Englisch wechseln"
+  langOtherAriaLabel: "Zur englischen Fassung wechseln"
 
 hero:
-  eyebrow: "KI & Data Science · Prognosen · Bildverarbeitung"
-  heading: "KI-Modelle, die mit Ihren Daten funktionieren – und der Nachweis, dass sie es tun."
-  lede: "Wir sind zwei Machine-Learning-Forschende und entwickeln individuelle Modelle für Unternehmen: Prognosen, mit denen Sie planen können, und Bilderkennung, die in Ihren Bildern findet, worauf es ankommt. Bevor etwas live geht, messen wir es an dem, was Sie heute schon nutzen."
+  eyebrow: "Statistik · Machine Learning"
+  heading: "Modelle, die Ihre Arbeit messbar verbessern."
+  lede: "Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
   ctaPrimary: "Schreiben Sie uns"
-  ctaSecondary: "Unsere Arbeiten ansehen"
 
 services:
   heading: "Was wir tun"
   items:
-    - title: "Prognosen"
-      text: "Nachfrage, Energie, Absatz – alles, was sich mit der Zeit oder dem Wetter bewegt. Probabilistische Prognosen, die sagen, wie wahrscheinlich jedes Ergebnis ist, statt nur eine Zahl zu nennen – damit Sie für die ganze Bandbreite planen können."
-    - title: "Bilderkennung & individuelle Modelle"
-      text: "Bildmodelle, die erkennen, klassifizieren und segmentieren – für Qualitätsprüfung, Dokumente oder medizinische Bilder. Sprach-, multimodale und domänenspezifische Modelle, wenn die Aufgabe es verlangt."
-    - title: "KI-Strategie & Machbarkeit"
-      text: "Welche Ihrer Ideen lohnen sich? Wir bewerten Anwendungsfälle, Machbarkeit, Nutzen und die Einbindung in Ihre Systeme – bevor Sie investieren."
-    - title: "Umsetzung & Befähigung"
-      text: "Von Anfang bis Ende: Datenpipelines, Training, Evaluation, Deployment und MLOps. Und wir helfen Ihrem Team, KI sicher einzusetzen – damit alles auch nach uns weiterläuft."
+    - title: "Was Ihre Daten können"
+      text: "Wir prüfen, ob sich ein Modell lohnt – bevor Sie investieren."
+    - title: "Modelle für Ihre Aufgabe"
+      text: "Statistisch oder Deep Learning – auf den Daten, die Sie haben."
+    - title: "Von der Idee in den Betrieb"
+      text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
 
 range:
-  heading: "Eine Bandbreite statt einer einzigen Zahl."
-  body: "Jede Prognose ist unsicher. Wir zeigen, wie wahrscheinlich jedes Ergebnis ist – und je weiter wir vorausschauen, desto breiter wird die Spanne. Sie planen mit dem ganzen Bild statt mit falscher Genauigkeit."
-  caption: "Beispieldaten zur Veranschaulichung."
+  heading: "Eine Bandbreite statt einer Zahl."
+  body: "Je weiter voraus, desto breiter. Sie planen mit dem ganzen Bild."
+  caption: "Beispieldaten."
   labels:
     observed: "beobachtet"
     today: "heute"
@@ -57,64 +53,53 @@ range:
 
 principle:
   heading: "Gemessen, nicht versprochen."
-  body: "Viele KI-Projekte werden an einer Demo gemessen. Wir messen unsere an einem Vergleich: das neue Modell gegen Ihre bisherige Methode, auf Ihren Daten, mit einem fairen Maßstab, den wir vorher festlegen. Schlägt es Ihre Lösung nicht, sagen wir es Ihnen – bevor Sie in den Betrieb investieren. Saubere Evaluation ist für uns kein Zusatz. Sie ist Evas Forschungsgebiet."
+  body: "Ihre Daten, Ihre bisherige Methode, ein vorher vereinbarter Maßstab. Schlägt das Modell sie nicht, sagen wir es Ihnen."
 
 work:
   heading: "Ausgewählte Arbeiten"
   items:
-    - eyebrow: "Prognosen · gemeinsames Projekt · 2024"
+    - eyebrow: "Prognosen · 2024"
       title: "Niederschlagsprognosen für das nördliche tropische Afrika"
-      text: "Mit Kolleg:innen am KIT und am HITS haben wir ein Deep-Learning-Bildmodell mit einem statistischen Verfahren für Unsicherheit kombiniert, um den Niederschlag der nächsten 24 Stunden vorherzusagen. Es schlug das physikalische Ensemble des Europäischen Zentrums für mittelfristige Wettervorhersage (EZMW) – bei der Frage, ob es regnet, und bei der Frage, wie viel."
+      text: "Schlug das physikalische EZMW-Ensemble bei 24-Stunden-Niederschlag."
       link: "https://arxiv.org/abs/2401.03746"
       linkLabel: "Quelle"
       pending: false
-    - eyebrow: "Bildverarbeitung · Gregor · DKFZ"
-      title: "nnU-Net: medizinische Bildsegmentierung, die sich selbst konfiguriert"
-      text: "Gregor ist Mitautor des ursprünglichen nnU-Net-Papers: ein Framework, das sich ohne manuelles Tuning an neue Segmentierungsaufgaben anpasst und in der medizinischen Bildverarbeitung zu einer weit verbreiteten Referenz geworden ist."
+    - eyebrow: "Bildverarbeitung · DKFZ"
+      title: "nnU-Net: Segmentierung, die sich selbst konfiguriert"
+      text: "Gregor ist Mitautor; heute eine Referenz in der medizinischen Bildverarbeitung."
       link: "https://arxiv.org/abs/1809.10486"
       linkLabel: "Quelle"
       pending: false
-    - eyebrow: "Evaluation · Eva · 2026"
-      title: "Faire Vergleiche von KI- und physikalischen Wettermodellen"
-      text: "Eva hat den Potential CRPS mitentwickelt – ein Maß, mit dem sich KI-Wettermodelle und klassische Modelle unter gleichen Bedingungen vergleichen lassen. Veröffentlicht in Artificial Intelligence for the Earth Systems."
+    - eyebrow: "Evaluation · 2026"
+      title: "KI- und physikalische Wettermodelle fair vergleichen"
+      text: "Eva hat den Potential CRPS mitentwickelt."
       link: "https://journals.ametsoc.org/view/journals/aies/5/1/AIES-D-25-0054.1.xml"
       linkLabel: "Quelle"
       pending: false
-    - eyebrow: "Kundenprojekt · seit 2025"
-      title: "TODO: Projekttitel"
-      text: "TODO: Zwei, drei Sätze: das Problem des Kunden, was wir gebaut haben, und das gemessene Ergebnis."
+    - eyebrow: "Bildsuche · Kundenprojekt"
+      title: "Das richtige Werkzeug per Foto finden"
+      text: "Gregor gleicht Fotos mit dem Katalog des Unternehmens ab: aus einer manuellen Suche wurde eine automatische."
       link: null
       linkLabel: "Quelle"
-      pending: true
-
-howWeWork:
-  heading: "So arbeiten wir"
-  steps:
-    - title: "Sie schreiben uns"
-      text: "Beschreiben Sie, was Sie vorhersagen oder erkennen möchten und welche Daten Sie haben. Ein paar Sätze reichen."
-    - title: "Wir prüfen die Machbarkeit"
-      text: "Wir sehen uns Aufgabe und Daten an und sagen Ihnen ehrlich, ob sich KI lohnt – und wie ein fairer Test aussähe."
-    - title: "Wir bauen, messen, übergeben"
-      text: "Das Modell, sein Vergleich mit Ihrer bisherigen Methode, die Inbetriebnahme – und ein Team, das es weiterführen kann."
+      pending: false
 
 about:
   heading: "Wer wir sind"
   photoPlaceholder: "TODO: Foto"
   people:
     - name: "Dr. Eva-Maria Walz"
-      role: "Prognosen & Evaluation"
-      bio: "Statistikerin mit Schwerpunkt auf probabilistischen Prognosen – und auf der Frage, woran man erkennt, ob eine Prognose wirklich gut ist. Forschung am Karlsruher Institut für Technologie (KIT) und am Heidelberger Institut für Theoretische Studien (HITS), mit Veröffentlichungen zu Wettervorhersage, Prognosebewertung und maschinellem Lernen. Sie entwickelt außerdem Software bis in den produktiven Betrieb."
+      role: "Statistik & Prognosen"
+      bio: "Statistikerin am KIT und am HITS – probabilistische Prognosen und ihre Bewertung."
       photo: "eva-walz.jpg"
       photoAlt: "Porträt von Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
-      role: "Bildverarbeitung & individuelle KI-Modelle"
-      bio: "Seit 2015 im Machine Learning. Acht Jahre Deep-Learning-Forschung am Deutschen Krebsforschungszentrum (DKFZ), Mitautor von nnU-Net und seit 2025 selbstständiger KI-Berater. Mitorganisator des Freiburg.AI-Meetups und zuvor von heidelberg.ai (über 3.000 Mitglieder)."
+      role: "Deep Learning & Modelle"
+      bio: "Deep Learning seit 2015, über alle Modellfamilien hinweg. Acht Jahre am DKFZ, Mitautor von nnU-Net."
       photo: "gregor-koehler.jpg"
       photoAlt: "Porträt von Gregor Köhler"
 
 contact:
-  heading: "Erzählen Sie uns, was Sie vorhersagen oder erkennen möchten."
-  body: "Schreiben Sie ein paar Zeilen zu Aufgabe und Daten. Wir antworten persönlich."
+  heading: "Erzählen Sie uns, was Ihre Daten leisten sollen."
   email: "TODO: hallo@[Domain – später]"
   cta: "Schreiben Sie uns"
 

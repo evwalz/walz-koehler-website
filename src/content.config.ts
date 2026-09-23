@@ -46,7 +46,6 @@ const siteSchema = z.object({
     brand: z.string(),
     ariaLabel: z.string(),
     links: z.object({
-      services: z.string(),
       work: z.string(),
       about: z.string(),
       contact: z.string(),
@@ -61,11 +60,10 @@ const siteSchema = z.object({
     heading: z.string(),
     lede: z.string(),
     ctaPrimary: z.string(),
-    ctaSecondary: z.string(),
   }),
   services: z.object({
     heading: z.string(),
-    items: z.array(z.object({ title: z.string(), text: z.string() })).length(4),
+    items: z.array(z.object({ title: z.string(), text: z.string() })).length(3),
   }),
   range: z.object({
     heading: z.string(),
@@ -86,10 +84,6 @@ const siteSchema = z.object({
     heading: z.string(),
     items: z.array(workItem).length(4),
   }),
-  howWeWork: z.object({
-    heading: z.string(),
-    steps: z.array(z.object({ title: z.string(), text: z.string() })).length(3),
-  }),
   about: z.object({
     heading: z.string(),
     photoPlaceholder: z.string(),
@@ -97,7 +91,6 @@ const siteSchema = z.object({
   }),
   contact: z.object({
     heading: z.string(),
-    body: z.string(),
     email: z.string(),
     cta: z.string(),
   }),

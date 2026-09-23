@@ -5,7 +5,6 @@ import Services from "./Services.astro";
 import Range from "./Range.astro";
 import Principle from "./Principle.astro";
 import Work from "./Work.astro";
-import HowWeWork from "./HowWeWork.astro";
 import About from "./About.astro";
 import Contact from "./Contact.astro";
 import type { Lang } from "../lib/routes";
@@ -25,7 +24,6 @@ const { lang, data } = Astro.props;
   <Range lang={lang} data={data} />
   <Principle data={data} />
   <Work data={data} />
-  <HowWeWork data={data} />
   <About data={data} />
   <Contact data={data} />
 </Layout>
