@@ -256,40 +256,24 @@ html.scrolled .nav {
 .range h2 {
   margin-bottom: 16px;
 }
-.fig {
-  padding-bottom: 14px;
-}
 .fig svg {
   display: block;
   width: 100%;
   height: auto;
 }
-.cap {
-  font: 12px/1.45 var(--mono);
-  color: var(--muted);
-  margin-top: 8px;
-}
 
-.sec-band {
-  padding-block: 8px;
+/* The lead sits tight under the heading: it frames the three cards below it. */
+.h-tight {
+  margin-bottom: 12px;
 }
-/* The band carries one claim and nothing else, so there is no second column to fill. */
-.principle {
-  background: var(--accent);
-  color: var(--ground);
-  border-radius: 18px;
-  padding: clamp(28px, 4.5vw, 56px);
-}
-.principle h2 {
-  max-width: 24ch;
-  font-size: clamp(30px, 4.4vw, 52px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.02;
-  margin: 0;
-}
-.sec-band + .sec {
-  border-top: 0;
+.svc-lead {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 58ch;
+  margin-bottom: 26px;
+  /* three even lines rather than a short tail */
+  text-wrap: balance;
 }
 
 .works {
@@ -379,12 +363,25 @@ html.scrolled .nav {
   line-height: 1.6;
 }
 
-.contact-in {
+/* The one green block on the page: the invitation to write. */
+.contact-box {
+  background: var(--accent);
+  color: var(--ground);
+  border-radius: 18px;
+  padding: clamp(28px, 4.5vw, 56px);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
   gap: 24px 48px;
+}
+.contact-box .mail {
+  color: var(--ground);
+}
+.contact-box .btn.p {
+  background: var(--ground);
+  border-color: var(--ground);
+  color: var(--ink);
 }
 .contact h2 {
   font-size: clamp(28px, 3.8vw, 46px);
@@ -392,7 +389,7 @@ html.scrolled .nav {
   letter-spacing: -0.03em;
   line-height: 1.05;
   max-width: 20ch;
-  margin-bottom: 16px;
+  margin: 0;
 }
 .mail-box {
   display: flex;

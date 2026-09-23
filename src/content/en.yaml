@@ -28,54 +28,63 @@ hero:
 
 services:
   heading: "What we do"
+  lead: "Every project begins with your problem and your data. Only then do we choose the approach — a deep learning model, a classical statistical method, or no model at all."
   items:
     - title: "What your data can do"
-      text: "We check whether a model pays off — before you invest."
+      text: "What it supports, what it does not, and what would have to change first."
     - title: "Models for your problem"
       text: "Statistical or deep learning, on the data you have."
     - title: "From idea to production"
       text: "Pipelines, deployment — and a team that can run it."
 
 range:
-  heading: "What that looks like in a forecast."
-  body: "Part of judging a model is knowing where it is unsure. In a forecast that is a range that widens the further ahead it looks; in a language or image task it sits on single cases instead. Either way, knowing where it sits gives you more to decide on than the answer alone."
-  caption: "A forecast, as one example. Example data."
+  heading: "What you get back."
+  body: "Not just an answer, but also where the model is unsure. In a forecast that is a range that widens the further ahead it looks; in a language or image task it sits on single cases instead. Knowing where it sits gives you more to decide on than the answer alone."
   labels:
     observed: "observed"
     today: "today"
     forecast: "forecast"
   ariaLabel: "Fan chart: observed values up to today, then a forecast whose uncertainty bands widen and fade the further ahead it looks"
 
-principle:
-  heading: "Judging whether a model is really better is our work."
-
 work:
   heading: "Selected work"
   items:
     - eyebrow: "Forecasting · 2024"
-      title: "Rainfall forecasts for northern tropical Africa"
-      text: "Beat the ECMWF physics ensemble on 24-hour rainfall."
+      title: "Beating the ECMWF ensemble on 24-hour rainfall"
+      text: "A neural network with EasyUQ outperformed the physics ensemble over northern tropical Africa."
       link: "https://arxiv.org/abs/2401.03746"
       linkLabel: "Source"
       pending: false
-    - eyebrow: "Computer vision · DKFZ"
+    - eyebrow: "Evaluation"
+      title: "Comparing models fairly"
+      text: "A benchmark is only as good as its setup. The right metrics and a careful comparison are what let you say which model is best — and why."
+      link: null
+      linkLabel: "Source"
+      pending: false
+    - eyebrow: "Uncertainty · SIAM Review 2024"
+      title: "More than a single number"
+      text: "A point prediction hides how sure the model is. A range says how much to rely on it — and EasyUQ produces one from any model, without tuning."
+      link: "https://arxiv.org/abs/2212.08376"
+      linkLabel: "Source"
+      pending: false
+    - eyebrow: "Deep learning · DKFZ"
       title: "nnU-Net: segmentation that configures itself"
       text: "Gregor co-authored it; now a standard baseline in medical imaging."
       link: "https://arxiv.org/abs/1809.10486"
       linkLabel: "Source"
       pending: false
-    - eyebrow: "Evaluation · 2026"
-      title: "Comparing AI and physics weather models fairly"
-      text: "Eva co-developed the potential CRPS."
-      link: "https://journals.ametsoc.org/view/journals/aies/5/1/AIES-D-25-0054.1.xml"
-      linkLabel: "Source"
-      pending: false
     - eyebrow: "Image search · client project"
-      title: "The right tool, found from a photo"
-      text: "Gregor matched photos against the company catalogue: a manual lookup became an automatic one."
+      title: "The right part, found from a photo"
+      text: "Gregor matched photos against the supplier's parts catalogue: a manual lookup became an automatic one."
       link: null
       linkLabel: "Source"
       pending: false
+    - eyebrow: "Client project"
+      title: "TODO: Gregor — second client project"
+      text: "TODO: the problem, what he built, what changed for the client"
+      link: null
+      linkLabel: "Source"
+      pending: true
 
 about:
   heading: "Who we are"

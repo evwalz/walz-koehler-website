@@ -58,12 +58,12 @@ const siteSchema = z.object({
   }),
   services: z.object({
     heading: z.string(),
+    lead: z.string(),
     items: z.array(z.object({ title: z.string(), text: z.string() })).length(3),
   }),
   range: z.object({
     heading: z.string(),
     body: z.string(),
-    caption: z.string(),
     labels: z.object({
       observed: z.string(),
       today: z.string(),
@@ -71,12 +71,9 @@ const siteSchema = z.object({
     }),
     ariaLabel: z.string(),
   }),
-  principle: z.object({
-    heading: z.string(),
-  }),
   work: z.object({
     heading: z.string(),
-    items: z.array(workItem).length(4),
+    items: z.array(workItem).min(4).max(6),
   }),
   about: z.object({
     heading: z.string(),
