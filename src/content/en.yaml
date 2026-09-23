@@ -43,15 +43,6 @@ services:
     - title: "From idea to production"
       text: "Pipelines, deployment — and a team that can run it."
 
-range:
-  heading: "What you get back."
-  body: "Not just an answer, but also where the model is unsure. In a forecast that is a range that widens the further ahead it looks; in a language or image task it sits on single cases instead. Knowing where it sits gives you more to decide on than the answer alone."
-  labels:
-    observed: "observed"
-    today: "today"
-    forecast: "forecast"
-  ariaLabel: "Fan chart: observed values up to today, then a forecast whose uncertainty bands widen and fade the further ahead it looks"
-
 work:
   heading: "Selected work"
   items:

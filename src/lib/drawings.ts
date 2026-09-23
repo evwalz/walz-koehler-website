@@ -158,6 +158,13 @@ export function lossFieldSVG(c: DrawingColors): string {
  * B2 · Eva's title plot, redrawn in the site's one colour: observed past, "now", a
  * forecast whose nested quantile bands widen and fade with lead time. Shape traced from
  * her PDF; data illustrative.
+ *
+ * Currently unrendered: the "What you get back." section it lived in was dropped because
+ * the surrounding copy no longer earned it. Kept here so the drawing can come back.
+ * Its markup is at 33f4dfe: `git show 33f4dfe:src/components/Range.astro`. Note that
+ * component passed `fan-${lang}-wide` / `-narrow` as class names while the stylesheet
+ * matched `.fan-wide` / `.fan-narrow`, so both variants rendered at once — fix that
+ * before reusing it.
  */
 export function evaFanSVG(c: DrawingColors, lab: [string, string, string], gid: string, aria: string, fs: number): string {
   const obsY = [486, 522, 508, 450, 494, 500, 458, 465, 436];

@@ -234,27 +234,12 @@ html.scrolled .nav {
 .sec + .sec {
   border-top: 1px solid var(--line);
 }
-.sec-tight {
-  padding-top: 0;
-}
-.sec + .sec.sec-tight {
-  border-top: 0;
-}
-.fan-narrow {
-  display: none;
-}
 .sec h2 {
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: 28px;
-}
-.body-l {
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.6;
-  max-width: 52ch;
 }
 .card {
   background: var(--card);
@@ -281,21 +266,6 @@ html.scrolled .nav {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.range {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr);
-  gap: clamp(24px, 4vw, 56px);
-  align-items: center;
-}
-.range h2 {
-  margin-bottom: 16px;
-}
-.fig svg {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 /* The lead sits tight under the heading: it frames the three cards below it. */
@@ -526,15 +496,8 @@ mark.pend {
   }
   .svc,
   .works,
-  .people,
-  .range {
+  .people {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .fan-wide {
-    display: none;
-  }
-  .fan-narrow {
-    display: block;
   }
   .field {
     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 62%, #000 86%);
