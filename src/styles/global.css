@@ -423,6 +423,12 @@ html.scrolled .nav {
   object-fit: cover;
   border-radius: 13px;
 }
+/* A real photo drops the placeholder's dashed frame and hatching. */
+.photo-filled {
+  padding: 0;
+  border: 0;
+  background: none;
+}
 .photo span {
   background: var(--ground);
   padding: 2px 4px;
