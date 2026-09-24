@@ -45,58 +45,59 @@ services:
 work:
   heading: "Ausgewählte Arbeiten"
   items:
-    - eyebrow: "Bildsuche · Teileidentifikation"
+    - eyebrow: "Bildsuche · im Einsatz"
       title: "Das richtige Teil per Foto finden"
-      text: "Fotos werden mit dem Ersatzteilkatalog abgeglichen: aus einer manuellen Suche wurde eine automatische. Ein Foto findet das richtige Teil unter mehr als 15.000 Katalogprodukten, und zwar auch dann, wenn es im eingebauten Zustand aufgenommen wird: verdeckt von dem, was ringsherum montiert ist, und nur aus einer Richtung sichtbar. Jedes Katalogbild wird einmal in eine Vektordatenbank eingebettet, das Anfragefoto ist damit ein Punkt und die nächstgelegenen Punkte sind die Kandidaten; Teilenummern und Beschreibungen werden in derselben Anfrage durchsucht, beide Ranglisten zu einer verschmolzen. Das Ganze läuft produktiv hinter einer API, die auch Agenten nutzen: Sie labeln eingehende Fotos vor, ein Mensch prüft nach, und aus dem laufenden Betrieb wird der nächste Testdatensatz. Jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen. Das macht aus „fühlt sich besser an“ eine Entscheidung."
+      text: "Mitarbeitende und Kunden fotografieren ein Teil und bekommen den richtigen Katalogeintrag zurück, aus über 15.000 Produkten, auch wenn das Teil im eingebauten Zustand aufgenommen wird: verdeckt von dem, was ringsherum montiert ist, und nur aus einer Richtung sichtbar. Aus der manuellen Suche wurde ein produktiver Dienst hinter einer API, und jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen. Eine Verbesserung ist damit eine belegte Zahl und kein Eindruck."
       sources: []
       pending: false
       wide: true
       drawing: part-search
-    - eyebrow: "Prognosen · 2024"
+    - eyebrow: "Prognosen · begutachtet, 2024"
       title: "KI-Niederschlagsprognosen für das nördliche tropische Afrika"
-      text: "Schlug das physikalische EZMW-Ensemble bei 24-Stunden-Niederschlag."
+      text: "Ein neuronales Netz auf Satelliten-Niederschlagsdaten, mit EasyUQ probabilistisch gemacht, schlug das EZMW-Ensemble und jeden statistischen Mitbewerber beim 24-Stunden-Niederschlag, sowohl bei der Frage ob es regnet als auch bei der Menge. Neun Jahre Daten, eine der schwierigsten Prognoseregionen der Welt, und wir beide auf derselben Veröffentlichung: ein Modell, das sich gegen ein etabliertes physikalisches System behauptet."
       sources:
         - href: "https://arxiv.org/abs/2401.03746"
           label: "Quelle"
       pending: false
     - eyebrow: "Bildverarbeitung · Mitautor am DKFZ"
-      title: "nnU-Net: Segmentierung, die sich selbst konfiguriert"
-      text: "Es stellt sich auf jeden neuen medizinischen Bilddatensatz selbst ein und wurde so zur Referenz."
+      title: "nnU-Net: das erfolgreichste Segmentierungsmodell der medizinischen KI"
+      text: "Es konfiguriert sich für jeden neuen Datensatz selbst, statt von Hand eingestellt zu werden, und wurde genau dadurch zum Standard: Sieger des Medical Segmentation Decathlon und heute die Referenz, gegen die tausende Forschungsgruppen und Unternehmen messen und auf der sie aufbauen. Hinter der Mitautorschaft stehen acht Jahre am Deutschen Krebsforschungszentrum."
       sources:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Quelle"
       pending: false
     - eyebrow: "Bildverarbeitung · Erstautor, WACV 2024"
       title: "RecycleNet: ein Netz, das seine eigene Antwort überdenkt"
-      text: "Statt in einem einzigen Durchgang zu entscheiden, gibt das Modell seine eigenen Merkmale in frühere Schichten zurück und verfeinert die Entscheidung über mehrere Runden hinweg, über mehr Runden, als es im Training je gesehen hat. Es tauscht Rechenzeit gegen Genauigkeit, und dieser Tausch lohnt sich überall dort, wo eine falsche Antwort teuer ist."
+      text: "Das Modell gibt seine eigenen Merkmale in frühere Schichten zurück und verfeinert die Entscheidung über mehrere Runden, und es wird über mehr Runden besser, als es im Training je gesehen hat. Genauigkeit wird damit zum Regler zur Laufzeit: günstig bei den einfachen Fällen, länger nachdenkend dort, wo ein Fehler teuer ist. Begutachtet und auf der WACV 2024 vorgestellt."
       sources:
         - href: "https://arxiv.org/abs/2309.07513"
           label: "Quelle"
       pending: false
     - eyebrow: "Dokumentenverständnis · Auftragseingang"
       title: "Bestellungen dort gelesen, wo sie ankommen"
-      text: "Bestell-PDFs werden zu validiertem, angereichertem JSON mit Konfidenz je Feld, abgeglichen mit Kunden- und Ersatzteilkatalog und bereit für das ERP. Das Modell läuft auf der Maschine im Haus, und kein Dokument verlässt sie."
+      text: "Eingehende Bestell-PDFs werden zu validiertem JSON mit Konfidenz je Feld, abgeglichen mit Kunden- und Ersatzteilkatalog und an das ERP übergeben. Das Abtippen entfällt, und bei einem Menschen landen die Aufträge, die das Modell selbst als unsicher markiert. Es läuft auf einer Maschine im Haus, kein Kundendokument geht an einen externen Dienst."
       sources: []
       pending: false
-    - eyebrow: "Evaluation"
+    - eyebrow: "Edge-ML · Beratung"
+      title: "Arten erkennen auf einem solarbetriebenen Sensor"
+      text: "Beratung von Hula Earth, einem Münchner Startup für Biodiversitätsmonitoring, zum Modell in seinem Feldgerät: ein Netz, klein genug für einen Mikrocontroller und ein Solarbudget, angelernt von einem sehr viel größeren und mit unbeschrifteten Aufnahmen weitergetrieben. Schwierig ist nicht die Genauigkeit im Labor, sondern die Genauigkeit, die ein Gerät im Wald ohne Strom und ohne Netz übersteht."
+      sources: []
+      pending: false
+    - eyebrow: "Evaluation · begutachtet"
       title: "Die passende Metrik für die Aufgabe wählen"
-      text: "Eine Metrik sagt mehr, wenn sie zum Ziel passt, und wenn man weiß, wie sie zu lesen ist."
+      text: "Welche Zahl darüber entscheidet, ob ein Modell gut genug ist, ist zuerst eine unternehmerische und erst dann eine statistische Frage, und die üblichen Metriken beantworten unterschiedliche Fragen, ohne das dazuzusagen. Unsere Forschung bringt die Maße für Ja-Nein-Ergebnisse und für geordnete Ergebnisse in einen gemeinsamen Rahmen, mitsamt dem statistischen Test für die Frage, die im Steuerungsmeeting wirklich gestellt wird: Ist Modell A tatsächlich besser als Modell B, oder ist der Unterschied Rauschen?"
       sources:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Quelle"
       pending: false
-    - eyebrow: "Edge-ML · Beratung"
-      title: "Arten erkennen auf einem solarbetriebenen Sensor"
-      text: "Beratung von Hula Earth, einem Münchner Startup für Biodiversitätsmonitoring, zum Modell in seinem Feldgerät: ein kleines Netz, quantisiert auf einen Mikrocontroller, angelernt von einem sehr viel größeren und mit unbeschrifteten Aufnahmen weitergetrieben."
-      sources: []
-      pending: false
-    - eyebrow: "Unsicherheit"
+    - eyebrow: "Unsicherheitsquantifizierung · EasyUQ"
       title: "Wie sicher eine Vorhersage ist"
-      text: "Nicht nur die Antwort, sondern auch, wie sehr Sie sich darauf verlassen können."
+      text: "Die meisten Modelle im Betrieb liefern eine einzelne Zahl und keinen Hinweis darauf, wie sehr man ihr trauen kann, und genau der fehlt für eine Entscheidung. EasyUQ macht aus dieser Zahl eine kalibrierte Wahrscheinlichkeitsverteilung, gelernt allein aus vergangenen Vorhersagen und dem, was tatsächlich eingetreten ist, ohne das Modell neu zu trainieren, zu verändern oder auch nur seine Eingaben zu sehen. Es arbeitet hinter jedem Modell, ob physikalische Simulation, statistisches Verfahren oder neuronales Netz, hat nichts einzustellen und ist nachweislich schon auf endlichen Stichproben kalibriert, nicht erst im Grenzwert. Auf Benchmarks des maschinellen Lernens hält es mit konformer Vorhersage und mit deutlich aufwendigeren Verfahren mit, die Zugriff auf das Innenleben brauchen. Für ein Unternehmen ist es der kürzeste Weg von „das Modell sagt 42“ zu „das Modell sagt 42, und so wahrscheinlich liegt es um mehr als zehn daneben“, und auf diesem Satz lassen sich Schwellen, Budgets und eine menschliche Nachprüfung aufbauen."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
           label: "Quelle"
       pending: false
+      wide: true
 
 about:
   heading: "Wer wir sind"

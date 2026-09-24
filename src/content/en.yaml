@@ -46,58 +46,59 @@ services:
 work:
   heading: "Selected work"
   items:
-    - eyebrow: "Image search · parts identification"
+    - eyebrow: "Image search · in production"
       title: "The right part, found from a photo"
-      text: "Photos matched against the parts catalogue: a manual lookup became an automatic one. One photo finds the right part among more than 15,000 catalogue products, and it does so when the part is photographed where it sits: built into the machine, half of it covered by what surrounds it, visible from one direction only. Every catalogue image is embedded once into a vector database, so a query photo is a point and the nearest points are the candidates; part numbers and descriptions are searched in the same request, and the two rankings are fused into one. It runs in production behind an API that agents can call too. They pre-label incoming photos, a human checks them, and everyday traffic becomes the next test set. Every release is scored against a frozen, human-validated test set, which is what turns “this feels better” into a decision."
+      text: "Staff and customers photograph a part and get the right catalogue entry back, out of more than 15,000 products, even when the part is photographed built into the machine, half covered by what surrounds it and visible from one direction only. What used to be a manual lookup now runs in production behind an API, and every release is scored against a frozen, human validated test set, so an improvement is a measured fact rather than an impression."
       sources: []
       pending: false
       wide: true
       drawing: part-search
-    - eyebrow: "Forecasting · 2024"
+    - eyebrow: "Forecasting · peer reviewed, 2024"
       title: "AI forecasts of rainfall for northern tropical Africa"
-      text: "Beat the ECMWF physics ensemble on 24-hour rainfall."
+      text: "A neural network trained on satellite rainfall, made probabilistic with EasyUQ, beat the ECMWF ensemble and every statistical competitor on 24-hour rainfall, for whether it rains and for how much. Nine years of data, one of the hardest forecasting regions in the world, and the two of us on the same paper: a model earning its place against an established physical system."
       sources:
         - href: "https://arxiv.org/abs/2401.03746"
           label: "Source"
       pending: false
-    - eyebrow: "Computer vision · co-authored at DKFZ"
-      title: "nnU-Net: segmentation that configures itself"
-      text: "It adapts its own setup to each new medical imaging dataset, which made it a standard baseline."
+    - eyebrow: "Computer vision · co-authored at the DKFZ"
+      title: "nnU-Net: the most successful segmentation model in medical AI"
+      text: "It configures itself for each new dataset instead of being tuned by hand, which is what made it the standard: it won the Medical Segmentation Decathlon and is now the baseline thousands of research groups and companies measure against and build on. Eight years at the German Cancer Research Center stand behind that co-authorship."
       sources:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Source"
       pending: false
     - eyebrow: "Computer vision · first author, WACV 2024"
       title: "RecycleNet: a network that reconsiders its own answer"
-      text: "Instead of deciding in a single pass, the model feeds its own features back into earlier layers and refines the decision over several rounds, more rounds than it ever saw in training. It buys accuracy with computing time, which is the right trade wherever a wrong answer is expensive."
+      text: "The model feeds its own features back into earlier layers and refines its decision over several rounds, and it keeps improving over more rounds than it ever saw in training. That turns accuracy into a dial you set at runtime: cheap on the easy cases, longer thinking where a mistake is expensive. Peer reviewed and presented at WACV 2024."
       sources:
         - href: "https://arxiv.org/abs/2309.07513"
           label: "Source"
       pending: false
     - eyebrow: "Document understanding · order intake"
       title: "Orders read where they arrive"
-      text: "Ordering PDFs turned into validated, enriched JSON with a confidence score per field, matched against the customer and parts catalogues and ready for the ERP. The model runs on the machine in the building, and no document leaves it."
+      text: "Incoming order PDFs become validated JSON with a confidence score per field, matched against the customer and parts catalogues and handed to the ERP. The typing step disappears, and the orders that still reach a human are the ones the model itself flags as uncertain. It runs on a machine inside the building, so no customer document goes to an outside service."
       sources: []
       pending: false
-    - eyebrow: "Evaluation"
+    - eyebrow: "Edge ML · advisory"
+      title: "Species recognised on a solar-powered sensor"
+      text: "Advising Hula Earth, a Munich biodiversity-monitoring startup, on the model inside its field device: a network small enough for a microcontroller and a solar power budget, taught by a much larger one and pushed further with unlabelled recordings. The hard part is not accuracy in the lab, it is the accuracy that survives a device standing in a forest with no power and no network."
+      sources: []
+      pending: false
+    - eyebrow: "Evaluation · peer reviewed"
       title: "Choosing the right score for the task"
-      text: "A score says more when it fits the goal, and when you know how to read it."
+      text: "Which number decides whether a model is good enough is a business question before it is a statistical one, and the usual scores answer different questions without saying so. Our research puts the measures used for yes-or-no outcomes and for ranked ones into one framework, together with the statistical test for the question that actually comes up in a steering meeting: is model A really better than model B, or is the difference noise?"
       sources:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Source"
       pending: false
-    - eyebrow: "Edge ML · advisory"
-      title: "Species recognised on a solar-powered sensor"
-      text: "Advising Hula Earth, a Munich biodiversity-monitoring startup, on the model inside its field device: a small network quantised onto a microcontroller, taught by a far larger one and pushed further with unlabelled recordings."
-      sources: []
-      pending: false
-    - eyebrow: "Uncertainty"
+    - eyebrow: "Uncertainty quantification · EasyUQ"
       title: "How certain a prediction is"
-      text: "Not just the answer, but how much you can rely on it."
+      text: "Most models in production return a single number and no indication of how much to trust it, which is precisely what a decision needs. EasyUQ turns that number into a calibrated probability distribution, learned only from past predictions and what actually happened, without retraining the model, changing it, or even seeing its inputs. It works behind any model, a physical simulation, a statistical method or a neural network, has nothing to tune, and is provably calibrated on finite samples rather than only in the limit. On machine learning benchmarks it holds its own against conformal prediction and against far more elaborate methods that need access to the internals. For a company it is the shortest route from “the model says 42” to “the model says 42, and here is how likely it is to be off by more than ten”, which is the sentence a threshold, a budget or a human review step can actually be built on."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
           label: "Source"
       pending: false
+      wide: true
 
 about:
   heading: "Who we are"
