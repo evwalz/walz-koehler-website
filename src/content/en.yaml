@@ -3,13 +3,13 @@ htmlLang: "en"
 
 meta:
   home:
-    title: "Walz & Köhler — statistics and machine learning for companies"
-    description: "Two researchers building models that measurably improve how you work. Your problem and your data decide the approach — statistical, deep learning, or both."
+    title: "Walz & Köhler: statistics and machine learning for companies"
+    description: "Two researchers building models that measurably improve how you work. Your problem and your data decide the approach: statistical, deep learning, or both."
   legalNotice:
-    title: "Legal notice — Walz & Köhler"
+    title: "Legal notice · Walz & Köhler"
     description: "Legal notice (Impressum) for the Walz & Köhler website."
   privacy:
-    title: "Privacy — Walz & Köhler"
+    title: "Privacy · Walz & Köhler"
     description: "How Walz & Köhler handles personal data on this website."
 
 skipLink: "Skip to content"
@@ -29,61 +29,76 @@ nav:
 hero:
   eyebrow: "Statistics · Machine learning"
   heading: "Models that measurably improve how you work."
-  lede: "Your problem and your data decide the approach — statistical, deep learning, or both."
+  lede: "Your problem and your data decide the approach: statistical, deep learning, or both."
   ctaPrimary: "Write to us"
 
 services:
   heading: "What we do"
-  lead: "Every project begins with your problem and your data. Only then do we choose the approach — a deep learning model, a classical statistical method, or no model at all."
+  lead: "Every project begins with your problem and your data. Only then do we choose the approach: a deep learning model, a classical statistical method, or no model at all."
   items:
     - title: "What your data can do"
       text: "What it supports, what it does not, and what would have to change first."
     - title: "Models for your problem"
       text: "Statistical or deep learning, on the data you have."
     - title: "From idea to production"
-      text: "Pipelines, deployment — and a team that can run it."
+      text: "Pipelines, deployment, and a team that can run it."
 
 work:
   heading: "Selected work"
   items:
-    - eyebrow: "Forecasting · 2024"
+    - eyebrow: "Image search · in production"
+      title: "The right part, found from a photo"
+      text: "Staff and customers photograph a part and get the right catalogue entry back, out of more than 15,000 products, even when the part is photographed built into the machine, half covered by what surrounds it and visible from one direction only. What used to be a manual lookup now runs in production behind an API, and every release is scored against a frozen, human validated test set, so an improvement is a measured fact rather than an impression."
+      sources: []
+      pending: false
+      wide: true
+      drawing: part-search
+    - eyebrow: "Forecasting · peer reviewed, 2024"
       title: "AI forecasts of rainfall for northern tropical Africa"
-      text: "Beat the ECMWF physics ensemble on 24-hour rainfall."
+      text: "A neural network trained on satellite rainfall, made probabilistic with EasyUQ, beat the ECMWF ensemble and every statistical competitor on 24-hour rainfall, for whether it rains and for how much. Nine years of data, one of the hardest forecasting regions in the world, and the two of us on the same paper: a model earning its place against an established physical system."
       sources:
         - href: "https://arxiv.org/abs/2401.03746"
           label: "Source"
       pending: false
-    - eyebrow: "Computer vision · co-authored at DKFZ"
-      title: "nnU-Net: segmentation that configures itself"
-      text: "It adapts its own setup to each new medical imaging dataset, which made it a standard baseline."
+    - eyebrow: "Computer vision · co-authored at the DKFZ"
+      title: "nnU-Net: the most successful segmentation model in medical AI"
+      text: "It configures itself for each new dataset instead of being tuned by hand, which is what made it the standard: it won the Medical Segmentation Decathlon and is now the baseline thousands of research groups and companies measure against and build on. Eight years at the German Cancer Research Center stand behind that co-authorship."
       sources:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Source"
       pending: false
-    - eyebrow: "Image search · Hauer GmbH"
-      title: "The right part, found from a photo"
-      text: "Photos matched against the parts catalogue: a manual lookup became an automatic one."
+    - eyebrow: "Computer vision · first author, WACV 2024"
+      title: "RecycleNet: a network that reconsiders its own answer"
+      text: "The model feeds its own features back into earlier layers and refines its decision over several rounds, and it keeps improving over more rounds than it ever saw in training. That turns accuracy into a dial you set at runtime: cheap on the easy cases, longer thinking where a mistake is expensive. Peer reviewed and presented at WACV 2024."
+      sources:
+        - href: "https://arxiv.org/abs/2309.07513"
+          label: "Source"
+      pending: false
+    - eyebrow: "Document understanding · order intake"
+      title: "Orders read where they arrive"
+      text: "Incoming order PDFs become validated JSON with a confidence score per field, matched against the customer and parts catalogues and handed to the ERP. The typing step disappears, and the orders that still reach a human are the ones the model itself flags as uncertain. It runs on a machine inside the building, so no customer document goes to an outside service."
       sources: []
       pending: false
-    - eyebrow: "Client project"
-      title: "TODO: second client project"
-      text: "TODO: Gregor — the problem, what was built, what changed for the client"
+    - eyebrow: "Edge ML · advisory"
+      title: "Species recognised on a solar-powered sensor"
+      text: "Advising Hula Earth, a Munich biodiversity-monitoring startup, on the model inside its field device: a network small enough for a microcontroller and a solar power budget, taught by a much larger one and pushed further with unlabelled recordings. The hard part is not accuracy in the lab, it is the accuracy that survives a device standing in a forest with no power and no network."
       sources: []
-      pending: true
-    - eyebrow: "Evaluation"
+      pending: false
+    - eyebrow: "Evaluation · peer reviewed"
       title: "Choosing the right score for the task"
-      text: "A score says more when it fits the goal — and when you know how to read it."
+      text: "Which number decides whether a model is good enough is a business question before it is a statistical one, and the usual scores answer different questions without saying so. Our research puts the measures used for yes-or-no outcomes and for ranked ones into one framework, together with the statistical test for the question that actually comes up in a steering meeting: is model A really better than model B, or is the difference noise?"
       sources:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Source"
       pending: false
-    - eyebrow: "Uncertainty"
+    - eyebrow: "Uncertainty quantification · EasyUQ"
       title: "How certain a prediction is"
-      text: "Not just the answer — how much you can rely on it."
+      text: "Most models in production return a single number and no indication of how much to trust it, which is precisely what a decision needs. EasyUQ turns that number into a calibrated probability distribution, learned only from past predictions and what actually happened, without retraining the model, changing it, or even seeing its inputs. It works behind any model, a physical simulation, a statistical method or a neural network, has nothing to tune, and is provably calibrated on finite samples rather than only in the limit. On machine learning benchmarks it holds its own against conformal prediction and against far more elaborate methods that need access to the internals. For a company it is the shortest route from “the model says 42” to “the model says 42, and here is how likely it is to be off by more than ten”, which is the sentence a threshold, a budget or a human review step can actually be built on."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
           label: "Source"
       pending: false
+      wide: true
 
 about:
   heading: "Who we are"
@@ -95,14 +110,14 @@ about:
       photo: "eva-walz.jpg"
       photoAlt: "Portrait of Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
-      role: "Deep learning & models"
-      bio: "Deep learning since 2015, across model families. Eight years at the DKFZ, co-author of nnU-Net."
+      role: "Deep learning, vision & retrieval"
+      bio: "Deep learning since 2015, across model families. Eight years at the DKFZ in medical image segmentation, co-author of nnU-Net. Today he builds systems that run: visual search over industrial catalogues, document understanding on local hardware, and models small enough for a sensor in a field."
       photo: "gregor-koehler.jpg"
       photoAlt: "Portrait of Gregor Köhler"
 
 contact:
   heading: "Tell us what you want your data to do."
-  email: "TODO: hello@[domain — later]"
+  email: "hallo@walz-koehler.com"
   cta: "Write to us"
 
 footer:
@@ -112,18 +127,18 @@ footer:
 
 legalNotice:
   heading: "Impressum"
-  checkNotice: "TODO: Verify every fact on this page — and the arrangement sentence — before it goes live."
+  checkNotice: "TODO: Verify every fact on this page, the arrangement sentence included, before it goes live."
   ddgIntro: "Angaben gemäß § 5 DDG"
   facts:
     - label: "Anbieterin"
       value: "TODO: Dr. Eva-Maria Walz, Straße Hausnummer, PLZ Ort"
     - label: "Anbieter"
-      value: "TODO: Gregor Köhler, Straße Hausnummer, PLZ Ort"
+      value: "Gregor Köhler, Erwinstr. 24, 79102 Freiburg"
     - label: "Kontakt"
-      value: "TODO: hello@[Domain] · Telefon [Nummer]"
+      value: "hallo@walz-koehler.com"
     - label: "Umsatzsteuer-ID"
-      value: "TODO: USt-IdNr. beider Anbieter nach § 27a UStG — oder der Hinweis auf § 19 UStG"
-  arrangement: "TODO: Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
+      value: "TODO: USt-IdNr. von Eva-Maria Walz nach § 27a UStG ergänzen, oder den Hinweis auf § 19 UStG. Gregor Köhler: DE451751819"
+  arrangement: "Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
   dispute: "Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit."
   englishHeading: "In English"
   englishBody: "German law requires this page in German, so the version above is the binding one. In short: Walz & Köhler is a collaboration between two self-employed freelancers, each contracting and invoicing in their own name."
@@ -133,15 +148,15 @@ privacy:
   checkNotice: "TODO: Verify every fact on this page before it goes live."
   sections:
     - heading: "Controller"
-      body: "TODO: name and contact details of the controller"
+      body: "TODO: add the address of Dr. Eva-Maria Walz. The controllers for the data processing on this website are Gregor Köhler, Erwinstr. 24, 79102 Freiburg, Germany, and Dr. Eva-Maria Walz, reachable at hallo@walz-koehler.com"
     - heading: "Hosting and server logs"
       intro: "This website is hosted by:"
-      body: "TODO: hosting provider and server location"
+      body: "GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA, represented in the EU by GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Netherlands. The site consists of static files only. When you open it, GitHub processes technically necessary access data, including your IP address, the date and time of the request, the file requested and details of your browser and operating system. The legal basis is Art. 6(1)(f) GDPR, our legitimate interest in secure and stable operation. Delivery runs over servers in the USA as well; GitHub states that it is certified under the EU-U.S. Data Privacy Framework."
     - heading: "Contact"
-      body: "If you write to us by email, we use your message and email address only to answer you."
+      body: "If you write to us by email, we use your message and email address only to answer you, on the basis of Art. 6(1)(b) and (f) GDPR. We delete the message once the enquiry is settled and no retention obligation applies."
     - heading: "Cookies and analytics"
-      body: "We do not use cookies or third-party analytics. The fonts on this site are hosted on our own server, not loaded from Google or any other third party."
+      body: "We set no cookies and use no third-party analytics. The fonts are delivered with the site, not loaded from Google or any other third party. External links, for example to arxiv.org, only reach a third party once you click them."
     - heading: "Your rights"
-      body: "Under the GDPR (Art. 15–21) you have the right to access, rectification, erasure, restriction of processing, data portability and objection regarding your personal data."
+      body: "Under the GDPR (Art. 15 to 21) you have the right to access, rectification, erasure, restriction of processing, data portability and objection regarding your personal data. Write to the contact address above to exercise them."
     - heading: "Right to complain"
-      body: "You have the right to lodge a complaint with a data-protection supervisory authority."
+      body: "You have the right to lodge a complaint with a data-protection supervisory authority, in particular in the member state of your residence, your place of work or the place of the alleged infringement."

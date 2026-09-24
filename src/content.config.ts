@@ -12,6 +12,10 @@ const workItem = z.object({
   text: z.string(),
   sources: z.array(z.object({ href: z.string().url(), label: z.string() })),
   pending: z.boolean(),
+  // A listed work can span the grid and carry a drawing. Optional, so every other item
+  // stays exactly as it was.
+  wide: z.boolean().optional(),
+  drawing: z.enum(["part-search"]).optional(),
 });
 
 const person = z.object({
@@ -67,7 +71,7 @@ const siteSchema = z.object({
   }),
   work: z.object({
     heading: z.string(),
-    items: z.array(workItem).min(4).max(6),
+    items: z.array(workItem).min(4).max(10),
   }),
   about: z.object({
     heading: z.string(),

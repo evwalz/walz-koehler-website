@@ -2,13 +2,13 @@ htmlLang: "de"
 
 meta:
   home:
-    title: "Walz & Köhler — Statistik und Machine Learning für Unternehmen"
-    description: "Zwei Forschende bauen Modelle, die Ihre Arbeit messbar verbessern. Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
+    title: "Walz & Köhler: Statistik und Machine Learning für Unternehmen"
+    description: "Zwei Forschende bauen Modelle, die Ihre Arbeit messbar verbessern. Ihr Problem und Ihre Daten entscheiden über die Methode: Statistik, Deep Learning oder beides."
   legalNotice:
-    title: "Impressum — Walz & Köhler"
+    title: "Impressum · Walz & Köhler"
     description: "Impressum für die Website von Walz & Köhler."
   privacy:
-    title: "Datenschutz — Walz & Köhler"
+    title: "Datenschutz · Walz & Köhler"
     description: "Wie Walz & Köhler personenbezogene Daten auf dieser Website verarbeitet."
 
 skipLink: "Zum Inhalt springen"
@@ -28,61 +28,76 @@ nav:
 hero:
   eyebrow: "Statistik · Machine Learning"
   heading: "Modelle, die Ihre Arbeit messbar verbessern."
-  lede: "Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
+  lede: "Ihr Problem und Ihre Daten entscheiden über die Methode: Statistik, Deep Learning oder beides."
   ctaPrimary: "Schreiben Sie uns"
 
 services:
   heading: "Was wir tun"
-  lead: "Jedes Projekt beginnt mit Ihrem Problem und Ihren Daten. Erst danach wählen wir die Methode – ein Deep-Learning-Modell, ein klassisches statistisches Verfahren oder gar kein Modell."
+  lead: "Jedes Projekt beginnt mit Ihrem Problem und Ihren Daten. Erst danach wählen wir die Methode: ein Deep-Learning-Modell, ein klassisches statistisches Verfahren oder gar kein Modell."
   items:
     - title: "Was Ihre Daten können"
       text: "Was sie hergeben, was nicht, und was sich dafür ändern müsste."
     - title: "Modelle für Ihre Aufgabe"
-      text: "Statistisch oder Deep Learning – auf den Daten, die Sie haben."
+      text: "Statistisch oder Deep Learning, auf den Daten, die Sie haben."
     - title: "Von der Idee in den Betrieb"
-      text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
+      text: "Datenpipelines, Inbetriebnahme und ein Team, das es weiterführt."
 
 work:
   heading: "Ausgewählte Arbeiten"
   items:
-    - eyebrow: "Prognosen · 2024"
+    - eyebrow: "Bildsuche · im Einsatz"
+      title: "Das richtige Teil per Foto finden"
+      text: "Mitarbeitende und Kunden fotografieren ein Teil und bekommen den richtigen Katalogeintrag zurück, aus über 15.000 Produkten, auch wenn das Teil im eingebauten Zustand aufgenommen wird: verdeckt von dem, was ringsherum montiert ist, und nur aus einer Richtung sichtbar. Aus der manuellen Suche wurde ein produktiver Dienst hinter einer API, und jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen. Eine Verbesserung ist damit eine belegte Zahl und kein Eindruck."
+      sources: []
+      pending: false
+      wide: true
+      drawing: part-search
+    - eyebrow: "Prognosen · begutachtet, 2024"
       title: "KI-Niederschlagsprognosen für das nördliche tropische Afrika"
-      text: "Schlug das physikalische EZMW-Ensemble bei 24-Stunden-Niederschlag."
+      text: "Ein neuronales Netz auf Satelliten-Niederschlagsdaten, mit EasyUQ probabilistisch gemacht, schlug das EZMW-Ensemble und jeden statistischen Mitbewerber beim 24-Stunden-Niederschlag, sowohl bei der Frage ob es regnet als auch bei der Menge. Neun Jahre Daten, eine der schwierigsten Prognoseregionen der Welt, und wir beide auf derselben Veröffentlichung: ein Modell, das sich gegen ein etabliertes physikalisches System behauptet."
       sources:
         - href: "https://arxiv.org/abs/2401.03746"
           label: "Quelle"
       pending: false
     - eyebrow: "Bildverarbeitung · Mitautor am DKFZ"
-      title: "nnU-Net: Segmentierung, die sich selbst konfiguriert"
-      text: "Es stellt sich auf jeden neuen medizinischen Bilddatensatz selbst ein und wurde so zur Referenz."
+      title: "nnU-Net: das erfolgreichste Segmentierungsmodell der medizinischen KI"
+      text: "Es konfiguriert sich für jeden neuen Datensatz selbst, statt von Hand eingestellt zu werden, und wurde genau dadurch zum Standard: Sieger des Medical Segmentation Decathlon und heute die Referenz, gegen die tausende Forschungsgruppen und Unternehmen messen und auf der sie aufbauen. Hinter der Mitautorschaft stehen acht Jahre am Deutschen Krebsforschungszentrum."
       sources:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Quelle"
       pending: false
-    - eyebrow: "Bildsuche · Hauer GmbH"
-      title: "Das richtige Teil per Foto finden"
-      text: "Fotos werden mit dem Ersatzteilkatalog abgeglichen: aus einer manuellen Suche wurde eine automatische."
+    - eyebrow: "Bildverarbeitung · Erstautor, WACV 2024"
+      title: "RecycleNet: ein Netz, das seine eigene Antwort überdenkt"
+      text: "Das Modell gibt seine eigenen Merkmale in frühere Schichten zurück und verfeinert die Entscheidung über mehrere Runden, und es wird über mehr Runden besser, als es im Training je gesehen hat. Genauigkeit wird damit zum Regler zur Laufzeit: günstig bei den einfachen Fällen, länger nachdenkend dort, wo ein Fehler teuer ist. Begutachtet und auf der WACV 2024 vorgestellt."
+      sources:
+        - href: "https://arxiv.org/abs/2309.07513"
+          label: "Quelle"
+      pending: false
+    - eyebrow: "Dokumentenverständnis · Auftragseingang"
+      title: "Bestellungen dort gelesen, wo sie ankommen"
+      text: "Eingehende Bestell-PDFs werden zu validiertem JSON mit Konfidenz je Feld, abgeglichen mit Kunden- und Ersatzteilkatalog und an das ERP übergeben. Das Abtippen entfällt, und bei einem Menschen landen die Aufträge, die das Modell selbst als unsicher markiert. Es läuft auf einer Maschine im Haus, kein Kundendokument geht an einen externen Dienst."
       sources: []
       pending: false
-    - eyebrow: "Kundenprojekt"
-      title: "TODO: zweites Kundenprojekt"
-      text: "TODO: Gregor – das Problem, was gebaut wurde, was sich für den Kunden geändert hat"
+    - eyebrow: "Edge-ML · Beratung"
+      title: "Arten erkennen auf einem solarbetriebenen Sensor"
+      text: "Beratung von Hula Earth, einem Münchner Startup für Biodiversitätsmonitoring, zum Modell in seinem Feldgerät: ein Netz, klein genug für einen Mikrocontroller und ein Solarbudget, angelernt von einem sehr viel größeren und mit unbeschrifteten Aufnahmen weitergetrieben. Schwierig ist nicht die Genauigkeit im Labor, sondern die Genauigkeit, die ein Gerät im Wald ohne Strom und ohne Netz übersteht."
       sources: []
-      pending: true
-    - eyebrow: "Evaluation"
+      pending: false
+    - eyebrow: "Evaluation · begutachtet"
       title: "Die passende Metrik für die Aufgabe wählen"
-      text: "Eine Metrik sagt mehr, wenn sie zum Ziel passt – und wenn man weiß, wie sie zu lesen ist."
+      text: "Welche Zahl darüber entscheidet, ob ein Modell gut genug ist, ist zuerst eine unternehmerische und erst dann eine statistische Frage, und die üblichen Metriken beantworten unterschiedliche Fragen, ohne das dazuzusagen. Unsere Forschung bringt die Maße für Ja-Nein-Ergebnisse und für geordnete Ergebnisse in einen gemeinsamen Rahmen, mitsamt dem statistischen Test für die Frage, die im Steuerungsmeeting wirklich gestellt wird: Ist Modell A tatsächlich besser als Modell B, oder ist der Unterschied Rauschen?"
       sources:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Quelle"
       pending: false
-    - eyebrow: "Unsicherheit"
+    - eyebrow: "Unsicherheitsquantifizierung · EasyUQ"
       title: "Wie sicher eine Vorhersage ist"
-      text: "Nicht nur die Antwort – sondern auch, wie sehr Sie sich darauf verlassen können."
+      text: "Die meisten Modelle im Betrieb liefern eine einzelne Zahl und keinen Hinweis darauf, wie sehr man ihr trauen kann, und genau der fehlt für eine Entscheidung. EasyUQ macht aus dieser Zahl eine kalibrierte Wahrscheinlichkeitsverteilung, gelernt allein aus vergangenen Vorhersagen und dem, was tatsächlich eingetreten ist, ohne das Modell neu zu trainieren, zu verändern oder auch nur seine Eingaben zu sehen. Es arbeitet hinter jedem Modell, ob physikalische Simulation, statistisches Verfahren oder neuronales Netz, hat nichts einzustellen und ist nachweislich schon auf endlichen Stichproben kalibriert, nicht erst im Grenzwert. Auf Benchmarks des maschinellen Lernens hält es mit konformer Vorhersage und mit deutlich aufwendigeren Verfahren mit, die Zugriff auf das Innenleben brauchen. Für ein Unternehmen ist es der kürzeste Weg von „das Modell sagt 42“ zu „das Modell sagt 42, und so wahrscheinlich liegt es um mehr als zehn daneben“, und auf diesem Satz lassen sich Schwellen, Budgets und eine menschliche Nachprüfung aufbauen."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
           label: "Quelle"
       pending: false
+      wide: true
 
 about:
   heading: "Wer wir sind"
@@ -90,18 +105,18 @@ about:
   people:
     - name: "Dr. Eva-Maria Walz"
       role: "Statistik & Prognosen"
-      bio: "Statistikerin am KIT und am HITS – probabilistische Prognosen und ihre Bewertung."
+      bio: "Statistikerin am KIT und am HITS: probabilistische Prognosen und ihre Bewertung."
       photo: "eva-walz.jpg"
       photoAlt: "Porträt von Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
-      role: "Deep Learning & Modelle"
-      bio: "Deep Learning seit 2015, über alle Modellfamilien hinweg. Acht Jahre am DKFZ, Mitautor von nnU-Net."
+      role: "Deep Learning, Vision & Retrieval"
+      bio: "Deep Learning seit 2015, über alle Modellfamilien hinweg. Acht Jahre am DKFZ in der medizinischen Bildsegmentierung, Mitautor von nnU-Net. Heute baut er Systeme, die laufen: visuelle Suche über Industriekataloge, Dokumentenverständnis auf lokaler Hardware und Modelle, die klein genug für einen Sensor im Feld sind."
       photo: "gregor-koehler.jpg"
       photoAlt: "Porträt von Gregor Köhler"
 
 contact:
   heading: "Erzählen Sie uns, was Ihre Daten leisten sollen."
-  email: "TODO: hallo@[Domain – später]"
+  email: "hallo@walz-koehler.com"
   cta: "Schreiben Sie uns"
 
 footer:
@@ -111,18 +126,18 @@ footer:
 
 legalNotice:
   heading: "Impressum"
-  checkNotice: "TODO: Alle Angaben auf dieser Seite – auch den Satz zur Zusammenarbeit – vor Veröffentlichung prüfen."
+  checkNotice: "TODO: Alle Angaben auf dieser Seite, auch den Satz zur Zusammenarbeit, vor Veröffentlichung prüfen."
   ddgIntro: "Angaben gemäß § 5 DDG"
   facts:
     - label: "Anbieterin"
       value: "TODO: Dr. Eva-Maria Walz, Straße Hausnummer, PLZ Ort"
     - label: "Anbieter"
-      value: "TODO: Gregor Köhler, Straße Hausnummer, PLZ Ort"
+      value: "Gregor Köhler, Erwinstr. 24, 79102 Freiburg"
     - label: "Kontakt"
-      value: "TODO: hallo@[Domain] · Telefon [Nummer]"
+      value: "hallo@walz-koehler.com"
     - label: "Umsatzsteuer-ID"
-      value: "TODO: USt-IdNr. beider Anbieter nach § 27a UStG — oder der Hinweis auf § 19 UStG"
-  arrangement: "TODO: Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
+      value: "TODO: USt-IdNr. von Eva-Maria Walz nach § 27a UStG ergänzen, oder den Hinweis auf § 19 UStG. Gregor Köhler: DE451751819"
+  arrangement: "Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
   dispute: "Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit."
   englishHeading: ""
   englishBody: ""
@@ -132,15 +147,15 @@ privacy:
   checkNotice: "TODO: Alle Angaben auf dieser Seite vor Veröffentlichung prüfen."
   sections:
     - heading: "Verantwortlicher"
-      body: "TODO: Name und Kontaktdaten des Verantwortlichen"
+      body: "TODO: Anschrift von Dr. Eva-Maria Walz ergänzen. Verantwortlich für die Datenverarbeitung auf dieser Website sind Gregor Köhler, Erwinstr. 24, 79102 Freiburg, und Dr. Eva-Maria Walz, erreichbar unter hallo@walz-koehler.com"
     - heading: "Hosting und Server-Logs"
       intro: "Diese Website wird gehostet bei:"
-      body: "TODO: Hosting-Anbieter und Serverstandort"
+      body: "GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA, in der EU vertreten durch GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Niederlande. Die Seite besteht ausschließlich aus statischen Dateien. Beim Aufruf verarbeitet GitHub technisch notwendige Zugriffsdaten, darunter Ihre IP-Adresse, Datum und Uhrzeit der Anfrage, die angefragte Datei sowie Angaben zu Browser und Betriebssystem. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, unser berechtigtes Interesse an einem sicheren und stabilen Betrieb. Die Auslieferung erfolgt über Server auch in den USA; GitHub ist nach eigener Angabe unter dem EU-US Data Privacy Framework zertifiziert."
     - heading: "Kontakt"
-      body: "Wenn Sie uns per E-Mail schreiben, verwenden wir Ihre Nachricht und E-Mail-Adresse ausschließlich zur Beantwortung."
+      body: "Wenn Sie uns per E-Mail schreiben, verwenden wir Ihre Nachricht und E-Mail-Adresse ausschließlich zur Beantwortung, gestützt auf Art. 6 Abs. 1 lit. b und lit. f DSGVO. Wir löschen die Nachricht, sobald die Anfrage erledigt ist und keine Aufbewahrungspflichten entgegenstehen."
     - heading: "Cookies und Analyse"
-      body: "Wir verwenden keine Cookies und keine Analyse-Dienste Dritter. Die Schriften dieser Website werden auf unserem eigenen Server gehostet, nicht bei Google oder einem anderen Dritten geladen."
+      body: "Wir setzen keine Cookies und verwenden keine Analyse-Dienste Dritter. Die Schriften dieser Website werden mit der Seite ausgeliefert und nicht bei Google oder einem anderen Dritten geladen. Externe Links, etwa zu arxiv.org, führen erst nach einem Klick zu einem Drittanbieter."
     - heading: "Ihre Rechte"
-      body: "Nach der DSGVO (Art. 15–21) haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch bezüglich Ihrer personenbezogenen Daten."
+      body: "Nach der DSGVO (Art. 15 bis 21) haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch bezüglich Ihrer personenbezogenen Daten. Wenden Sie sich dafür an die oben genannte Kontaktadresse."
     - heading: "Beschwerderecht"
-      body: "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren."
+      body: "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes."

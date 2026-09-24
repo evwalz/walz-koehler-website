@@ -373,3 +373,161 @@ export function svcMarkSVGs(c: DrawingColors): [string, string, string] {
 }
 
 export const B3_COLORS: DrawingColors = { accent: "#43682B", ink: "#18200F", muted: "#58624F", contour: "#A9B79B" };
+
+/* ---- Case study · "the right part, found from a photo" -------------------------------
+   Three beats, in the same line-art register as the header and the services strip:
+   a photographed part · the catalogue as a cloud of vectors with the query's nearest
+   neighbours · the ranked answer. Drawn at build time, text-free apart from the rank
+   numerals so the same picture serves /de/ too, and composed twice — side by side on a
+   wide screen, stacked below 860px, exactly one rendered at any width. Each beat is drawn
+   in its own local 340x240 box and placed with a transform, so composition is trivial. */
+
+/** deterministic scatter — the picture must be byte-identical on every build */
+function lcg(seed: number): () => number {
+  let s = seed >>> 0;
+  return () => {
+    s = (s * 1664525 + 1013904223) >>> 0;
+    return s / 4294967296;
+  };
+}
+
+/** Beat 1 · an object in the viewfinder — deliberately abstract: nested contours around a
+   centre, in the register of the header's loss field. It has to read as "a thing, photographed",
+   without depicting anyone's actual part. */
+function photoBeat(c: DrawingColors): string {
+  const br = 30;
+  const corner = (x: number, y: number, dx: number, dy: number) =>
+    '<path d="M' + (x + dx * br) + " " + y + "H" + x + "V" + (y + dy * br) +
+    '" fill="none" stroke="' + c.accent + '" stroke-width="2.6" stroke-linecap="round"/>';
+
+  const cx = 170;
+  const cy = 120;
+  /** a closed, slightly irregular contour — same shape at every scale, so they nest */
+  const blob = (k: number): string => {
+    const pts: string[] = [];
+    for (let i = 0; i < 72; i++) {
+      const t = (i / 72) * Math.PI * 2;
+      const r = 88 * k * (1 + 0.11 * Math.sin(3 * t + 0.6) + 0.06 * Math.cos(5 * t - 0.3));
+      pts.push(f1(cx + Math.cos(t) * r * 1.06) + "," + f1(cy + Math.sin(t) * r * 0.92));
+    }
+    return pts.join(" ");
+  };
+
+  return (
+    corner(8, 8, 1, 1) + corner(332, 8, -1, 1) + corner(8, 232, 1, -1) + corner(332, 232, -1, -1) +
+    '<polygon points="' + blob(1) + '" fill="#FFFFFF" stroke="' + c.ink + '" stroke-width="2.2" stroke-linejoin="round"/>' +
+    '<polygon points="' + blob(0.72) + '" fill="none" stroke="' + c.ink + '" stroke-width="1.3" stroke-linejoin="round"/>' +
+    '<polygon points="' + blob(0.46) + '" fill="none" stroke="' + c.contour + '" stroke-width="1.2" stroke-linejoin="round"/>' +
+    '<circle cx="' + cx + '" cy="' + cy + '" r="8" fill="' + c.accent + '"/>'
+  );
+}
+
+/** Beat 2 · the catalogue as vectors: the query lands in the cloud, its neighbours light up. */
+function vectorBeat(c: DrawingColors): string {
+  const qx = 150;
+  const qy = 122;
+  const rnd = lcg(20260923);
+  const pts: Point[] = [];
+  for (let i = 0; i < 52; i++) {
+    const x = 26 + rnd() * 288;
+    const y = 26 + rnd() * 188;
+    if (Math.hypot(x - qx, y - qy) < 16) continue;
+    pts.push([x, y]);
+  }
+  const near = [...pts].sort((a, b) => Math.hypot(a[0] - qx, a[1] - qy) - Math.hypot(b[0] - qx, b[1] - qy)).slice(0, 3);
+  const isNear = (p: Point) => near.some((n) => n[0] === p[0] && n[1] === p[1]);
+
+  const far = pts.filter((p) => !isNear(p))
+    .map((p) => '<circle cx="' + f1(p[0]) + '" cy="' + f1(p[1]) + '" r="3.2" fill="' + c.muted + '" fill-opacity="0.5"/>').join("");
+  const links = near.map((p) =>
+    '<line x1="' + qx + '" y1="' + qy + '" x2="' + f1(p[0]) + '" y2="' + f1(p[1]) +
+    '" stroke="' + c.accent + '" stroke-width="1.3" stroke-dasharray="2 4" stroke-linecap="round"/>').join("");
+  const hits = near.map((p) =>
+    '<circle cx="' + f1(p[0]) + '" cy="' + f1(p[1]) + '" r="5.4" fill="' + c.accent + '" stroke="#FFFFFF" stroke-width="1.2"/>').join("");
+  const reach = f1(Math.max(...near.map((p) => Math.hypot(p[0] - qx, p[1] - qy))) + 16);
+
+  return (
+    far +
+    '<circle cx="' + qx + '" cy="' + qy + '" r="' + reach + '" fill="none" stroke="' + c.accent +
+    '" stroke-width="1.4" stroke-dasharray="5 6" opacity="0.85"/>' +
+    links + hits +
+    '<path d="M' + (qx - 20) + " " + qy + "h12M" + (qx + 8) + " " + qy + "h12M" + qx + " " + (qy - 20) + "v12M" + qx + " " + (qy + 8) +
+    'v12" stroke="' + c.ink + '" stroke-width="1.5" stroke-linecap="round"/>' +
+    '<circle cx="' + qx + '" cy="' + qy + '" r="6.5" fill="' + c.ink + '"/>'
+  );
+}
+
+/** Beat 3 · the answer: candidates ranked, the first one carried by the accent. */
+function rankBeat(c: DrawingColors): string {
+  const glyph = (i: number, x: number, y: number): string => {
+    if (i === 0)
+      return '<circle cx="' + (x + 20) + '" cy="' + (y + 20) + '" r="13" fill="none" stroke="' + c.ink + '" stroke-width="1.6"/>' +
+        '<circle cx="' + (x + 20) + '" cy="' + (y + 20) + '" r="4.5" fill="' + c.accent + '"/>';
+    if (i === 1)
+      return '<path d="M' + (x + 9) + " " + (y + 28) + "v-13h11v-6h11v19z" + '" fill="none" stroke="' + c.muted + '" stroke-width="1.5" stroke-linejoin="round"/>';
+    return '<circle cx="' + (x + 20) + '" cy="' + (y + 16) + '" r="7.5" fill="none" stroke="' + c.muted + '" stroke-width="1.5"/>' +
+      '<path d="M' + (x + 20) + " " + (y + 24) + 'v8" stroke="' + c.muted + '" stroke-width="1.5" stroke-linecap="round"/>';
+  };
+
+  let out = "";
+  const barW = [[152, 104], [128, 86], [116, 74]];
+  for (let i = 0; i < 3; i++) {
+    const y = 10 + i * 78;
+    const first = i === 0;
+    out +=
+      '<rect x="10" y="' + y + '" width="320" height="64" rx="12" fill="#FFFFFF" stroke="' +
+      (first ? c.accent : c.contour) + '" stroke-width="' + (first ? 2 : 1.2) + '"/>' +
+      '<rect x="24" y="' + (y + 12) + '" width="40" height="40" rx="9" fill="none" stroke="' + c.contour + '" stroke-width="1.2"/>' +
+      glyph(i, 24, y + 12) +
+      '<rect x="80" y="' + (y + 17) + '" width="' + barW[i][0] + '" height="9" rx="4.5" fill="' + (first ? c.accent : c.contour) + '" fill-opacity="' + (first ? 1 : 0.85) + '"/>' +
+      '<rect x="80" y="' + (y + 36) + '" width="' + barW[i][1] + '" height="7" rx="3.5" fill="' + c.contour + '" fill-opacity="0.6"/>' +
+      '<circle cx="303" cy="' + (y + 32) + '" r="13" fill="' + (first ? c.accent : "none") + '" stroke="' + (first ? c.accent : c.contour) + '" stroke-width="1.4"/>' +
+      '<text x="303" y="' + (y + 37) + '" text-anchor="middle" font-family="DM Mono,monospace" font-size="14" fill="' +
+      (first ? "#FFFFFF" : c.muted) + '">' + (i + 1) + "</text>";
+  }
+  return out;
+}
+
+/** the connector between two beats: a dashed run with a solid arrowhead */
+function beatArrow(c: DrawingColors, x: number, y: number, len: number, vertical: boolean): string {
+  const x2 = vertical ? x : x + len;
+  const y2 = vertical ? y + len : y;
+  const head = vertical
+    ? "M" + (x - 6) + " " + (y2 - 9) + "L" + x + " " + y2 + "L" + (x + 6) + " " + (y2 - 9) + "Z"
+    : "M" + (x2 - 9) + " " + (y - 6) + "L" + x2 + " " + y + "L" + (x2 - 9) + " " + (y + 6) + "Z";
+  return (
+    '<line x1="' + x + '" y1="' + y + '" x2="' + (vertical ? x : x2 - 8) + '" y2="' + (vertical ? y2 - 8 : y) +
+    '" stroke="' + c.accent + '" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>' +
+    '<path d="' + head + '" fill="' + c.accent + '"/>'
+  );
+}
+
+function place(inner: string, x: number, y: number): string {
+  return '<g transform="translate(' + x + " " + y + ')">' + inner + "</g>";
+}
+
+/** Wide screens: the three beats side by side. */
+export function partSearchStripSVG(c: DrawingColors): string {
+  return (
+    '<svg viewBox="0 0 1200 260" width="100%" aria-hidden="true" style="display:block">' +
+    place(photoBeat(c), 0, 10) +
+    beatArrow(c, 352, 130, 56, false) +
+    place(vectorBeat(c), 430, 10) +
+    beatArrow(c, 792, 130, 56, false) +
+    place(rankBeat(c), 860, 10) +
+    "</svg>"
+  );
+}
+
+/** Below 860px: the same three beats stacked, at column width. */
+export function partSearchStackSVG(c: DrawingColors): string {
+  return (
+    '<svg viewBox="0 0 340 800" width="100%" aria-hidden="true" style="display:block">' +
+    place(photoBeat(c), 0, 0) +
+    beatArrow(c, 170, 252, 44, true) +
+    place(vectorBeat(c), 0, 300) +
+    beatArrow(c, 170, 552, 44, true) +
+    place(rankBeat(c), 0, 600) +
+    "</svg>"
+  );
+}

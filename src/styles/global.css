@@ -498,6 +498,28 @@ mark.pend {
   font-size: 15px;
 }
 
+/* One listed work carries a drawing and spans the grid: the picture sits on the page's
+   own paper colour inside the white card, so the ranked rows keep the contrast they were
+   drawn with. Wide screens get the three beats side by side, below 860px they stack. */
+.work-wide {
+  grid-column: 1 / -1;
+}
+.work-fig {
+  margin: 0 0 6px;
+  background: var(--ground);
+  border-radius: 10px;
+  padding: clamp(10px, 1.6vw, 20px) clamp(8px, 1.4vw, 18px);
+}
+.work-wide .eyebrow {
+  margin-top: 4px;
+}
+.work-wide p:not(.eyebrow) {
+  max-width: 88ch;
+}
+.fig-stack {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .svc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -519,6 +541,12 @@ mark.pend {
   .svc-mark {
     display: block;
     margin-bottom: 2px;
+  }
+  .fig-wide {
+    display: none;
+  }
+  .fig-stack {
+    display: block;
   }
   .field {
     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 62%, #000 86%);
