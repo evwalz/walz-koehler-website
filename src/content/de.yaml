@@ -2,13 +2,13 @@ htmlLang: "de"
 
 meta:
   home:
-    title: "Walz & Köhler — Statistik und Machine Learning für Unternehmen"
-    description: "Zwei Forschende bauen Modelle, die Ihre Arbeit messbar verbessern. Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
+    title: "Walz & Köhler: Statistik und Machine Learning für Unternehmen"
+    description: "Zwei Forschende bauen Modelle, die Ihre Arbeit messbar verbessern. Ihr Problem und Ihre Daten entscheiden über die Methode: Statistik, Deep Learning oder beides."
   legalNotice:
-    title: "Impressum — Walz & Köhler"
+    title: "Impressum · Walz & Köhler"
     description: "Impressum für die Website von Walz & Köhler."
   privacy:
-    title: "Datenschutz — Walz & Köhler"
+    title: "Datenschutz · Walz & Köhler"
     description: "Wie Walz & Köhler personenbezogene Daten auf dieser Website verarbeitet."
 
 skipLink: "Zum Inhalt springen"
@@ -28,26 +28,26 @@ nav:
 hero:
   eyebrow: "Statistik · Machine Learning"
   heading: "Modelle, die Ihre Arbeit messbar verbessern."
-  lede: "Ihr Problem und Ihre Daten entscheiden über die Methode – Statistik, Deep Learning oder beides."
+  lede: "Ihr Problem und Ihre Daten entscheiden über die Methode: Statistik, Deep Learning oder beides."
   ctaPrimary: "Schreiben Sie uns"
 
 services:
   heading: "Was wir tun"
-  lead: "Jedes Projekt beginnt mit Ihrem Problem und Ihren Daten. Erst danach wählen wir die Methode – ein Deep-Learning-Modell, ein klassisches statistisches Verfahren oder gar kein Modell."
+  lead: "Jedes Projekt beginnt mit Ihrem Problem und Ihren Daten. Erst danach wählen wir die Methode: ein Deep-Learning-Modell, ein klassisches statistisches Verfahren oder gar kein Modell."
   items:
     - title: "Was Ihre Daten können"
       text: "Was sie hergeben, was nicht, und was sich dafür ändern müsste."
     - title: "Modelle für Ihre Aufgabe"
-      text: "Statistisch oder Deep Learning – auf den Daten, die Sie haben."
+      text: "Statistisch oder Deep Learning, auf den Daten, die Sie haben."
     - title: "Von der Idee in den Betrieb"
-      text: "Datenpipelines, Inbetriebnahme – und ein Team, das es weiterführt."
+      text: "Datenpipelines, Inbetriebnahme und ein Team, das es weiterführt."
 
 work:
   heading: "Ausgewählte Arbeiten"
   items:
     - eyebrow: "Bildsuche · Teileidentifikation"
       title: "Das richtige Teil per Foto finden"
-      text: "Fotos werden mit dem Ersatzteilkatalog abgeglichen: aus einer manuellen Suche wurde eine automatische. Jedes Katalogbild wird einmal in eine Vektordatenbank eingebettet, das Anfragefoto ist damit ein Punkt und die nächstgelegenen Punkte sind die Kandidaten; Teilenummern und Beschreibungen werden in derselben Anfrage durchsucht, beide Ranglisten zu einer verschmolzen. Das Ganze läuft produktiv hinter einer API, die auch Agenten nutzen: Sie labeln eingehende Fotos vor, ein Mensch prüft nach, und aus dem laufenden Betrieb wird der nächste Testdatensatz. Jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen – das macht aus „fühlt sich besser an“ eine Entscheidung."
+      text: "Fotos werden mit dem Ersatzteilkatalog abgeglichen: aus einer manuellen Suche wurde eine automatische. Ein Foto findet das richtige Teil unter mehr als 15.000 Katalogprodukten, und zwar auch dann, wenn es im eingebauten Zustand aufgenommen wird: verdeckt von dem, was ringsherum montiert ist, und nur aus einer Richtung sichtbar. Jedes Katalogbild wird einmal in eine Vektordatenbank eingebettet, das Anfragefoto ist damit ein Punkt und die nächstgelegenen Punkte sind die Kandidaten; Teilenummern und Beschreibungen werden in derselben Anfrage durchsucht, beide Ranglisten zu einer verschmolzen. Das Ganze läuft produktiv hinter einer API, die auch Agenten nutzen: Sie labeln eingehende Fotos vor, ein Mensch prüft nach, und aus dem laufenden Betrieb wird der nächste Testdatensatz. Jedes Release wird gegen einen eingefrorenen, von Hand validierten Testdatensatz gemessen. Das macht aus „fühlt sich besser an“ eine Entscheidung."
       sources: []
       pending: false
       wide: true
@@ -66,39 +66,36 @@ work:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Quelle"
       pending: false
+    - eyebrow: "Bildverarbeitung · Erstautor, WACV 2024"
+      title: "RecycleNet: ein Netz, das seine eigene Antwort überdenkt"
+      text: "Statt in einem einzigen Durchgang zu entscheiden, gibt das Modell seine eigenen Merkmale in frühere Schichten zurück und verfeinert die Entscheidung über mehrere Runden hinweg, über mehr Runden, als es im Training je gesehen hat. Es tauscht Rechenzeit gegen Genauigkeit, und dieser Tausch lohnt sich überall dort, wo eine falsche Antwort teuer ist."
+      sources:
+        - href: "https://arxiv.org/abs/2309.07513"
+          label: "Quelle"
+      pending: false
     - eyebrow: "Dokumentenverständnis · Auftragseingang"
       title: "Bestellungen dort gelesen, wo sie ankommen"
-      text: "Bestell-PDFs werden zu validiertem, angereichertem JSON mit Konfidenz je Feld, abgeglichen mit Kunden- und Ersatzteilkatalog und bereit für das ERP. Das Modell läuft auf der Maschine im Haus – kein Dokument verlässt sie."
+      text: "Bestell-PDFs werden zu validiertem, angereichertem JSON mit Konfidenz je Feld, abgeglichen mit Kunden- und Ersatzteilkatalog und bereit für das ERP. Das Modell läuft auf der Maschine im Haus, und kein Dokument verlässt sie."
       sources: []
       pending: false
     - eyebrow: "Evaluation"
       title: "Die passende Metrik für die Aufgabe wählen"
-      text: "Eine Metrik sagt mehr, wenn sie zum Ziel passt – und wenn man weiß, wie sie zu lesen ist."
+      text: "Eine Metrik sagt mehr, wenn sie zum Ziel passt, und wenn man weiß, wie sie zu lesen ist."
       sources:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Quelle"
       pending: false
     - eyebrow: "Edge-ML · Beratung"
       title: "Arten erkennen auf einem solarbetriebenen Sensor"
-      text: "Beratung eines Startups für Biodiversitätsmonitoring zum Modell in seinem Feldgerät: ein kleines Netz, quantisiert auf einen Mikrocontroller, angelernt von einem sehr viel größeren und mit unbeschrifteten Aufnahmen weitergetrieben."
+      text: "Beratung von Hula Earth, einem Münchner Startup für Biodiversitätsmonitoring, zum Modell in seinem Feldgerät: ein kleines Netz, quantisiert auf einen Mikrocontroller, angelernt von einem sehr viel größeren und mit unbeschrifteten Aufnahmen weitergetrieben."
       sources: []
       pending: false
     - eyebrow: "Unsicherheit"
       title: "Wie sicher eine Vorhersage ist"
-      text: "Nicht nur die Antwort – sondern auch, wie sehr Sie sich darauf verlassen können."
+      text: "Nicht nur die Antwort, sondern auch, wie sehr Sie sich darauf verlassen können."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
           label: "Quelle"
-      pending: false
-    - eyebrow: "Simulation · eigenes Labor"
-      title: "Nutzerforschung, bevor es Nutzer gibt"
-      text: "Eine Population aus einer bekannten Merkmalsverteilung ziehen und ein Modell so antworten lassen, wie es diese Menschen täten. Rückmeldung zu Fragebogen oder Produkt, solange beides noch entsteht – geprüft an Verteilungen, die wir nachrechnen können."
-      sources: []
-      pending: false
-    - eyebrow: "Forschung · laufend"
-      title: "Lernen mit wenigen Labels"
-      text: "Selbstüberwachtes Vortrainieren und halbüberwachtes Lernen, die den Bedarf an annotierten Aufnahmen senken – ehrlich gemessen gegen eine gut eingestellte nnU-Net-Baseline."
-      sources: []
       pending: false
 
 about:
@@ -107,7 +104,7 @@ about:
   people:
     - name: "Dr. Eva-Maria Walz"
       role: "Statistik & Prognosen"
-      bio: "Statistikerin am KIT und am HITS – probabilistische Prognosen und ihre Bewertung."
+      bio: "Statistikerin am KIT und am HITS: probabilistische Prognosen und ihre Bewertung."
       photo: "eva-walz.jpg"
       photoAlt: "Porträt von Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
@@ -118,7 +115,7 @@ about:
 
 contact:
   heading: "Erzählen Sie uns, was Ihre Daten leisten sollen."
-  email: "TODO: hallo@[Domain – später]"
+  email: "TODO: hallo@[Domain, später entschieden]"
   cta: "Schreiben Sie uns"
 
 footer:
@@ -128,7 +125,7 @@ footer:
 
 legalNotice:
   heading: "Impressum"
-  checkNotice: "TODO: Alle Angaben auf dieser Seite – auch den Satz zur Zusammenarbeit – vor Veröffentlichung prüfen."
+  checkNotice: "TODO: Alle Angaben auf dieser Seite, auch den Satz zur Zusammenarbeit, vor Veröffentlichung prüfen."
   ddgIntro: "Angaben gemäß § 5 DDG"
   facts:
     - label: "Anbieterin"
@@ -138,7 +135,7 @@ legalNotice:
     - label: "Kontakt"
       value: "TODO: hallo@[Domain] · Telefon [Nummer]"
     - label: "Umsatzsteuer-ID"
-      value: "TODO: USt-IdNr. beider Anbieter nach § 27a UStG — oder der Hinweis auf § 19 UStG"
+      value: "TODO: USt-IdNr. beider Anbieter nach § 27a UStG, oder der Hinweis auf § 19 UStG"
   arrangement: "TODO: Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
   dispute: "Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit."
   englishHeading: ""
@@ -158,6 +155,6 @@ privacy:
     - heading: "Cookies und Analyse"
       body: "Wir verwenden keine Cookies und keine Analyse-Dienste Dritter. Die Schriften dieser Website werden auf unserem eigenen Server gehostet, nicht bei Google oder einem anderen Dritten geladen."
     - heading: "Ihre Rechte"
-      body: "Nach der DSGVO (Art. 15–21) haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch bezüglich Ihrer personenbezogenen Daten."
+      body: "Nach der DSGVO (Art. 15 bis 21) haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch bezüglich Ihrer personenbezogenen Daten."
     - heading: "Beschwerderecht"
       body: "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren."

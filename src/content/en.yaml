@@ -3,13 +3,13 @@ htmlLang: "en"
 
 meta:
   home:
-    title: "Walz & Köhler — statistics and machine learning for companies"
-    description: "Two researchers building models that measurably improve how you work. Your problem and your data decide the approach — statistical, deep learning, or both."
+    title: "Walz & Köhler: statistics and machine learning for companies"
+    description: "Two researchers building models that measurably improve how you work. Your problem and your data decide the approach: statistical, deep learning, or both."
   legalNotice:
-    title: "Legal notice — Walz & Köhler"
+    title: "Legal notice · Walz & Köhler"
     description: "Legal notice (Impressum) for the Walz & Köhler website."
   privacy:
-    title: "Privacy — Walz & Köhler"
+    title: "Privacy · Walz & Köhler"
     description: "How Walz & Köhler handles personal data on this website."
 
 skipLink: "Skip to content"
@@ -29,26 +29,26 @@ nav:
 hero:
   eyebrow: "Statistics · Machine learning"
   heading: "Models that measurably improve how you work."
-  lede: "Your problem and your data decide the approach — statistical, deep learning, or both."
+  lede: "Your problem and your data decide the approach: statistical, deep learning, or both."
   ctaPrimary: "Write to us"
 
 services:
   heading: "What we do"
-  lead: "Every project begins with your problem and your data. Only then do we choose the approach — a deep learning model, a classical statistical method, or no model at all."
+  lead: "Every project begins with your problem and your data. Only then do we choose the approach: a deep learning model, a classical statistical method, or no model at all."
   items:
     - title: "What your data can do"
       text: "What it supports, what it does not, and what would have to change first."
     - title: "Models for your problem"
       text: "Statistical or deep learning, on the data you have."
     - title: "From idea to production"
-      text: "Pipelines, deployment — and a team that can run it."
+      text: "Pipelines, deployment, and a team that can run it."
 
 work:
   heading: "Selected work"
   items:
     - eyebrow: "Image search · parts identification"
       title: "The right part, found from a photo"
-      text: "Photos matched against the parts catalogue: a manual lookup became an automatic one. Every catalogue image is embedded once into a vector database, so a query photo is a point and the nearest points are the candidates; part numbers and descriptions are searched in the same request, and the two rankings are fused into one. It runs in production behind an API that agents can call too — they pre-label incoming photos, a human checks them, and everyday traffic becomes the next test set. Every release is scored against a frozen, human-validated test set, which is what turns “this feels better” into a decision."
+      text: "Photos matched against the parts catalogue: a manual lookup became an automatic one. One photo finds the right part among more than 15,000 catalogue products, and it does so when the part is photographed where it sits: built into the machine, half of it covered by what surrounds it, visible from one direction only. Every catalogue image is embedded once into a vector database, so a query photo is a point and the nearest points are the candidates; part numbers and descriptions are searched in the same request, and the two rankings are fused into one. It runs in production behind an API that agents can call too. They pre-label incoming photos, a human checks them, and everyday traffic becomes the next test set. Every release is scored against a frozen, human-validated test set, which is what turns “this feels better” into a decision."
       sources: []
       pending: false
       wide: true
@@ -67,39 +67,36 @@ work:
         - href: "https://arxiv.org/abs/1809.10486"
           label: "Source"
       pending: false
+    - eyebrow: "Computer vision · first author, WACV 2024"
+      title: "RecycleNet: a network that reconsiders its own answer"
+      text: "Instead of deciding in a single pass, the model feeds its own features back into earlier layers and refines the decision over several rounds, more rounds than it ever saw in training. It buys accuracy with computing time, which is the right trade wherever a wrong answer is expensive."
+      sources:
+        - href: "https://arxiv.org/abs/2309.07513"
+          label: "Source"
+      pending: false
     - eyebrow: "Document understanding · order intake"
       title: "Orders read where they arrive"
-      text: "Ordering PDFs turned into validated, enriched JSON with a confidence score per field, matched against the customer and parts catalogues and ready for the ERP. The model runs on the machine in the building — no document leaves it."
+      text: "Ordering PDFs turned into validated, enriched JSON with a confidence score per field, matched against the customer and parts catalogues and ready for the ERP. The model runs on the machine in the building, and no document leaves it."
       sources: []
       pending: false
     - eyebrow: "Evaluation"
       title: "Choosing the right score for the task"
-      text: "A score says more when it fits the goal — and when you know how to read it."
+      text: "A score says more when it fits the goal, and when you know how to read it."
       sources:
         - href: "https://arxiv.org/abs/2510.17994"
           label: "Source"
       pending: false
     - eyebrow: "Edge ML · advisory"
       title: "Species recognised on a solar-powered sensor"
-      text: "Advising a biodiversity-monitoring startup on the model inside its field device: a small network quantised onto a microcontroller, taught by a far larger one and pushed further with unlabelled recordings."
+      text: "Advising Hula Earth, a Munich biodiversity-monitoring startup, on the model inside its field device: a small network quantised onto a microcontroller, taught by a far larger one and pushed further with unlabelled recordings."
       sources: []
       pending: false
     - eyebrow: "Uncertainty"
       title: "How certain a prediction is"
-      text: "Not just the answer — how much you can rely on it."
+      text: "Not just the answer, but how much you can rely on it."
       sources:
         - href: "https://arxiv.org/abs/2212.08376"
           label: "Source"
-      pending: false
-    - eyebrow: "Simulation · our own lab"
-      title: "User research before there are users"
-      text: "Draw a population from a known feature distribution, then let a model answer as each of those people would. Feedback on a questionnaire or a product while both are still being built — checked against distributions we can verify."
-      sources: []
-      pending: false
-    - eyebrow: "Research · ongoing"
-      title: "Learning from few labels"
-      text: "Self-supervised pretraining and semi-supervised learning that cut how many annotated scans a segmentation model needs — measured honestly against a well-tuned nnU-Net baseline."
-      sources: []
       pending: false
 
 about:
@@ -119,7 +116,7 @@ about:
 
 contact:
   heading: "Tell us what you want your data to do."
-  email: "TODO: hello@[domain — later]"
+  email: "TODO: hello@[domain, decided later]"
   cta: "Write to us"
 
 footer:
@@ -129,7 +126,7 @@ footer:
 
 legalNotice:
   heading: "Impressum"
-  checkNotice: "TODO: Verify every fact on this page — and the arrangement sentence — before it goes live."
+  checkNotice: "TODO: Verify every fact on this page, the arrangement sentence included, before it goes live."
   ddgIntro: "Angaben gemäß § 5 DDG"
   facts:
     - label: "Anbieterin"
@@ -139,7 +136,7 @@ legalNotice:
     - label: "Kontakt"
       value: "TODO: hello@[Domain] · Telefon [Nummer]"
     - label: "Umsatzsteuer-ID"
-      value: "TODO: USt-IdNr. beider Anbieter nach § 27a UStG — oder der Hinweis auf § 19 UStG"
+      value: "TODO: USt-IdNr. beider Anbieter nach § 27a UStG, oder der Hinweis auf § 19 UStG"
   arrangement: "TODO: Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
   dispute: "Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit."
   englishHeading: "In English"
@@ -159,6 +156,6 @@ privacy:
     - heading: "Cookies and analytics"
       body: "We do not use cookies or third-party analytics. The fonts on this site are hosted on our own server, not loaded from Google or any other third party."
     - heading: "Your rights"
-      body: "Under the GDPR (Art. 15–21) you have the right to access, rectification, erasure, restriction of processing, data portability and objection regarding your personal data."
+      body: "Under the GDPR (Art. 15 to 21) you have the right to access, rectification, erasure, restriction of processing, data portability and objection regarding your personal data."
     - heading: "Right to complain"
       body: "You have the right to lodge a complaint with a data-protection supervisory authority."
