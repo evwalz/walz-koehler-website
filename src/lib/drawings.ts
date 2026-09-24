@@ -340,12 +340,20 @@ const COL_W = (1200 - 2 * 34) / 3;
 const colMid = (i: number) => i * (COL_W + 34) + COL_W / 2;
 const FAN_BOX = { w: 450, inkL: 20, inkR: 433 };     // ink inside the 450-wide inset
 
+/* The data block is centred on its track and then moved 16 left. Its ink is already balanced —
+   the centre of mass measures 1.4px left of the column's centre and the two rows agree within
+   0.6px — but the photo and page stacks overhang up and to the right, and those edges read as
+   weight that a centre-of-mass calculation cannot see. Eva judged it against the column's own
+   edges at 0 / -8 / -16 / -24 and picked -16, so the number is a measurement of the eye, not a
+   fudge; it belongs to this arrangement of these glyphs and should be re-judged if they change. */
+const KINDS_OPTICAL = -16;
+
 /** Wide screens: the three beats as one drawing under the three columns. */
 export function svcStripSVG(c: DrawingColors): string {
   const mid = 96;
   return (
     '<svg viewBox="0 0 1200 200" width="100%" height="200" aria-hidden="true" style="display:block">' +
-    G(dataKindsSVG(c), colMid(0) - DATA_KINDS.w / 2, mid - DATA_KINDS.h / 2, 1) +
+    G(dataKindsSVG(c), colMid(0) - DATA_KINDS.w / 2 + KINDS_OPTICAL, mid - DATA_KINDS.h / 2, 1) +
     fanInset(c, "fan-svc-wide", 'x="' + f1(colMid(1) - (FAN_BOX.inkL + FAN_BOX.inkR) / 2) +
       '" y="10" width="' + FAN_BOX.w + '" height="172.8"') +
     loopSVG(c, colMid(2), mid, 54, 5) +
