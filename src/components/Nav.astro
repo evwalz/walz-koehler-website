@@ -1,5 +1,5 @@
 ---
-import { ROUTES, otherLang, type Lang, type PageKind } from "../lib/routes";
+import { ROUTES, type Lang, type PageKind } from "../lib/routes";
 import type { SiteData } from "../lib/types";
 
 interface Props {
@@ -10,9 +10,12 @@ interface Props {
 
 const { lang, page, data } = Astro.props;
 const homeHref = ROUTES[lang].home;
-const other = otherLang(lang);
-const otherHref = ROUTES[other][page];
 const brandHref = page === "home" ? "#top" : homeHref;
+
+// The two languages always sit in the same place: German left, English right. Only the
+// highlight moves, so the switch does not make the buttons jump under the pointer.
+const LANG_ORDER: Lang[] = ["de", "en"];
+const langLabel = (l: Lang) => (l === lang ? data.nav.langCurrentLabel : data.nav.langOtherLabel);
 
 function sectionHref(id: string): string {
   return page === "home" ? `#${id}` : `${homeHref}#${id}`;
@@ -29,8 +32,15 @@ function sectionHref(id: string): string {
         <a href={sectionHref("contact")}>{data.nav.links.contact}</a>
       </nav>
       <div class="lang" role="group" aria-label={data.nav.langGroupAriaLabel}>
-        <span aria-current="page">{data.nav.langCurrentLabel}</span>
-        <a href={otherHref} aria-label={data.nav.langOtherAriaLabel}>{data.nav.langOtherLabel}</a>
+        {
+          LANG_ORDER.map((l) =>
+            l === lang ? (
+              <span aria-current="page">{langLabel(l)}</span>
+            ) : (
+              <a href={ROUTES[l][page]} aria-label={data.nav.langOtherAriaLabel}>{langLabel(l)}</a>
+            ),
+          )
+        }
       </div>
     </div>
   </div>
