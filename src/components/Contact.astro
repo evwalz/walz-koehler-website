@@ -16,7 +16,7 @@ const mailHref = `mailto:${todoText(data.contact.email)}`;
     <div class="contact-box">
       <h2>{data.contact.heading}</h2>
       <div class="mail-box">
-        <p class="mail"><Todo value={data.contact.email} /></p>
+        <p class="mail"><a href={mailHref}><Todo value={data.contact.email} /></a></p>
         <a class="btn p" href={mailHref}>{data.contact.cta} <span aria-hidden="true">→</span></a>
       </div>
     </div>
