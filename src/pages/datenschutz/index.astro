@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import PrivacyPage from "../../../components/PrivacyPage.astro";
+import PrivacyPage from "../../components/PrivacyPage.astro";
 
 const entry = await getEntry("site", "de");
 if (!entry) throw new Error("Missing content entry: de");
