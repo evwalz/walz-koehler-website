@@ -130,7 +130,7 @@ legalNotice:
   ddgIntro: "Angaben gemäß § 5 DDG"
   facts:
     - label: "Anbieterin"
-      value: "TODO: Dr. Eva-Maria Walz, Straße Hausnummer, PLZ Ort"
+      value: "Dr. Eva-Maria Walz, Antoniterstraße 9, 79106 Freiburg"
     - label: "Anbieter"
       value: "Gregor Köhler, Erwinstr. 24, 79102 Freiburg"
     - label: "Kontakt"
@@ -147,7 +147,7 @@ privacy:
   checkNotice: "TODO: Alle Angaben auf dieser Seite vor Veröffentlichung prüfen."
   sections:
     - heading: "Verantwortlicher"
-      body: "TODO: Anschrift von Dr. Eva-Maria Walz ergänzen. Verantwortlich für die Datenverarbeitung auf dieser Website sind Gregor Köhler, Erwinstr. 24, 79102 Freiburg, und Dr. Eva-Maria Walz, erreichbar unter hallo@walz-koehler.com"
+      body: "Verantwortlich für die Datenverarbeitung auf dieser Website sind Gregor Köhler, Erwinstr. 24, 79102 Freiburg, und Dr. Eva-Maria Walz, Antoniterstraße 9, 79106 Freiburg, beide erreichbar unter hallo@walz-koehler.com"
     - heading: "Hosting und Server-Logs"
       intro: "Diese Website wird gehostet bei:"
       body: "GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA, in der EU vertreten durch GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Niederlande. Die Seite besteht ausschließlich aus statischen Dateien. Beim Aufruf verarbeitet GitHub technisch notwendige Zugriffsdaten, darunter Ihre IP-Adresse, Datum und Uhrzeit der Anfrage, die angefragte Datei sowie Angaben zu Browser und Betriebssystem. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, unser berechtigtes Interesse an einem sicheren und stabilen Betrieb. Die Auslieferung erfolgt über Server auch in den USA; GitHub ist nach eigener Angabe unter dem EU-US Data Privacy Framework zertifiziert."
