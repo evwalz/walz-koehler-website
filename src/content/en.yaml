@@ -117,7 +117,7 @@ about:
 
 contact:
   heading: "Tell us what you want your data to do."
-  email: "hallo@walz-koehler.com"
+  email: "hello@walz-koehler.com"
   cta: "Write to us"
 
 footer:
@@ -135,7 +135,7 @@ legalNotice:
     - label: "Anbieter"
       value: "Gregor Köhler, Erwinstr. 24, 79102 Freiburg"
     - label: "Kontakt"
-      value: "hallo@walz-koehler.com"
+      value: "hello@walz-koehler.com"
     - label: "Umsatzsteuer-ID"
       value: "TODO: USt-IdNr. von Eva-Maria Walz nach § 27a UStG ergänzen, oder den Hinweis auf § 19 UStG. Gregor Köhler: DE451751819"
   arrangement: "Walz & Köhler ist die Zusammenarbeit zweier selbstständiger Freiberufler. Verträge kommen jeweils mit der einzelnen Person zustande, und jede Person rechnet ihre Leistungen selbst ab. Eine Gesellschaft besteht nicht."
@@ -148,7 +148,7 @@ privacy:
   checkNotice: "TODO: Verify every fact on this page before it goes live."
   sections:
     - heading: "Controller"
-      body: "The controllers for the data processing on this website are Gregor Köhler, Erwinstr. 24, 79102 Freiburg, Germany, and Dr. Eva-Maria Walz, Antoniterstraße 9, 79106 Freiburg, Germany, both reachable at hallo@walz-koehler.com"
+      body: "The controllers for the data processing on this website are Gregor Köhler, Erwinstr. 24, 79102 Freiburg, Germany, and Dr. Eva-Maria Walz, Antoniterstraße 9, 79106 Freiburg, Germany, both reachable at hello@walz-koehler.com"
     - heading: "Hosting and server logs"
       intro: "This website is hosted by:"
       body: "GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA, represented in the EU by GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Netherlands. The site consists of static files only. When you open it, GitHub processes technically necessary access data, including your IP address, the date and time of the request, the file requested and details of your browser and operating system. The legal basis is Art. 6(1)(f) GDPR, our legitimate interest in secure and stable operation. Delivery runs over servers in the USA as well; GitHub states that it is certified under the EU-U.S. Data Privacy Framework."

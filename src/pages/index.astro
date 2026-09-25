@@ -2,8 +2,8 @@
 import { getEntry } from "astro:content";
 import HomePage from "../components/HomePage.astro";
 
-const entry = await getEntry("site", "en");
-if (!entry) throw new Error("Missing content entry: en");
+const entry = await getEntry("site", "de");
+if (!entry) throw new Error("Missing content entry: de");
 ---
 
-<HomePage lang="en" data={entry.data} />
+<HomePage lang="de" data={entry.data} />
