@@ -131,7 +131,7 @@ legalNotice:
   ddgIntro: "Angaben gemäß § 5 DDG"
   facts:
     - label: "Anbieterin"
-      value: "TODO: Dr. Eva-Maria Walz, Straße Hausnummer, PLZ Ort"
+      value: "Dr. Eva-Maria Walz, Antoniterstraße 9, 79106 Freiburg"
     - label: "Anbieter"
       value: "Gregor Köhler, Erwinstr. 24, 79102 Freiburg"
     - label: "Kontakt"
@@ -148,7 +148,7 @@ privacy:
   checkNotice: "TODO: Verify every fact on this page before it goes live."
   sections:
     - heading: "Controller"
-      body: "TODO: add the address of Dr. Eva-Maria Walz. The controllers for the data processing on this website are Gregor Köhler, Erwinstr. 24, 79102 Freiburg, Germany, and Dr. Eva-Maria Walz, reachable at hallo@walz-koehler.com"
+      body: "The controllers for the data processing on this website are Gregor Köhler, Erwinstr. 24, 79102 Freiburg, Germany, and Dr. Eva-Maria Walz, Antoniterstraße 9, 79106 Freiburg, Germany, both reachable at hallo@walz-koehler.com"
     - heading: "Hosting and server logs"
       intro: "This website is hosted by:"
       body: "GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA, represented in the EU by GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Netherlands. The site consists of static files only. When you open it, GitHub processes technically necessary access data, including your IP address, the date and time of the request, the file requested and details of your browser and operating system. The legal basis is Art. 6(1)(f) GDPR, our legitimate interest in secure and stable operation. Delivery runs over servers in the USA as well; GitHub states that it is certified under the EU-U.S. Data Privacy Framework."
