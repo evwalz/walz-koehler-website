@@ -105,8 +105,8 @@ about:
   photoPlaceholder: "TODO: photo"
   people:
     - name: "Dr. Eva-Maria Walz"
-      role: "Statistics & forecasting"
-      bio: "Statistician at KIT and HITS, working on probabilistic forecasts and how to tell whether one is good."
+      role: "Statistics, forecasting & evaluation"
+      bio: "PhD in statistics, research at KIT and HITS. Builds AI and forecasting models and measures how good they are: probabilistic forecasts, model evaluation, uncertainty quantification."
       photo: "eva-walz.jpg"
       photoAlt: "Portrait of Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"

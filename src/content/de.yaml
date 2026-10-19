@@ -54,7 +54,7 @@ work:
       drawing: part-search
     - eyebrow: "Prognosen · begutachtet, 2024"
       title: "KI-Niederschlagsprognosen für das nördliche tropische Afrika"
-      text: "Ein neuronales Netz auf Satelliten-Niederschlagsdaten, mit EasyUQ probabilistisch gemacht, schlug das EZMW-Ensemble und jeden statistischen Mitbewerber beim 24-Stunden-Niederschlag, sowohl bei der Frage ob es regnet als auch bei der Menge. Neun Jahre Daten, eine der schwierigsten Prognoseregionen der Welt, und wir beide auf derselben Veröffentlichung: ein Modell, das sich gegen ein etabliertes physikalisches System behauptet."
+      text: "Ein neuronales Netz auf Satelliten-Niederschlagsdaten, mit EasyUQ probabilistisch gemacht, schlug das ECMWF-Ensemble und jeden statistischen Mitbewerber beim 24-Stunden-Niederschlag, sowohl bei der Frage ob es regnet als auch bei der Menge. Neun Jahre Daten, eine der schwierigsten Prognoseregionen der Welt, und wir beide auf derselben Veröffentlichung: ein Modell, das sich gegen ein etabliertes physikalisches System behauptet."
       sources:
         - href: "https://arxiv.org/abs/2401.03746"
           label: "Quelle"
@@ -104,8 +104,8 @@ about:
   photoPlaceholder: "TODO: Foto"
   people:
     - name: "Dr. Eva-Maria Walz"
-      role: "Statistik & Prognosen"
-      bio: "Statistikerin am KIT und am HITS: probabilistische Prognosen und ihre Bewertung."
+      role: "Statistik, Prognosen & Evaluation"
+      bio: "Promovierte Statistikerin, Forschung am KIT und HITS. Baut KI- und Prognosemodelle und macht messbar, wie gut sie sind: probabilistische Vorhersagen, Modellbewertung, Unsicherheitsquantifizierung."
       photo: "eva-walz.jpg"
       photoAlt: "Porträt von Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
