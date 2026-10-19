@@ -104,8 +104,8 @@ about:
   photoPlaceholder: "TODO: Foto"
   people:
     - name: "Dr. Eva-Maria Walz"
-      role: "Statistik & Prognosen"
-      bio: "Statistikerin am KIT und am HITS: probabilistische Prognosen und ihre Bewertung."
+      role: "Statistik, Prognosen & Evaluation"
+      bio: "Promovierte Statistikerin, Forschung am KIT und HITS. Baut KI- und Prognosemodelle und macht messbar, wie gut sie sind: probabilistische Vorhersagen, Modellbewertung, Unsicherheitsquantifizierung."
       photo: "eva-walz.jpg"
       photoAlt: "Porträt von Dr. Eva-Maria Walz"
     - name: "Gregor Köhler"
